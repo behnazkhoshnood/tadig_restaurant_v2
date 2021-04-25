@@ -1,6 +1,102 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Home page{% endblock %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It works!</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-5 col-md-6">
+            <p class="logo-font font-weight-bold text-black mt-2 center pt-md-5 text-center">About Us</p>
+            <p class="p-sm-2 p-md-3 text-center">
+                Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
+                Introducing the Persian signature dishes to the world, with the best service and quality is our top goal.
+                All of our dishes serves with a small pice of tadig,  which is a thin crust of slightly browned rice at the bottom of the cooking pot.
+                <br>
+            </p>
+            <p class="text-center font-weight-bold">
+                Thank you for choosing us.
+            </p>
+        </div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide  d-none d-sm-block col-12 col-sm-7 col-md-6 p-0" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleDark" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="1"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="2"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="3"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="4"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="5"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="6"></li>
+                <li data-target="#carouselExampleDark" data-slide-to="7"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!--                                  kashke bademjan-->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Kashke bademjan</h6>
+                    </div>
+                    <img src="/media/Kashke-bademjan.jpg" class="d-block w-100 img-fluid carousel-img" alt="Kashke-bademjan" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                     Khoreshte fesenjoon-->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Khoreshte fesenjoon</h6>
+                    </div>
+                    <img src="/media/Khoreshte-fesenjoon.jpg" class="d-block w-100 img-fluid carousel-img" alt="Khoreshte fesenjoon" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                    noone khamei-->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Noone kamei</h6>
+                    </div>
+                    <img src="media/Noon-khamei.jpg" class="d-block w-100 img-fluid carousel-img" alt="Noone khamei" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                 araghe bidmeshk-->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Araghe bidmeshk</h6>
+                    </div>
+                    <img src="/media/Araghe-bidmeshk.jpg" class="d-block w-100 img-fluid carousel-img" alt="Araghe bidmeshk" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                       white russen -->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">White russian</h6>
+                    </div>
+                    <img src="/media/White-russian.jpg" class="d-block w-100 img-fluid carousel-img" alt="White russian" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                      espresso -->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Espresso</h6>
+                    </div>
+                    <img src="/media/Espresso.jpg" class="d-block w-100 img-fluid carousel-img" alt="Espresso" />
+                </div>
+                <div class="carousel-item">
+                    <!--                                                  watermelon juice -->
+                    <div class="carousel-caption">
+                        <h6 class="text-black bg-white d-none d-sm-inline">Watermelon juice</h6>
+                    </div>
+                    <img src="/media/Watermelon-juice.jpg" class="d-block w-100 img-fluid carousel-img" alt="Watermelon juice" />
+                </div>
+
+            </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span>Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span>Next</span>
+                </button>
+            </div>
+    </div>
+    </div>
 {% endblock %}
