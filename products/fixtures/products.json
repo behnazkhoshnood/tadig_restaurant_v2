@@ -1,0 +1,366 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001340155",
+         "name":"Kashke bademjan",
+         "description":"A tasty and simple persian appetiser. An eggplant dip with caramelized onions, roasted nuts, herbs and spices.",
+         "price":65.0,
+         "category":1,
+         "rating":4.6,
+         "image_url":"media/Kashke-bademjan.jpg",
+         "image":"Kashke-bademjan.jpg"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001600425",
+         "name":"Mirza ghasemi",
+         "description":"A great Persian dish of soft roasted aubergine in tomato and garlic sauce, with eggs cooked into it at the last minute. Ideal for making as part of a mezze meal.",
+         "price":58.99,
+         "category":1,
+         "rating":4.6,
+         "image_url":"media/Mirza-ghasemi.jpg",
+         "image":"Mirza-ghasemi.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001730010",
+         "name":"Do piyaze alo",
+         "description":"Do piyaze alo is a nice, simple vegetarian meal made of diced potato, tomato and onions.",
+         "price":58.99,
+         "category":1,
+         "rating":4.7,
+         "image_url":"media/Do-piyaze-alo.JPG",
+         "image":"Do-piyaze-alo.JPG"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001890157",
+         "name":"Salad olivieh",
+         "description":"Salad olivieh is the Persian version of chicken salad and potato salad, rolled into one amazing dish that is loved by most who try it.",
+         "price":69.99,
+         "category":1,
+         "rating":5.0,
+         "image_url":"media/Salad-olviyeh.jpg",
+         "image":"Salad-olviyeh.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002111605",
+         "name":"Noon panir sabzi",
+         "description":"Noon panir sabzi is a Persian platter served with a delicious mix of fresh herbs, mint, walnuts, radishes feta cheese and flat bread.",
+         "price":44.99,
+         "category":1,
+         "rating":4.5,
+         "image_url":"media/Noon-panir-sabzi.jpg",
+         "image":"Noon-panir-sabzi.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002260206",
+         "name":"Baghali polo",
+         "description":"Baghali polo is a popular Iranian dish of rice, fava beans and dill. It is made by cooking rice and green broad beans in boiling water. This dish can be served in all varieties.",
+         "price":130.99,
+         "category":2,
+         "rating":4.7,
+         "image_url":"media/Baghali-polo.jpg",
+         "image":"Baghali-polo.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002440521",
+         "name":"Zereshk polo ba morgh",
+         "description":"Zereshk Polo ba Morgh is a Persian classic made with Zereshk (barberries), Morgh (chicken), and Polo, which is the steamed and fluffy Persian rice.",
+         "price":109.0,
+         "category":2,
+         "rating":4.4,
+         "image_url":"media/Zereshk-Polo.jpg",
+         "image":"Zereshk-Polo.jpg"
+      }
+   },
+   {
+      "pk":8,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002601115",
+         "name":"Khoreshte gheymeh bademjoon",
+         "description":"Lamb Aubergine Stew with Yellow Split Peas gives you an idea of the main ingredients of this dish.",
+         "price":136.99,
+         "category":2,
+         "rating":4.5,
+         "image_url":"media/Khoreshe-gheymeh.jpg",
+         "image":"Khoreshe-gheymeh.jpg"
+      }
+   },
+   {
+      "pk":9,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002690715",
+         "name":"Khoreshte ghorme sabzi",
+         "description":"A stew made of herbs like parsley and coriander; cooked with kidney beans and lamb. Vegetarian ghormeh sabzi has mushrooms rather than meat.",
+         "price":129.99,
+         "category":2,
+         "rating":4.7,
+         "image_url":"media/ghormeh-sabzi.jpg",
+         "image":"ghormeh-sabzi.jpg"
+      }
+   },
+   {
+      "pk":10,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002701115",
+         "name":"Khoreste fesenjoon ba morgh",
+         "description":"This stew is flavored with pomegranate paste, ground walnuts and spices like turmeric, cinnamon, cardamom, and rosebud.",
+         "price":133.99,
+         "category":2,
+         "rating":4.4,
+         "image_url":"media/Khoreshte-fesenjoon.jpg",
+         "image":"Khoreshte-fesenjoon.jpg"
+      }
+   },
+   {
+      "pk":11,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002761055",
+         "name":"Baklava",
+         "description":"Baklava is a rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with honey.",
+         "price":74.99,
+         "category":3,
+         "rating":3.0,
+         "image_url":"media/Baklava.jpg",
+         "image":"Baklava.jpg"
+      }
+   },
+   {
+      "pk":12,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002820069",
+         "name":"Faloodeh shirazi",
+         "description":"Faloodeh is a traditional Iranian cold dessert similar to a sorbet. It consists of thin vermicelli-sized noodles made from starch in a semi-frozen syrup.",
+         "price":60.99,
+         "category":3,
+         "rating":4.6,
+         "image_url":"media/Faloode-shirazi.jpg",
+         "image":"Faloode-shirazi.jpg"
+      }
+   },
+   {
+      "pk":13,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002820147",
+         "name":"Bastani sonnati",
+         "description":"Bastani is an Iranian ice cream made from milk, eggs, sugar, rose water, saffron, vanilla, and pistachios. It is known widely as Persian ice cream.",
+         "price":60.0,
+         "category":3,
+         "rating":3.9,
+         "image_url":"media/Bastani-sonnati.jpg",
+         "image":"Bastani-sonnati.jpg"
+      }
+   },
+   {
+      "pk":14,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002910572",
+         "name":"Noon khamei",
+         "description":"Noon khamei is a filled choux pastry ball with a typically sweet and moist filling of whipped cream, custard, pastry cream, or ice cream. ",
+         "price":56.99,
+         "category":3,
+         "rating":4.7,
+         "image_url":"media/Noone-khamei.jpg",
+         "image":"Noone-khamei.jpg"
+      }
+   },
+   {
+      "pk":15,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002990740",
+         "name":"Ranginak",
+         "description":"Ranginak is a Shirazi sweet made from Dates, nuts, cinnamon. It's makes a good combination with tea.",
+         "price":48.99,
+         "category":3,
+         "rating":4.8,
+         "image_url":"media/Ranginak.jpg",
+         "image":"Ranginak.jpg"
+      }
+   },
+   {
+      "pk":16,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003050248",
+         "name":"Doogh",
+         "description":"Doogh is a cold savory yogurt-based beverage that is mixed with salt.",
+         "price":29.99,
+         "category":5,
+         "rating":4.4,
+         "image_url":"media/Doogh.jpg",
+         "image":"Doogh.jpg"
+      }
+   },
+   {
+      "pk":17,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003070787",
+         "name":"Araghe bidmeshk",
+         "description":"Strengthens the nervous system Facilitates the digestion Helps with stress-related headaches, tachycardia, anxiety and mood.",
+         "price":33.99,
+         "category":5,
+         "rating":4.4,
+         "image_url":"media/Araghe-bidmeshk.jpg",
+         "image":"Araghe-bidmeshk.jpg"
+      }
+   },
+   {
+      "pk":18,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003090182",
+         "name":"Araghe gol gav zaban",
+         "description":"Gol gav zaban flower has a sweet honey-like taste and is one of the few truly blue-colored edible substances.",
+         "price":33.99,
+         "category":5,
+         "rating":4.8,
+         "image_url":"media/Gol-gav-zaban.jpg",
+         "image":"Gol-gav-zaban.jpg"
+      }
+   },
+   {
+      "pk":19,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003090186",
+         "name":"Mojito",
+         "description":"Mojito flavors are sweetness, citrus, and herbaceous mint, which makes it a popular summer drink.",
+         "price":69.99,
+         "category":6,
+         "rating":5.0,
+         "image_url":"media/Mojito.jpg",
+         "image":"Mojito.jpg"
+      }
+   },
+   {
+      "pk":20,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003161326",
+         "name":"White russian",
+         "description":"White russian is a cocktail made with vodka, coffee liqueur and cream served with ice in an Old Fashioned glass.",
+         "price":69.99,
+         "category":6,
+         "rating":4.7,
+         "image_url":"media/White-russian.jpg",
+         "image":"White-russian.jpg"
+      }
+   },
+   {
+      "pk":21,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003230723",
+         "name":"Bloody mary",
+         "description":"Bloody mary is a cocktail containing vodka, tomato juice, and other spices and flavorings including celery and lemon juice.",
+         "price":60.99,
+         "category":6,
+         "rating":4.3,
+         "image_url":"media/Bloody-mary.jpg",
+         "image":"Bloody-mary.jpg"
+      }
+   },
+   {
+      "pk":22,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003270936",
+         "name":"Espresso",
+         "description":"A small amount of nearly boiling water is forced under pressure (expressed) through finely-ground coffee beans.",
+         "price":36.99,
+         "category":7,
+         "rating":5.0,
+         "image_url":"media/Espresso.jpg",
+         "image":"Espresso.jpg"
+      }
+   },
+   {
+      "pk":23,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003360384",
+         "name":"Masala chai",
+         "description":"Masala chai is a flavoured tea beverage made by brewing black tea with a mixture of aromatic Indian spices and herbs.",
+         "price":39.99,
+         "category":7,
+         "rating":4.8,
+         "image_url":"media/Chai-latte.jpg",
+         "image":"Chai-latte.jpg"
+      }
+   },
+   {
+      "pk":24,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003440111",
+         "name":"Orange juice",
+         "description":"Orange juice is a liquid extract of the orange tree fruit, produced by squeezing or reaming oranges.",
+         "price":50.0,
+         "category":8,
+         "rating":3.8,
+         "image_url":"media/Orange-Juice.jpg",
+         "image":"Orange-Juice.jpg"
+      }
+   },
+   {
+      "pk":25,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003540313",
+         "name":"Watermelon juice",
+         "description":"A soft sweet natural juice. No added suger.",
+         "price":50.0,
+         "category":8,
+         "rating":3.9,
+         "image_url":"media/Watermelon-juice.jpg",
+         "image":"Watermelon-juice.jpg"
+      }
+   },
+   {
+      "pk":26,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5003560513",
+         "name":"Berry juice",
+         "description":"A soft sweet natural juice. No added suger.",
+         "price":50.0,
+         "category":7,
+         "rating":4.4,
+         "image_url":"media/Berry-juice.jpg",
+         "image":"Berry-juice.jpg"
+      }
+   }
+]

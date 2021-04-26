@@ -1,0 +1,172 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Raleway';
+    color: #555;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong{
+    font-family: Open+Sans;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: Open+Sans;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.carousel-item img {
+    background-position: center;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+    height: 400px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+    background: black;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.carousel-control-prev{
+    width: 100px
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    padding: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    background: black;
+    opacity: .5;
+}
+
+.carousel-note{
+    opacity: .5;
+}
+
+.inline{
+    display: inline;
+}
+
+
+.bg-black{
+    background: black;
+}
+
+footer {
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    position: relative;
+    height: 190px;
+    margin-top: -190px;
+}
+
+.fas{
+    line-height: 2 !important;
+}
+
+/* -------------------------------- Media Queries */
+
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar on medium and up */
+@media (min-width: 576px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 144px;
+    }
+}
