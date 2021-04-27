@@ -10,6 +10,10 @@ html {
     font-weight: 500;
 }
 
+hr{
+    width: 90%;
+}
+
 h1,
 h2,
 h3,
@@ -90,11 +94,10 @@ strong{
     padding: 10px;
     margin: 10px;
     color: white;
-}
-
-.carousel-control-prev{
     width: 100px
 }
+
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
@@ -104,7 +107,6 @@ strong{
 .carousel-indicators {
     position: absolute;
     right: 0;
-    bottom: 0;
     left: 0;
     z-index: 15;
     display: -ms-flexbox;
