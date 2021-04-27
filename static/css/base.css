@@ -91,10 +91,10 @@ strong{
     opacity: .5;
     transition: opacity .15s ease;
     background: black;
+    color: white;
+    width: 100px;
     padding: 10px;
     margin: 10px;
-    color: white;
-    width: 100px
 }
 
 
@@ -105,7 +105,6 @@ strong{
 }
 
 .carousel-indicators {
-    position: absolute;
     right: 0;
     left: 0;
     z-index: 15;
@@ -121,8 +120,10 @@ strong{
     opacity: .5;
 }
 
-.carousel-note{
+.carousel-caption{
     opacity: .5;
+    margin: 0 auto;
+    width: max-content;
 }
 
 .inline{
@@ -157,8 +158,8 @@ footer {
   }
 }
 
-/* fixed top navbar on medium and up */
-@media (min-width: 576px) {
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -167,7 +168,35 @@ footer {
         z-index: 1030;
     }
 
-    .header-container {
+        .header-container {
         padding-top: 144px;
+    }
+}
+
+@media (max-width: 991px) and (min-width:386){
+    .header-container {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width:385px){
+    .navbar{
+        font-size: 13px;
+        padding: 7px;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link,
+    .navbar-toggler{
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+
+        .header-container {
+        padding-top: 70px;
+    }
+
+    .logo-font{
+        font-size: 15px;
     }
 }
