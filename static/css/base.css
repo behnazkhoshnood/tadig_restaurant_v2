@@ -21,7 +21,7 @@ h4,
 h5,
 h6,
 strong{
-    font-family: Open+Sans;
+    font-family: 'Open+Sans';
 }
 
 /* from Bulma */
@@ -35,7 +35,7 @@ strong{
 
 .logo-font {
     text-transform: uppercase;
-    font-family: Open+Sans;
+    font-family: 'Raleway';
 }
 
 .main-logo-link {
@@ -156,7 +156,6 @@ footer {
     left: 0;
     position: fixed;
     background: white;
-    z-index: -1;
 }
 
 /* -------------------------------- Media Queries */
