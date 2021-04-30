@@ -76,7 +76,7 @@ strong{
 .carousel-control-next,
 .carousel-control-prev {
     position: absolute;
-    top: 45%;
+    top: 40%;
     z-index: 1;
     display: -ms-flexbox;
     display: flex;
@@ -94,7 +94,7 @@ strong{
     width: 40px;
     height: 40px;
     padding: 10px;
-    margin: 10px;
+    margin: 30px;
 }
 
 .carousel-indicators {
@@ -146,24 +146,35 @@ footer {
     margin-top: -190px;
 }
 
-.fas{
+.fas,
+.fab{
     line-height: 2 !important;
+    font-weight: 900;
+    font-size: 1.33333em;
+    color: black;
+}
+
+.fa-search{
+    color: white;
 }
 
 /* -------------------------------- products page */
 
-.product-img{
-    width: 100%;
-    height: 400px;
+.img-fluid{
+    width: 92% !important;
+    margin-right: 4%;
+    margin-left: 4%;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: white;
+div.img-div{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+.rating{
+    display: block;
 }
 
 /* -------------------------------- Media Queries */
@@ -188,11 +199,19 @@ footer {
     .header-container {
         padding-top: 144px;
     }
+
+    .product-img{
+        height: 300px;
+    }
 }
 
-@media (max-width: 991px) and (min-width:386){
+@media (min-width:386px) and (max-width: 991px) {
     .header-container {
-        padding-top: 90px;
+        padding-top: 100px;
+    }
+
+        .product-img{
+        height: 250px;
     }
 }
 
@@ -200,7 +219,6 @@ footer {
     .navbar{
         font-size: 13px;
         padding: 7px;
-        flex-wrap: nowrap;
     }
 
     .nav-link,

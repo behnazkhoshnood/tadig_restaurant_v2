@@ -148,7 +148,7 @@
          "description":"Baklava is a rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with honey.",
          "price":74.99,
          "category":3,
-         "rating":3.0,
+         "rating":4.5,
          "image_url":"media/Baklava.jpg",
          "image":"Baklava.jpg"
       }
@@ -176,7 +176,7 @@
          "description":"Bastani is an Iranian ice cream made from milk, eggs, sugar, rose water, saffron, vanilla, and pistachios. It is known widely as Persian ice cream.",
          "price":60.0,
          "category":3,
-         "rating":3.9,
+         "rating":4.9,
          "image_url":"media/Bastani-sonnati.jpg",
          "image":"Bastani-sonnati.jpg"
       }
@@ -218,7 +218,7 @@
          "description":"Doogh is a cold savory yogurt-based beverage that is mixed with salt.",
          "price":29.99,
          "category":5,
-         "rating":4.4,
+         "rating":4.7,
          "image_url":"media/Doogh.jpg",
          "image":"Doogh.jpg"
       }
@@ -288,7 +288,7 @@
          "description":"Bloody mary is a cocktail containing vodka, tomato juice, and other spices and flavorings including celery and lemon juice.",
          "price":60.99,
          "category":6,
-         "rating":4.3,
+         "rating":4.7,
          "image_url":"media/Bloody-mary.jpg",
          "image":"Bloody-mary.jpg"
       }
@@ -330,7 +330,7 @@
          "description":"Orange juice is a liquid extract of the orange tree fruit, produced by squeezing or reaming oranges.",
          "price":50.0,
          "category":8,
-         "rating":3.8,
+         "rating":4.8,
          "image_url":"media/Orange-Juice.jpg",
          "image":"Orange-Juice.jpg"
       }
@@ -344,7 +344,7 @@
          "description":"A soft sweet natural juice. No added suger.",
          "price":50.0,
          "category":8,
-         "rating":3.9,
+         "rating":4.9,
          "image_url":"media/Watermelon-juice.jpg",
          "image":"Watermelon-juice.jpg"
       }
@@ -357,8 +357,8 @@
          "name":"Berry juice",
          "description":"A soft sweet natural juice. No added suger.",
          "price":50.0,
-         "category":7,
-         "rating":4.4,
+         "category":8,
+         "rating":4.7,
          "image_url":"media/Berry-juice.jpg",
          "image":"Berry-juice.jpg"
       }

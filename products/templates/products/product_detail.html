@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}- {{ products.category }} page{% endblock %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -18,19 +17,17 @@
                 <hr class="w-50 mb-1">
             </div>
         </div>
-        <!--                                                products details -->
             <ul class="list-group list-group-flush">
-                {% for product in products %}
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-12 col-md-6 col-lg-8">
+                            <div class="col-12 col-md-6 col-lg-7">
                                 <h4>{{ product.name }}</h4>
                                 <h6>{{ product.price }} kr</h6>
                                 <p>{{ product.description }}</p>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 img-div">
+                            <div class="col-12 col-md-6 col-lg-5 img-div">
                                 {% if product.image %}
-                                    <a href="{% url 'product_detail' product.id %}">
+                                    <a href="{{ product.image.url }}" target="_blank">
                                         <img class="img-fluid product-img" src="{{ product.image.url }}"
                                         alt="{{ product.name }}">
                                     </a>
@@ -49,6 +46,5 @@
                             </div>
                         </div>
                     </li>
-                {% endfor %}
             </ul>
 {% endblock %}
