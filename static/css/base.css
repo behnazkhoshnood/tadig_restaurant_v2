@@ -10,6 +10,7 @@ html {
     font-weight: 500;
 }
 
+
 #page-container {
   position: relative;
   min-height: 80vh;
@@ -62,6 +63,19 @@ strong{
 .btn-black {
     background: black;
     color: white;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
 }
 
 .shop-now-button:hover,
@@ -228,6 +242,7 @@ div.img-div{
     }
 }
 
+
 @media (min-width:386px) and (max-width: 991px) {
     .header-container {
         padding-top: 100px;
@@ -289,11 +304,6 @@ div.img-div{
 
     .carousel-item img{
         height: 500px;
-    }
-
-    hr{
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
 }
 
