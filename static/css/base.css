@@ -82,6 +82,10 @@ strong{
     border: 1px solid black !important;
 }
 
+.navbar-nav li{
+    white-space: nowrap
+    }
+
 #about-note p{
     text-align: justify;
 }

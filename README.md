@@ -5,3 +5,9 @@ the image in my product page is showing on the border line of my fixed navbar.
 
 to pot the footer at the bottom of the page
 https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+
+my main nav menu items text were seperating to 2 line. I used this code to fix it:
+https://stackoverflow.com/questions/17704539/css-getting-text-in-one-line-rather-than-two
+.navbar-nav li{
+    white-space: nowrap
+    }
