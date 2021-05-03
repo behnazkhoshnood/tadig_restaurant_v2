@@ -18,19 +18,19 @@
         </li>
 
         <li class="col-2 nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=appetizer" id="appetizer-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=appetizers" id="appetizer-link">
                 Appetizers
             </a>
         </li>
 
         <li class="col-2 nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=main" id="main-dish-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=mains" id="main-dish-link">
                 Main
             </a>
         </li>
 
         <li class="col-2 nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products' %}?category=dessert" id="dessert-link">
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products' %}?category=desserts" id="dessert-link">
                 Desserts
             </a>
         </li>
@@ -40,10 +40,10 @@
                 Beverages
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-drinks-link">
-                <a href="{% url 'products' %}?category=persian" class="dropdown-item">Persian Drinks</a>
-                <a href="{% url 'products' %}?category=alcoholic" class="dropdown-item">Alcoholic Drinks</a>
-                <a href="{% url 'products' %}?category=warm" class="dropdown-item">Warm Drinks</a>
-                <a href="{% url 'products' %}?category=cold" class="dropdown-item">Cold Drinks</a>
+                <a href="{% url 'products' %}?category=persians" class="dropdown-item">Persian Drinks</a>
+                <a href="{% url 'products' %}?category=alcoholics" class="dropdown-item">Alcoholic Drinks</a>
+                <a href="{% url 'products' %}?category=warms" class="dropdown-item">Warm Drinks</a>
+                <a href="{% url 'products' %}?category=colds" class="dropdown-item">Cold Drinks</a>
             </div>
         </li>
     </ul>
