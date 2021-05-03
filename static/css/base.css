@@ -10,6 +10,23 @@ html {
     font-weight: 500;
 }
 
+#page-container {
+  position: relative;
+  min-height: 80vh;
+}
+
+#content-wrap {
+  padding-bottom: 5px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+}
+
+
 hr{
     width: 90%;
 }
@@ -63,6 +80,10 @@ strong{
 
 .border-black {
     border: 1px solid black !important;
+}
+
+#about-note p{
+    text-align: justify;
 }
 
 .carousel-item img {
@@ -142,8 +163,6 @@ footer {
     padding: 0;
     clear: both;
     position: relative;
-    height: 190px;
-    margin-top: -190px;
 }
 
 .fas,
@@ -227,7 +246,11 @@ div.img-div{
         padding-left: 3px;
     }
 
-        .header-container {
+    .nav-link:last-child{
+        padding-right: 20px;
+    }
+
+    .header-container {
         padding-top: 70px;
     }
 
@@ -244,4 +267,40 @@ div.img-div{
     .list-group-item:last-child{
         border-bottom: none;
     }
+
+    #about-note,
+    .social-note,
+    .contacts{
+        padding: 15px;
+    }
+}
+
+@media(min-height:800px){
+    #about-note,
+    .social-note,
+    .contacts{
+        line-height: 3;
+        padding: 30px;
+    }
+
+    .carousel-item img{
+        height: 500px;
+    }
+
+    hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-height:1300px){
+    #page-container {
+    min-height: 68vh;
+    }
+
+    #content-wrap,
+    .navbar {
+    padding-top: 50px;
+    }
+
 }

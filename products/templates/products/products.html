@@ -11,84 +11,97 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <hr>
-    <div class="row">
-        <div class="col text-center">
-            {% for c in current_categories %}
-            <h3 class="inline">{{ c.friendly_name }}</h3>
-            {% endfor %}
-            <h3 class="inline">Menu</h3>
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-    <div class="row mt-1 mb-2">
-        <div class="col-12 my-auto d-flex justify-content-center">
-            <div class="sort-select-wrapper w-50">
-                <select id="sort-selector"
-                    class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
-                        high)</option>
-                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
-                        to low)</option>
-                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low
-                        to high)</option>
-                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating
-                        (high to low)</option>
-                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
-                    </option>
-                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
-                    </option>
-                </select>
-            </div>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-            <p class="text-muted mt-3 text-center text-md-left">
-                {% if search_term or current_categories or current_sorting != 'None_None' %}
-                <span class="small"><a href="{% url 'products' %}">Menu</a> | </span>
-                {% endif %}
-                {{ products|length }} dishes/drinks {% if search_term %} found for
-                <strong>"{{ search_term }}"</strong>{% endif %}
-            </p>
-        </div>
-    </div>
-    <!--                                                products details -->
-    <ul class="list-group list-group-flush">
-        {% for product in products %}
-        <li class="list-group-item">
+    <div id="content-wrap">
+        <div class="container-fluid">
+            <hr>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-8">
-                    <h4>{{ product.name }}</h4>
-                    <h6>
-                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                            {{ product.category.friendly_name }}
-                        </a>
-                    </h6>
-                    <h6>{{ product.price }} kr</h6>
-                    <p>{{ product.description }}</p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 img-div">
-                    {% if product.image %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                    </a>
-                    {% endif %}
-                    {% if product.rating %}
-                    <small class="text-muted rating"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                        5</small>
-                    {% else %}
-                    <small class="text-muted rating">No Rating</small>
-                    {% endif %}
+                <div class="col text-center">
+                    {% for c in current_categories %}
+                    <h3 class="inline">{{ c.friendly_name }}</h3>
+                    {% endfor %}
+                    <h3 class="inline">Menu</h3>
+                    <hr class="w-50 mb-1">
                 </div>
             </div>
-        </li>
-        {% endfor %}
-    </ul>
+            <div class="row mt-1 mb-2">
+                <div class="col-12 my-auto d-flex justify-content-center">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                                (low to
+                                high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                                (high
+                                to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                                Rating (low
+                                to high)</option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
+                                Rating
+                                (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                (A-Z)
+                            </option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name
+                                (Z-A)
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'products' %}">Menu</a> | </span>
+                        {% endif %}
+                        {{ products|length }} dishes/drinks {% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+            <!--                                                products details -->
+            <hr class="w-100">
+            <ul class="list-group list-group-flush">
+                {% for product in products %}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-8">
+                            <h4>{{ product.name }}</h4>
+                            <h6>
+                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                    {{ product.category.friendly_name }}
+                                </a>
+                            </h6>
+                            <h6>{{ product.price }} kr</h6>
+                            <p>{{ product.description }}</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 img-div">
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="img-fluid product-img" src="{{ product.image.url }}"
+                                    alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            {% if product.rating %}
+                            <small class="text-muted rating"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                5</small>
+                            {% else %}
+                            <small class="text-muted rating">No Rating</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
     {% endblock %}
 
     {% block postloadjs %}
