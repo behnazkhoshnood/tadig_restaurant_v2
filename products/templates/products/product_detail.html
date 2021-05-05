@@ -4,23 +4,23 @@
 {% block extra_title %}- {{ product.name }} {% endblock %}
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="row mt-4 mt-lg-5 pt-lg-4">
+        <div class="col mt-4"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
+    <div class="row mt-md-5">
+        <div class="col">
             <h2 class="logo-font">{{ products.name }}</h2>
         </div>
     </div>
-    <ul class="list-group list-group-flush mt-5">
+    <ul class="list-group list-group-flush mt-3">
         <li class="list-group-item">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-7">
+                <div class="col-12 col-md-6">
                     <h4>{{ product.name }}</h4>
                     {% if product.category %}
                     <h6>
@@ -46,28 +46,28 @@
                             </div>
 
                             <div class="col-12">
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-3"
+                                    value="Add to Bag">
                                 <a href="{% url 'products' %}" class="order-btn btn btn-outline-black rounded-0 mt-3">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">order some more?</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-3"
-                                    value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
                     <hr class="d-block d-md-none">
                 </div>
-                <div class="col-12 col-md-6 col-lg-5 img-div">
+                <div class="col-12 col-md-6 img-div">
                     {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
-                        <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img class="img-fluid product-details-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="img-fluid product-details-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                     {% endif %}
                     {% if product.rating %}

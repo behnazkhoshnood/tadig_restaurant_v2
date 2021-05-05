@@ -13,17 +13,18 @@ html {
 
 #page-container {
     position: relative;
+    min-height: 100vh;
 }
 
 #content-wrap {
-    padding-bottom: 5px;
+    padding-bottom: 460px;
 }
 
 #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 1rem;
+    max-height: 460px;
 }
 
 h1,
@@ -90,6 +91,10 @@ strong{
     border: 1px solid black !important;
 }
 
+.navbar{
+    justify-content: space-around;
+}
+
 .navbar-nav li,
 .order-btn{
     white-space: nowrap
@@ -146,9 +151,8 @@ strong{
     list-style: none;
     background: black;
     opacity: .5;
+    bottom: 0;
 }
-
-
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
@@ -160,6 +164,7 @@ strong{
     opacity: .5;
     margin: 0 auto;
     width: max-content;
+    bottom: 8%;
 }
 
 .inline{
@@ -179,7 +184,6 @@ footer {
     position: relative;
 }
 
-.fas,
 .fab{
     line-height: 2 !important;
     font-weight: 900;
@@ -187,8 +191,12 @@ footer {
     color: black;
 }
 
-.fa-search{
-    color: white;
+.contacts li i{
+    color: black;
+}
+
+.product-details-img{
+    height: 55vh;
 }
 
 /* -------------------------------- products page */
@@ -236,6 +244,12 @@ div.img-div{
     .product-img{
         height: 300px;
     }
+
+    .navbar {
+        height: 100px;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 
@@ -244,8 +258,9 @@ div.img-div{
         padding-top: 100px;
     }
 
-        .product-img{
-        height: 250px;
+    .product-details-img,
+    .product-img{
+        height: 300px;
     }
 }
 
@@ -273,6 +288,7 @@ div.img-div{
         font-size: 15px;
     }
 
+    .product-details-img,
     .product-img{
         height: 200px;
     }
@@ -308,7 +324,7 @@ div.img-div{
 }
 
 /* ipad pro view */
-@media(min-height:1300px){
+@media(min-height:1270px){
 
     .carousel-item img{
         height: 550px;
@@ -324,14 +340,12 @@ div.img-div{
         line-height: 5;
     }
 
-    #content-wrap,
-    .navbar {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    }
-
     #about-note,
     #carouselExampleDark{
         padding-top: 55px;
+    }
+
+        .product-details-img{
+    height: 30vh;
     }
 }
