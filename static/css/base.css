@@ -227,7 +227,7 @@ div.img-div{
   }
 }
 
-/* fixed top navbar only on medium and up */
+/*screens on lg and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -235,6 +235,12 @@ div.img-div{
         right: 0;
         left: 0;
         z-index: 1030;
+    }
+
+    .navbar {
+        height: 100px;
+        padding: 0;
+        margin: 0;
     }
 
     .header-container {
@@ -245,17 +251,30 @@ div.img-div{
         height: 300px;
     }
 
-    .navbar {
-        height: 100px;
-        padding: 0;
-        margin: 0;
+    .bag-items-img{
+        height: 150px;
     }
+
+    #content-wrap {
+    padding-bottom: 275px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 275px;
+}
 }
 
 
 @media (min-width:386px) and (max-width: 991px) {
     .header-container {
         padding-top: 100px;
+    }
+
+        .bag-items-img{
+        height: 100px;
     }
 
     .product-details-img,
@@ -285,7 +304,7 @@ div.img-div{
     }
 
     .logo-font{
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .product-details-img,
