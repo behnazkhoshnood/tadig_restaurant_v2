@@ -199,6 +199,11 @@ footer {
     height: 55vh;
 }
 
+.update-link,
+.remove-item{
+    cursor: pointer;
+}
+
 /* -------------------------------- products page */
 
 .img-fluid{
@@ -252,7 +257,7 @@ div.img-div{
     }
 
     .bag-items-img{
-        height: 150px;
+        height: 200px;
     }
 
     #content-wrap {
