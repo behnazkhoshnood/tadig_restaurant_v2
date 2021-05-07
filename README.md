@@ -32,24 +32,6 @@ The site owner is able to make money by providing this set of services to the us
 
 ### **User Stories**
 
-#### **As a Shopper**
-
-- **Viewing and Navigating**
-  - I want to be able to view a list of products, so that I can select some to purchase.
-  - I want to be able to view insividual product details, so that I can identify the price, description, product rating,product image and availabe sizes.
-  - I want to be able to quickly identify deals, clearance items and special offers, so that I can take advantage of special saving on products I'd like to purchase.
-  - I want to be able to easily view the total of my purchases at any time, so that I can avoid spending too much.
-
-- **Sorting and Searching**
-  - I want to be able to sort the list of availabe products, so that I can easily identify the best rated, best priced and categorically sorted products.
-  - I want to be able to sort a specific category of product, so that I can find the best priced or best rated product in a specific category, or sort the products in that category name.
-  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced or best rated products accross broad categories such as "Clothing" or "Homeware".
-  - I want to be able to search for a product by name or description, so that I can find a specific product I'd like to purchase.
-  - I want to be able to easily see what I've searched for and the number of results, so that I can quickly decide wheather the product I want is availabe.
-
-- **Purchasing and Checkout**
-  - I want to be able to easily select the size and quantity of a product when purchasing it, so that I can ensure I don't accidentally select the wrong product, auantity or size.
-
 #### **As a Site Users**
 
 - **Registeration and User Account**
@@ -59,23 +41,44 @@ The site owner is able to make money by providing this set of services to the us
   - I want to be able to receive an email confirmation after registering, so that I can verify that my account registeration was successful.
   - I want to be able to have a personalized user profile, so that I can view my personal order history and order confirmations and save my payment information.
 
+#### **As a Shopper**
 
-<!-- #### **As an Admin User**
-  - I want to be able to delete the unrelated or spams from the recipes.
-    - I have achieved this by creating a loop over all delete buttons on all recipes specialized for the admin. Other users can edit or delete only their own recipes.
-  - I want to be able to edit or delete the recipes that are added by myself.
-    - I have achived this by providing the edit and delete button on the collapsible header of these recipes in admin profile page. Delete btn moved to the head on the collapsible body in mobile viewdevices.
-  - I want to be able to manage the categories and marks for the recipes.
-    - I have achived this by making 2 seperated pages for the admin to go through all the categories and marks and add, edit or delete each on on them. -->
+- **Viewing and Navigating**
+  - I want to be able to view a list of products, so that I can select some to purchase.
+  - I want to be able to view individual product details, so that I can identify the price, description, product rating and product image.
+  - I want to be able to easily view the total of my purchases at any time, so that I can avoid spending too much.
+
+- **Sorting and Searching**
+  - I want to be able to sort the list of availabe products, so that I can easily identify the best rated, best priced and categorically sorted products.
+  - I want to be able to sort a specific category of product, so that I can find the best priced or best rated product in a specific category, or sort the products in each category.
+  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced or best rated products.
+  - I want to be able to search for a product by name, category or description, so that I can find a specific product I'd like to purchase.
+  - I want to be able to easily see what I've searched for and the number of results, so that I can quickly decide wheather the product I want is availabe.
+
+- **Purchasing and Checkout**
+  - I want to be able to easily select the quantity of a product when purchasing it, so that I can ensure I don't accidentally select the wrong product or quantity.
+  - I want to be able to view items in my bag to be purchased, so that I can identify the total cost of my purchase and all items I will receive.
+  - I want to be able to adjust the quantity of individual items in my bag, so that I can easily make changes to my purchase before checkout.
+  - I want to be able to easily enter my paiment information, so that I can check out quickly and with no hassles.
+  - I want to be able to feel my personal and payment information is safe and secure, so that I can confindently provide the needed information to make a purchase.
+  - I want to be able to view an order confirmation after checkout, so that I can verify that I haven't made any mistakes.
+  - I want to be able to receive an email confirmation after checking out, so that I can keep the confirmation of what I've purchased for my records.
+
+#### **As a Store Owner**
+
+- **Admin and Store Managment**
+  - I want to be able to add a product, so that I can add new items to my store.
+  - I want to be able to edit or update a product, so that I can change product pricees, descriptins, image or other product criteria.
+  - I want to be able to delete a product, so that I can remove items that are no longer available.
 
 ### **Design choices**
 
-  The goal in design was to create a website that is overall user friendly, has a modern feel with emphasis on providing information about recipes in a readable and eye-catching way. Therefore, following design choices were made:
+  The goal in design was to create a website that is overall user friendly, has a modern feel with emphasis on providing information about the restaurant dishes/drinks in a readable and eye-catching way. Therefore, following design choices were made:
 - **Framework**
   * Front-end framework, [Bootstrap](https://Bootstrap.com/),  based on bootstrap Design was chosen for this project for its modern interface and ease of use.
 
   * [JQuery](https://jquery.com/) was used for initializing some bootstrap elements.
-  * Micro framework [Flask](https://flask.palletsprojects.com/en/1.1.x/), was chosen to build the backend.
+
 - **Typography**
   - I used [Google Fonts](https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Yusei+Magic&display=swap") for the font style of my project:
     - The font I have used for the body of this project is called **Montserrat** and for the headers, input and labels I used **Yusei Magic** font with sans-serif as a backup font.
