@@ -28,6 +28,9 @@ def bag_contents(request):
         delivery = 0
         free_delivery_delta = 0
 
+    if product_count == 0:
+        delivery = 0
+
     grand_total = delivery + total
 
     context = {
