@@ -9,6 +9,20 @@ html {
     color: #555;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li{
+    font-family: 'Open+Sans';
+}
+
+i{
+    font-family: Awesome 5 Free;
+}
+
 
 #page-container {
     position: relative;

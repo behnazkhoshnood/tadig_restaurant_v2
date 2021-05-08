@@ -619,3 +619,12 @@ https://stackoverflow.com/questions/17704539/css-getting-text-in-one-line-rather
 
 used this for fixing my scrollbar style
 https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+
+Project Tools
+Django — Web Framework
+Back end Python 3.8 — Back end Programming language
+PostgreSQL — databases
+Front end — HTML 5, CSS 3, Bootstrap, JavaScript
+QR code Generation JavaScript JQuery
+Deployment Activity Heroku server
+Amazon Web Services — S3 Bucket Storage Allocation
