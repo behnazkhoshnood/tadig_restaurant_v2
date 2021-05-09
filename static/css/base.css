@@ -299,7 +299,7 @@ div.img-div{
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -309,13 +309,16 @@ div.img-div{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #343a40;
+  background: #888;
+  height: 10px;
+
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
-} 
+  background: #888;
+
+}
 
 /* -------------------------------- Media Queries */
 
