@@ -26,11 +26,22 @@
                 </p>
                 <h6 class="font-weight-bold">
                     Thank you for choosing us.
-                <h6>
+                </h6>
             </div>
             <!-- carousel -->
             <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-lg-7"
                 data-ride="carousel">
+                <hr class="d-block d-lg-none">
+                                                                                    <!-- carousel indicators -->
+                <ol class="carousel-indicators">
+                    {% for product in products %}
+                        {% if forloop.first %}
+                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                        {% else %}
+                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}"></li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
                 <div class="carousel-inner">
                     <!--                                  carousel item active -->
                     {% for product in products %}
@@ -83,16 +94,6 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="d-none">Next</span>
                 </button>
-                                                                    <!-- carousel indicators -->
-                <ol class="carousel-indicators">
-                    {% for product in products %}
-                        {% if forloop.first %}
-                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                        {% else %}
-                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}"></li>
-                        {% endif %}
-                    {% endfor %}
-                </ol>
             </div>
         </div>
     </div>

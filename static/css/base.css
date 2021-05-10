@@ -1,4 +1,4 @@
-/* general */
+/* -------------------------------- general */
 
 body,
 html {
@@ -11,7 +11,6 @@ html {
     font-family: 'Raleway' !important;
     color: #555;
 }
-
 
 #page-container {
     position: relative;
@@ -33,13 +32,23 @@ html {
     max-height: 450px;
 }
 
+.inline {
+    display: inline;
+}
+
+
+.bg-black {
+    background: black;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-li {
+li,
+strong {
     font-family: 'Open+Sans';
 }
 
@@ -78,43 +87,12 @@ i {
     width: 1.5rem;
 }
 
-.navbar {
-    font-size: 13px;
-    padding: 10px;
+.text-black {
+    color: #000 !important;
 }
 
-.table-responsive {
-    font-size: 13px;
-}
-
-.nav-link,
-.navbar-toggler {
-    padding-right: 3px;
-    padding-left: 3px;
-}
-
-.nav-link:last-child {
-    padding-right: 20px;
-}
-
-
-.product-details-img,
-.product-img {
-    height: 200px;
-}
-
-.quantity-input {
-    width: max-content;
-    margin: 0 auto;
-}
-
-.logo-font {
-    text-transform: uppercase;
-    font-family: 'Raleway';
-}
-
-.main-logo-link {
-    width: fit-content;
+.border-black {
+    border: 1px solid black !important;
 }
 
 .btn-black {
@@ -135,6 +113,54 @@ i {
     color: white !important;
 }
 
+/* -------------------------------- base html */
+
+.navbar {
+    font-size: 13px;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.navbar-nav li,
+.order-btn {
+    white-space: nowrap
+}
+
+.nav-link,
+.navbar-toggler {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.nav-link:last-child {
+    padding-right: 20px;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: 'Raleway';
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* -------------------------------- product/product_details html */
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.product-details-img,
+.product-img {
+    height: 200px;
+}
+
+.quantity-input {
+    width: max-content;
+    margin: 0 auto;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -145,21 +171,11 @@ i {
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
-}
+/* -------------------------------- index html */
 
-.border-black {
-    border: 1px solid black !important;
-}
-
-.navbar {
-    justify-content: space-around;
-}
-
-.navbar-nav li,
-.order-btn {
-    white-space: nowrap
+#about-note{
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 #about-note p {
@@ -172,7 +188,7 @@ i {
     background-size: cover;
     padding-left: 0;
     padding-right: 0;
-    height: 200px;
+    height: 250px;
 }
 
 .carousel-control-next,
@@ -199,21 +215,8 @@ i {
     margin: 45px;
 }
 
-.carousel-indicators {
-    right: 0;
-    left: 0;
-    z-index: 15;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
-    list-style: none;
-    background: black;
-    opacity: .5;
-    bottom: -10px;
+#carouselExampleDark{
+    height: 100%;
 }
 
 .carousel-control-prev-icon,
@@ -221,60 +224,12 @@ i {
     padding: 10px;
 }
 
-
 .carousel-caption {
     opacity: .6;
     margin: 0 auto;
     width: max-content;
     bottom: 8%;
     font-size: 12px;
-}
-
-.list-group-item:last-child {
-    border-bottom: none;
-}
-
-#about-note,
-.social-note,
-.contacts {
-    padding: 15px;
-}
-
-.inline {
-    display: inline;
-}
-
-
-.bg-black {
-    background: black;
-}
-
-footer {
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    clear: both;
-    position: relative;
-}
-
-.fab {
-    line-height: 2 !important;
-    font-weight: 900;
-    font-size: 1.33333em;
-    color: black;
-}
-
-.contacts li i {
-    color: black;
-}
-
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
-.update-form {
-    min-width: 80px;
 }
 
 /* -------------------------------- products page */
@@ -295,6 +250,59 @@ div.img-div {
 .rating {
     display: block;
 }
+
+/* -------------------------------- bag and checkout html */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.update-form {
+    min-width: 80px;
+}
+
+.bag-items-img {
+    height: 120px;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.table-responsive {
+    font-size: 13px;
+}
+
+td p,
+.order-summary{
+    font-family: 'Open+Sans';
+}
+
+p span{
+    margin-top: 10px;
+}
+
+/* -------------------------------- footer html */
+
+.social-note,
+.contacts {
+    padding: 15px;
+}
+
+.fab {
+    line-height: 2 !important;
+    font-weight: 900;
+    font-size: 1.33333em;
+    color: black;
+}
+
+.contacts li i {
+    color: black;
+}
+
 
 /* ------------------------------- bootstrap toasts */
 
@@ -358,12 +366,6 @@ div.img-div {
     border-bottom-color: #343a40 !important;
 }
 
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 /* -------------------------------- Media Queries */
 
 /* on sm */
@@ -375,9 +377,7 @@ div.img-div {
         height: 350px;
     }
 
-    .bag-items-img {
-        height: 120px;
-    }
+
 
     .carousel-control-next,
     .carousel-control-prev {
@@ -387,15 +387,15 @@ div.img-div {
 }
 
 /*screens on md */
+
 @media (min-width:768px) and (max-width: 991px) {
 
-    .bag-items-img {
-        height: 120px;
+    .product-details-img {
+        height: 400px;
     }
 
-    .product-details-img,
-    .carousel-item img {
-        height: 400px;
+    .carousel-item img{
+        height: 450px;
     }
 
     .carousel-control-next,
@@ -405,6 +405,7 @@ div.img-div {
 }
 
 /*screens on lg and up */
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -438,7 +439,7 @@ div.img-div {
     }
 
     .bag-items-img {
-        height: 250px;
+        height: 150px;
     }
 
     #content-wrap {
@@ -458,28 +459,19 @@ div.img-div {
         padding: 30px;
     }
 
-    #about-note {
-        line-height: 5;
-    }
-
     #about-note,
     .social-note,
     .contacts {
         line-height: 3;
-        padding: 30px;
     }
 
     .carousel-item img {
-        height: 400px;
+        height: 450px;
     }
-
-    .carousel-indicators {
-        bottom: 40px;
-    }
-
 }
 
 /* ipad pro */
+
 @media (min-height: 1350px) {
 
     #carouselExampleDark,
@@ -498,15 +490,12 @@ div.img-div {
     #about-note,
     .social-note,
     .contacts {
+        padding-top: 50px;
         line-height: 4;
     }
 
     .carousel-control-next,
     .carousel-control-prev {
         top: 50% !important;
-    }
-
-    .carousel-indicators {
-        bottom: 0 !important;
     }
 }
