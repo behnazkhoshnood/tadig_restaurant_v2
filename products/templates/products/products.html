@@ -3,7 +3,7 @@
 
 {% block extra_title %}{% for c in current_categories %}- {{ c.friendly_name}} {% endfor %}- Menu{% endblock %}
 {% block page_header %}
-<div class="container header-container">
+<div class="container-fluid header-container">
     <div class="row">
         <div class="col"></div>
     </div>
@@ -14,8 +14,8 @@
 
 <div class="container-fluid">
     <br>
-    <div class="row mt-4 mt-lg-5 pt-lg-4">
-        <div class="col text-center mt-4">
+    <div class="row">
+        <div class="col text-center">
             {% for c in current_categories %}
             <h3 class="inline">{{ c.friendly_name }}</h3>
             {% endfor %}
@@ -87,7 +87,7 @@
                     </a>
                     {% endif %}
                     {% if product.rating %}
-                    <small class="text-muted rating"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                    <small class="text-muted rating mt-2"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
                         5</small>
                     {% else %}
                     <small class="text-muted rating">No Rating</small>

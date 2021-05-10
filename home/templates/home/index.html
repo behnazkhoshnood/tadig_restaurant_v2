@@ -13,93 +13,68 @@
 {% block content %}
 
     <div class="container-fluid">
-        <hr>
-        <div class="row mt-5">
-            <div id="about-note" class="col-12 col-lg-6 text-center mt-lg-5">
-                <h6 class="logo-font font-weight-bold text-black">About Us</h6>
-                <p class="p-sm-2 mb-sm-0 p-md-3 about-note d-flex justify-content-center">
+        <div class="row">
+            <!-- about note -->
+            <div id="about-note" class="col-12 col-lg-5 text-center">
+                <p class="logo-font font-weight-bold text-black">About Us</p>
+                <p class="about-note d-flex justify-content-center">
                     Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
                     Introducing the Persian signature dishes to the world, with the best service and quality is our
                     top goal.
                     All of our dishes serves with a small pice of tadig, which is a thin crust of slightly browned
                     rice at the bottom of the cooking pot.
-                    {% for product in products %}
-                        <h1>{{ product.name }}</h1>
-                    {% endfor %}
-
                 </p>
-                <h6 class="font-weight-bold mb-4 mb-md-0">
+                <h6 class="font-weight-bold">
                     Thank you for choosing us.
                 <h6>
             </div>
-            <hr class="d-block d-lg-none">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide d-md-block col-12 col-lg-6 mt-lg-5"
+            <!-- carousel -->
+            <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-lg-7"
                 data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active data-interval="500">
-                        <!--                                  kashke bademjan -->
-                        <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/1">
-                            <img src="media/Kashke-bademjan.jpg" class="d-block w-100 img-fluid" alt="Kashke bademjan" />
-                            <div class="carousel-caption d-block">
-                                <h6 class="text-white bg-black d-inline">kashke bademjan</h6>
+                    <!--                                  carousel item active -->
+                    {% for product in products %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active data-interval="500">
+                                {% if product.image %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                    <div class="carousel-caption d-block">
+                                        <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                    </div>
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                        <div class="carousel-caption d-block">
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                        </div>
+                                    </a>
+                                {% endif %}
                             </div>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <!--                                     Khoreshte fesenjoon -->
-                        <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/10">
-                            <img src="media/Khoreshte-fesenjoon.jpg" class="d-block w-100 img-fluid"
-                                alt="Khoreshte fesenjoon" />
-                            <div class="carousel-caption d-block">
-                                <h6 class="text-white bg-black d-sm-inline">Khoreshte fesenjoon</h6>
-                        </a>
-                    </div>
+                        {% else %}
+                                      <!--                                     carousel item -->
+                            <div class="carousel-item">
+                                {% if product.image %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                        <div class="carousel-caption d-block">
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                        </div>
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                        <div class="carousel-caption d-block">
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="carousel-item">
-                    <!--                                    noone khamei-->
-                    <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/14">
-                        <img src="media/Noon-khamei.jpg" class="d-block w-100 img-fluid" alt="Noone khamei" />
-                        <div class="carousel-caption d-block">
-                            <h6 class="text-white bg-black d-inline">Noone kamei</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <!--                                 araghe bidmeshk-->
-                    <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/17">
-                        <img src="/media/Araghe-bidmeshk.jpg" class="d-block w-100 img-fluid" alt="Araghe bidmeshk" />
-                        <div class="carousel-caption d-block">
-                            <h6 class="text-white bg-black d-inline">Araghe bidmeshk</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <!--                                       Mojito -->
-                    <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/19">
-                        <img src="media/Mojito.jpg" class="d-block w-100 img-fluid" alt="Mojito" />
-                        <div class="carousel-caption d-block">
-                            <h6 class="text-white bg-black d-inline">Mojito</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <!--                                      espresso -->
-                    <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/22">
-                        <img src="/media/Espresso.jpg" class="d-block w-100 img-fluid" alt="Espresso" />
-                        <div class="carousel-caption d-block">
-                            <h6 class="text-white bg-black d-inline">Espresso</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <!--                                                  watermelon juice -->
-                    <a href="https://8000-pink-salmon-u6f6af0z.ws-eu03.gitpod.io/products/25">
-                        <img src="/media/Watermelon-juice.jpg" class="d-block w-100 img-fluid" alt="Watermelon juice" />
-                        <div class="carousel-caption d-block">
-                            <h6 class="text-white bg-black d-inline">Watermelon juice</h6>
-                        </div>
-                    </a>
-                </div>
+                                                            <!-- carousel prev and next btns -->
                 <button class="carousel-control-prev" type="button" data-target="#carouselExampleDark" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="d-none">Previous</span>
@@ -108,14 +83,15 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="d-none">Next</span>
                 </button>
+                                                                    <!-- carousel indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleDark" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="4"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="5"></li>
-                    <li data-target="#carouselExampleDark" data-slide-to="6"></li>
+                    {% for product in products %}
+                        {% if forloop.first %}
+                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                        {% else %}
+                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}"></li>
+                        {% endif %}
+                    {% endfor %}
                 </ol>
             </div>
         </div>

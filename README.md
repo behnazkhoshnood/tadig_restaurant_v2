@@ -628,3 +628,6 @@ Front end — HTML 5, CSS 3, Bootstrap, JavaScript
 QR code Generation JavaScript JQuery
 Deployment Activity Heroku server
 Amazon Web Services — S3 Bucket Storage Allocation
+
+to make my carousel dynamic
+https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django
