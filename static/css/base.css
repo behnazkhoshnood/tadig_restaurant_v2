@@ -140,7 +140,7 @@ i {
 
 .logo-font {
     text-transform: uppercase;
-    font-family: 'Raleway';
+    font-family: 'Raleway' !important;
 }
 
 .main-logo-link {
@@ -274,6 +274,7 @@ div.img-div {
 
 .table-responsive {
     font-size: 13px;
+    font-family: 'Opens+Sans';
 }
 
 p span{
