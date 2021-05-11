@@ -48,7 +48,9 @@ h4,
 h5,
 h6,
 li,
-strong {
+strong,
+small,
+input {
     font-family: 'Open+Sans';
 }
 
@@ -283,6 +285,11 @@ td p,
 
 p span{
     margin-top: 10px;
+}
+
+.StripeElement div{
+    font-family: 'Open+Sans' !important;
+    font-size: 15px;
 }
 
 /* -------------------------------- footer html */
