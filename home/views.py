@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.db import models
 
 from products.models import Product
-from products.views import product_detail
 
 
 def index(request):

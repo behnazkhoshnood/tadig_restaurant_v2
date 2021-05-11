@@ -22,7 +22,9 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: #aab7c4 !important;
+    font-family: "Open+Sans" !important;
+    font-size: 15px !important;
 }
 
 .fieldset-label {
@@ -34,4 +36,15 @@
 #card-element {
     color: #000;
     border: 1px solid #000;
+}
+
+.order-summary{
+    font-family: 'Open+Sans';
+    white-space: nowrap;
+}
+
+@media (max-width: 991px){
+    .checkout-calc-header{
+        padding-left: 30px;
+    }
 }

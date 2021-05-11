@@ -8,7 +8,7 @@ html {
     padding: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: 'Raleway' !important;
+    font-family: 'Raleway';
     color: #555;
 }
 
@@ -147,32 +147,6 @@ i {
     width: fit-content;
 }
 
-/* -------------------------------- product/product_details html */
-
-.list-group-item:last-child {
-    border-bottom: none;
-}
-
-.product-details-img,
-.product-img {
-    height: 200px;
-}
-
-.quantity-input {
-    width: max-content;
-    margin: 0 auto;
-}
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
-}
-
 /* -------------------------------- index html */
 
 #about-note{
@@ -190,7 +164,7 @@ i {
     background-size: cover;
     padding-left: 0;
     padding-right: 0;
-    height: 250px;
+    height: 200px;
 }
 
 .carousel-control-next,
@@ -234,7 +208,31 @@ i {
     font-size: 12px;
 }
 
-/* -------------------------------- products page */
+/* -------------------------------- product/product_details html */
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.product-details-img,
+.product-img {
+    height: 200px;
+}
+
+.quantity-input {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
 
 .img-fluid {
     width: 92% !important;
@@ -253,7 +251,7 @@ div.img-div {
     display: block;
 }
 
-/* -------------------------------- bag and checkout html */
+/* -------------------------------- bag html */
 
 .update-link,
 .remove-item {
@@ -278,18 +276,8 @@ div.img-div {
     font-size: 13px;
 }
 
-td p,
-.order-summary{
-    font-family: 'Open+Sans';
-}
-
 p span{
     margin-top: 10px;
-}
-
-.StripeElement div{
-    font-family: 'Open+Sans' !important;
-    font-size: 15px;
 }
 
 /* -------------------------------- footer html */
@@ -401,6 +389,7 @@ p span{
         height: 400px;
     }
 
+    .product-details-img,
     .carousel-item img{
         height: 450px;
     }
@@ -441,10 +430,6 @@ p span{
         height: 300px;
     }
 
-    .product-details-img {
-        height: 350px;
-    }
-
     .bag-items-img {
         height: 150px;
     }
@@ -472,6 +457,7 @@ p span{
         line-height: 3;
     }
 
+    .product-details-img,
     .carousel-item img {
         height: 450px;
     }
