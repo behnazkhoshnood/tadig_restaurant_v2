@@ -12,24 +12,19 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h2 class="logo-font">{{ products.name }}</h2>
-        </div>
-    </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item pt-0">
             <div class="row">
                 <div class="product-details-info col-12 col-lg-5 text-center">
-                    <h4>{{ product.name }}</h4>
+                    <h5 class="logo-font font-weight-bold text-black my-2">{{ product.name }}</h5>
                     {% if product.category %}
-                    <h6>
+                    <p>
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                             {{ product.category.friendly_name }}
                         </a>
-                    </h6>
+                    </p>
                     {% endif %}
-                    <h6>{{ product.price }} kr</h6>
+                    <p>{{ product.price }} kr</p>
                     <p>{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}

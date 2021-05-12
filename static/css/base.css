@@ -10,6 +10,7 @@ html {
     overflow-y: scroll;
     font-family: 'Raleway';
     color: #555;
+    word-spacing: 2px;
 }
 
 #page-container {
@@ -281,6 +282,14 @@ p span{
     margin-top: 10px;
 }
 
+.btn-lg{
+    font-size: 17px;
+}
+
+.table{
+    font-weight: 700;
+}
+
 /* -------------------------------- footer html */
 
 .social-note,
@@ -428,7 +437,7 @@ p span{
     }
 
     .product-img {
-        height: 300px;
+        height: 250px;
     }
 
     .bag-items-img {
@@ -436,22 +445,23 @@ p span{
     }
 
     #content-wrap {
-        padding-bottom: 370px;
+        padding-bottom: 400px;
     }
 
     #footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        max-height: 370px;
+        max-height: 400px;
     }
 
     .social-note,
     .contacts {
-        line-height: 4;
+        line-height: 2;
         padding: 30px;
     }
 
+    .product-details-info,
     #about-note,
     .social-note,
     .contacts {
@@ -460,7 +470,18 @@ p span{
 
     .product-details-img,
     .carousel-item img {
-        height: 450px;
+        height: 480px;
+    }
+
+    #container-wraper{
+        padding-top: 3%;
+    }
+}
+
+/*screens on xxl */
+@media (min-width: 1400px){
+    .product-img {
+        height: 350px !important;
     }
 }
 
@@ -471,21 +492,17 @@ p span{
     #carouselExampleDark,
     .carousel-item img,
     .product-details-img {
-        height: 680px;
+        height: 600px;
         padding: 0;
         padding-top: 30px;
     }
 
     .product-details-info {
         padding-top: 30px;
-        line-height: 4;
     }
 
-    #about-note,
-    .social-note,
-    .contacts {
-        padding-top: 50px;
-        line-height: 4;
+    #about-note {
+        padding-top: 60px;
     }
 
     .carousel-control-next,

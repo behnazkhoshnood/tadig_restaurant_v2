@@ -2,6 +2,7 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_title %}- Checkout{% endblock %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
@@ -18,8 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <br>
-                <h2 class="logo-font text-center">Checkout</h2>
+                <h5 class="logo-font font-weight-bold text-black text-center mt-0">Checkout</h5>
                 <hr class="w-100">
             </div>
         </div>
