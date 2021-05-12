@@ -436,12 +436,12 @@ p span{
         top: 35%;
     }
 
-    .product-img {
-        height: 250px;
+    .bag-items-img{
+        height: 200px;
     }
 
-    .bag-items-img {
-        height: 150px;
+    .product-img {
+        height: 250px;
     }
 
     #content-wrap {
