@@ -2,17 +2,16 @@
 {% load static %}
 
 {% block extra_title %}- Home page{% endblock %}
-{% block page_header %}
+<!-- {% block page_header %}
 <div class="container-fluid header-container">
     <div class="row">
         <div class="col"></div>
     </div>
 </div>
-{% endblock %}
+{% endblock %} !-->
 
 {% block content %}
 
-    <div class="container-fluid">
         <div class="row">
             <!-- about note -->
             <div id="about-note" class="col-12 col-lg-5 text-center">
@@ -29,9 +28,9 @@
                 </p>
             </div>
             <!-- carousel -->
+            <hr class="d-block d-lg-none">
             <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-lg-7"
                 data-ride="carousel">
-                <hr class="d-block d-lg-none">
                                                                                     <!-- carousel indicators -->
                 <ol class="carousel-indicators">
                     {% for product in products %}

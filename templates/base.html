@@ -48,17 +48,18 @@
 </head>
 
 <body>
+
     <div id="page-container">
         <div id="content-wrap">
             <header class="container-fluid fixed-top">
-                <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+                <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
                     <!-- navbar home -->
-                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
                         <a href="{% url 'home' %}" class="nav-link main-logo-link">
                             <h2 class="logo-font text-black my-0"><strong>Tadig </strong>Restaurant</h2>
                         </a>
                     </div>
-                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <div class="col-12 col-md-4 my-auto py-1 py-md-0">
                         <!-- navbar search -->
                         <form method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
@@ -76,8 +77,8 @@
                         </form>
                     </div>
                     <!-- navbar account -->
-                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <div class="col-12 col-md-4 my-auto py-1 py-md-0">
+                        <ul class="list-inline list-unstyled text-center text-md-right my-0">
                             <li class="list-inline-item dropdown">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -120,7 +121,7 @@
                 </div>
                 <!-- mobile and main nav includes -->
                 <div class="row bg-white">
-                    <nav class="navbar navbar-expand-lg navbar-light w-100">
+                    <nav class="navbar navbar-expand-md navbar-light w-100">
                         <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -156,17 +157,21 @@
             {% endif %}
 
             {% block page_header %}
+                <div class="container-fluid header-container">
+                    <div class="row">
+                        <div class="col"></div>
+                    </div>
+                </div>
             {% endblock %}
 
             {% block content %}
             {% endblock %}
         </div>
 
-        <footer id="footer" class="bg-white container-fluid">
+        <footer id="footer" class="bg-white container-fluid mt-1">
             {% include 'includes/footer.html' %}
         </footer>
     </div>
-
 
     {% block postloadjs %}
     <script type="text/javascript">
