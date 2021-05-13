@@ -48,19 +48,19 @@
 </head>
 
 <body>
-
-    <div id="page-container">
-        <div id="content-wrap">
+    <div class="flex-wrapper">
+        <div class="container-fluid">
+            <!-- header -->
             <header class="container-fluid fixed-top">
                 <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
-                    <!-- navbar home -->
+                    <!--  navbar home -->
                     <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
                         <a href="{% url 'home' %}" class="nav-link main-logo-link">
                             <h2 class="logo-font text-black my-0"><strong>Tadig </strong>Restaurant</h2>
                         </a>
                     </div>
+                    <!-- navbar search -->
                     <div class="col-12 col-md-4 my-auto py-1 py-md-0">
-                        <!-- navbar search -->
                         <form method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0" type="text" name="q"
@@ -76,9 +76,9 @@
                             </div>
                         </form>
                     </div>
-                    <!-- navbar account -->
                     <div class="col-12 col-md-4 my-auto py-1 py-md-0">
                         <ul class="list-inline list-unstyled text-center text-md-right my-0">
+                            <!-- navbar account -->
                             <li class="list-inline-item dropdown">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -139,6 +139,7 @@
             </header>
 
             {% if messages %}
+            <!-- message-container -->
                 <div class="message-container">
                     {% for message in messages %}
                         {% with message.level as level %}
@@ -156,21 +157,15 @@
                 </div>
             {% endif %}
 
-            {% block page_header %}
-                <div class="container-fluid header-container">
-                    <div class="row">
-                        <div class="col"></div>
-                    </div>
-                </div>
-            {% endblock %}
-
             {% block content %}
             {% endblock %}
         </div>
 
         <footer id="footer" class="bg-white container-fluid mt-1">
+                    <!-- footer -->
             {% include 'includes/footer.html' %}
         </footer>
+
     </div>
 
     {% block postloadjs %}
