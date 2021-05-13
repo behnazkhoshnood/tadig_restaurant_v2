@@ -331,7 +331,7 @@ p span {
 
     #page-container {
     position: relative;
-    min-height: 60vh;
+    min-height: 73vh;;
 }
 
     #footer {
@@ -347,7 +347,6 @@ p span {
     }
 
     .navbar {
-        height: 70px;
         padding: 0;
         margin: 0;
     }
@@ -357,7 +356,7 @@ p span {
 
 @media (min-width: 1124px) {
     .header-container {
-        padding-top: 219px;
+        padding-top: 185px;
     }
 }
 
@@ -365,12 +364,13 @@ p span {
         #footer {
         position: absolute;
     }
+
 }
 
-@media (min-height: 799px) and (max-height: 1005px) {
+/* @media (min-height: 799px) and (max-height: 1005px) {
     @media (min-width: 1270px) and (max-width: 1445px) {
         #footer {
             position: relative;
         }
     }
-}
+} */
