@@ -112,9 +112,9 @@ i {
 }
 
 .img-fluid {
-    height: 40vh;
-    width: 70vw;
-}
+    height: 300px;
+    }
+
 
 /* -------------------------------- base html */
 
@@ -158,6 +158,40 @@ i {
 #about-note p {
     text-align: justify;
     text-align-last: center;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+    border: none;
+    background-color: transparent;
+}
+
+.carousel-control-next-icon {
+    margin-right: 20px
+}
+
+.carousel-control-prev-icon {
+    margin-left: 20px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    height: 50;
+    width: 50;
+    opacity: 1;
+    background-color: black;
 }
 
 
@@ -315,6 +349,11 @@ p span {
     .flex-wrapper {
         padding-top: 208px;
     }
+
+    .img-fluid {
+    height: 40vh !important;
+    width: 70vw !important;
+    }
 }
 
 /* screens on lg and up */
@@ -327,6 +366,15 @@ p span {
         z-index: 1030;
     }
 
+    .img-fluid {
+        height: 310px;
+        width: 100vh;
+    }
+
+    #delivery-banner{
+        font-size: 20px;
+    }
+
     .navbar {
         padding: 0;
         margin: 0;
@@ -334,8 +382,8 @@ p span {
 
     .flex-wrapper{
         display: flex;
-        min-height:  calc(100vh - 195px);
-        padding-top: 195px;
+        min-height:  calc(100vh - 220px);
+        padding-top: 220px;
         flex-direction: column;
         justify-content: space-between;
     }
@@ -354,13 +402,22 @@ p span {
 /* kindle, nexus 10, ipad mini, ipad-pro, ipad */
 @media (min-width: 767px) {
     @media (min-height: 1024px) {
+        body{
+            font-size: 18px;
+            line-height: 2.3;
+        }
+
+        .img-fluid {
+            margin-top: 20px;
+        }
+
         #footer{
             position: fixed;
             bottom: 0;
         }
 
         .flex-wrapper{
-            padding-top: 450px;
+            padding-top: 45%;
         }
     
         #topnav{
@@ -371,17 +428,32 @@ p span {
             padding-bottom: 50px;
         }
 
-        .img-fluid{
-            height: 30vh;
-        }
-        /* on ipad and ipad mini */
+        /* on ipad and ipad mini*/
         @media (height: 1024px){
             .flex-wrapper{
-                padding-top: 330px;
+                padding-top: 43%;
             }
             .img-fluid{
-                height: 40vh
+                height: 35vh !important;
             }
         }
+        /* kindle */
+        @media (width: 800){
+            .flex-wrapper {
+                padding-top: 45vh !important;
+            }
+        }
+    }
+}
+
+/* carousel ipad and ipad mini */
+@media (width:768px){
+    .carousel-control-next, .carousel-control-prev {
+        top: 0;
+    }
+
+    #footer{
+        position: relative;
+        bottom: 0;
     }
 }
