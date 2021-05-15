@@ -341,12 +341,19 @@ p span {
 
 /* -------------------------------- Media Queries */
 
-/* screens smaller than sm grid and  */
+/* screens smaller than sm grid */
 @media (max-width: 290px) {
     .flex-wrapper {
         padding-top: 200px;
     }
 }
+
+/* @media (min-width: 576px){
+    #about-note,
+    .product-details.info{
+        margin-top: 20px !important;
+    }
+} */
 
 /* screens only md */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -354,8 +361,10 @@ p span {
         padding-top: 230px;
     }
 
+    .carousel-control-next, .carousel-control-prev,
     .img-fluid {
     height: 400px !important;
+
     }
 }
 
@@ -416,6 +425,7 @@ p span {
             bottom: 0;
         }
 
+        .carousel-control-next, .carousel-control-prev,
         .carousel-item img,
         .product-details-img{
             height: 500px;
@@ -425,7 +435,7 @@ p span {
         .product-details-info,
         #about-note{
             margin-top: 100px;
-            line-height: 3;
+            line-height: 2.6;
         }
 
         .social-note,
@@ -452,6 +462,7 @@ p span {
             bottom: 0;
         }
 
+        .carousel-control-next, .carousel-control-prev,
         .carousel-item img,
         .product-details-img,
         .product-details-info,
