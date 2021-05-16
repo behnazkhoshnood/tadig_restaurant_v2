@@ -45,7 +45,7 @@
 {% endif %}
 
   {% if can_add_email %}
-    <h2>{% trans "Add E-mail Address" %}</h2>
+    <p>{% trans "Add E-mail Address" %}</p>
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
