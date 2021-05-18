@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                     auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('order_number', models.CharField(
                     editable=False, max_length=32)),
-                ('full_name', models.CharField(blank=False, max_length=50)),
+                ('full_name', models.CharField(blank=True, max_length=50)),
                 ('email', models.EmailField(blank=True, max_length=254)),
                 ('phone_number', models.CharField(blank=True, max_length=20)),
                 ('postcode', models.CharField(max_length=20)),
