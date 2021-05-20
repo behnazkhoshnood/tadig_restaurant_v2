@@ -21,7 +21,7 @@ class UserProfileForm(forms.ModelForm):
             'default_town_or_city': 'Town or City',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
