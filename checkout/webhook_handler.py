@@ -13,7 +13,6 @@ import time
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
-
     def __init__(self, request):
         self.request = request
 
@@ -24,8 +23,8 @@ class StripeWH_Handler:
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+            'checkout/confirmation_emails/confirmation_email_body.txt',	
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})	
 
         send_mail(
             subject,
