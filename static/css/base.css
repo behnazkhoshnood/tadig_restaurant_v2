@@ -169,7 +169,8 @@ input[name='q']::placeholder {
     text-align-last: center;
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
     position: absolute;
     top:0;
     bottom: 0;
@@ -181,10 +182,17 @@ input[name='q']::placeholder {
     justify-content: center;
     width: 15%;
     text-align: center;
-    opacity: .5;
+    opacity: .6 !important;
     transition: opacity .15s ease;
     border: none;
     background-color: transparent;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover,
+.carousel-control-next:focus,
+.carousel-control-prev:focus{
+    opacity: .99 !important;
 }
 
 .carousel-control-next-icon {
@@ -195,12 +203,15 @@ input[name='q']::placeholder {
     margin-left: 20px;
 }
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon{
-    height: 50;
-    width: 50;
-    opacity: 1;
-    background-color: black;
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    height: 30px;
+    width: 30px;
+    background-color: #000000;
+}
+
+.carousel-caption{
+    opacity: .7;
 }
 
 

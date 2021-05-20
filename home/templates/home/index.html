@@ -44,14 +44,14 @@
                                     <a href="{% url 'product_detail' product.id %}">
                                     <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
                                     <div class="carousel-caption d-block">
-                                        <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                        <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                     </div>
                                     </a>
                                 {% else %}
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
                                         <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                         </div>
                                     </a>
                                 {% endif %}
@@ -63,14 +63,14 @@
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
                                         <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                         </div>
                                     </a>
                                 {% else %}
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
                                         <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p>
+                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                         </div>
                                     </a>
                                 {% endif %}

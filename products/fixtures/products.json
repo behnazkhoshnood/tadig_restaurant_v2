@@ -9,7 +9,7 @@
          "price":65.0,
          "category":1,
          "rating":4.6,
-         "image_url":"media/Kashke-bademjan.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/kashke-bademjan.jpg",
          "image":"Kashke-bademjan.jpg"
       }
    },
@@ -23,7 +23,7 @@
          "price":58.99,
          "category":1,
          "rating":4.6,
-         "image_url":"media/Mirza-ghasemi.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Mirza-ghasemi.jpg",
          "image":"Mirza-ghasemi.jpg"
       }
    },
@@ -37,8 +37,8 @@
          "price":58.99,
          "category":1,
          "rating":4.7,
-         "image_url":"media/Do-piyaze-alo.JPG",
-         "image":"Do-piyaze-alo.JPG"
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Do-piyaze-alo.jpg",
+         "image":"Do-piyaze-alo.jpg"
       }
    },
    {
@@ -51,7 +51,7 @@
          "price":69.99,
          "category":1,
          "rating":5.0,
-         "image_url":"media/Salad-olviyeh.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Salad-olviyeh.jpg",
          "image":"Salad-olviyeh.jpg"
       }
    },
@@ -65,7 +65,7 @@
          "price":44.99,
          "category":1,
          "rating":4.5,
-         "image_url":"media/Noon-panir-sabzi.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Noon-panir-sabzi.jpg",
          "image":"Noon-panir-sabzi.jpg"
       }
    },
@@ -79,7 +79,7 @@
          "price":130.99,
          "category":2,
          "rating":4.7,
-         "image_url":"media/Baghali-polo.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Baghali-polo.jpg",
          "image":"Baghali-polo.jpg"
       }
    },
@@ -93,7 +93,7 @@
          "price":109.0,
          "category":2,
          "rating":4.4,
-         "image_url":"media/Zereshk-Polo.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Zereshk-Polo.jpg",
          "image":"Zereshk-Polo.jpg"
       }
    },
@@ -107,7 +107,7 @@
          "price":136.99,
          "category":2,
          "rating":4.5,
-         "image_url":"media/Khoreshe-gheymeh.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Khoreshe-gheymeh.jpg",
          "image":"Khoreshe-gheymeh.jpg"
       }
    },
@@ -121,7 +121,7 @@
          "price":129.99,
          "category":2,
          "rating":4.7,
-         "image_url":"media/ghormeh-sabzi.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/ghormeh-sabzi.jpg",
          "image":"ghormeh-sabzi.jpg"
       }
    },
@@ -135,7 +135,7 @@
          "price":133.99,
          "category":2,
          "rating":4.4,
-         "image_url":"media/Khoreshte-fesenjoon.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Khoreshte-fesenjoon.jpg",
          "image":"Khoreshte-fesenjoon.jpg"
       }
    },
@@ -149,7 +149,7 @@
          "price":74.99,
          "category":3,
          "rating":4.5,
-         "image_url":"media/Baklava.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Baklava.jpg",
          "image":"Baklava.jpg"
       }
    },
@@ -163,7 +163,7 @@
          "price":60.99,
          "category":3,
          "rating":4.6,
-         "image_url":"media/Faloode-shirazi.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Faloode-shirazi.jpg",
          "image":"Faloode-shirazi.jpg"
       }
    },
@@ -177,7 +177,7 @@
          "price":60.0,
          "category":3,
          "rating":4.9,
-         "image_url":"media/Bastani-sonnati.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Bastani-sonnati.jpg",
          "image":"Bastani-sonnati.jpg"
       }
    },
@@ -191,7 +191,7 @@
          "price":56.99,
          "category":3,
          "rating":4.7,
-         "image_url":"media/Noon-khamei.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Noon-khamei.jpg",
          "image":"Noon-khamei.jpg"
       }
    },
@@ -205,7 +205,7 @@
          "price":48.99,
          "category":3,
          "rating":4.8,
-         "image_url":"media/Ranginak.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Ranginak.jpg",
          "image":"Ranginak.jpg"
       }
    },
@@ -219,7 +219,7 @@
          "price":29.99,
          "category":5,
          "rating":4.7,
-         "image_url":"media/Doogh.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Doogh.jpg",
          "image":"Doogh.jpg"
       }
    },
@@ -233,7 +233,7 @@
          "price":33.99,
          "category":5,
          "rating":4.4,
-         "image_url":"media/Araghe-bidmeshk.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Araghe-bidmeshk.jpg",
          "image":"Araghe-bidmeshk.jpg"
       }
    },
@@ -247,7 +247,7 @@
          "price":33.99,
          "category":5,
          "rating":4.8,
-         "image_url":"media/Gol-gav-zaban.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Gol-gav-zaban.jpg",
          "image":"Gol-gav-zaban.jpg"
       }
    },
@@ -261,7 +261,7 @@
          "price":69.99,
          "category":6,
          "rating":5.0,
-         "image_url":"media/Mojito.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Mojito.jpg",
          "image":"Mojito.jpg"
       }
    },
@@ -275,7 +275,7 @@
          "price":69.99,
          "category":6,
          "rating":4.7,
-         "image_url":"media/White-russian.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/White-russian.jpg",
          "image":"White-russian.jpg"
       }
    },
@@ -289,7 +289,7 @@
          "price":60.99,
          "category":6,
          "rating":4.7,
-         "image_url":"media/Bloody-mary.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Bloody-mary.jpg",
          "image":"Bloody-mary.jpg"
       }
    },
@@ -303,7 +303,7 @@
          "price":36.99,
          "category":7,
          "rating":5.0,
-         "image_url":"media/Espresso.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Espresso.jpg",
          "image":"Espresso.jpg"
       }
    },
@@ -317,7 +317,7 @@
          "price":39.99,
          "category":7,
          "rating":4.8,
-         "image_url":"media/Chai-latte.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Chai-latte.jpg",
          "image":"Chai-latte.jpg"
       }
    },
@@ -331,7 +331,7 @@
          "price":50.0,
          "category":8,
          "rating":4.8,
-         "image_url":"media/Orange-Juice.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Orange-Juice.jpg",
          "image":"Orange-Juice.jpg"
       }
    },
@@ -345,7 +345,7 @@
          "price":50.0,
          "category":8,
          "rating":4.9,
-         "image_url":"media/Watermelon-juice.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Watermelon-juice.jpg",
          "image":"Watermelon-juice.jpg"
       }
    },
@@ -359,7 +359,7 @@
          "price":50.0,
          "category":8,
          "rating":4.7,
-         "image_url":"media/Berry-juice.jpg",
+         "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Berry-juice.jpg",
          "image":"Berry-juice.jpg"
       }
    }
