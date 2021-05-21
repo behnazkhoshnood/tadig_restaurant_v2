@@ -196,11 +196,11 @@ input[name='q']::placeholder {
 }
 
 .carousel-control-next-icon {
-    margin-right: 10px
+    margin-right: 6px
 }
 
 .carousel-control-prev-icon {
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 .carousel-control-prev-icon,
