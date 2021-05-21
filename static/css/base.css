@@ -180,34 +180,34 @@ input[name='q']::placeholder {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 15%;
+    width: 13%;
     text-align: center;
-    opacity: .6 !important;
+    opacity: .4 !important;
     transition: opacity .15s ease;
     border: none;
-    background-color: transparent;
+    background-color: white;
 }
 
 .carousel-control-next:hover,
 .carousel-control-prev:hover,
 .carousel-control-next:focus,
 .carousel-control-prev:focus{
-    opacity: .99 !important;
+    opacity: .6 !important;
 }
 
 .carousel-control-next-icon {
-    margin-right: 20px
+    margin-right: 10px
 }
 
 .carousel-control-prev-icon {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
     height: 30px;
     width: 30px;
-    background-color: #000000;
+    mix-blend-mode: difference;
 }
 
 .carousel-caption{
@@ -544,7 +544,7 @@ p span {
         .product-details-info,
         #about-note{
             height: 400px !important;
-            margin-top: 60px
+            margin-top: 70px
         }
 
         /* ipad and ipad mini */

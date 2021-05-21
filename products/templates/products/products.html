@@ -63,6 +63,12 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="logo-font font-weight-bold text-black mt-0">{{ product.name }}</p>
+                    {% if request.user.is_superuser %}
+                        <small>
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
+                    {% endif %}
                     <h6>{{ product.price }} kr</h6>
                     {% if product.rating %}
                     <small class="d-block text-muted mt-2 text-center"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
