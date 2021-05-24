@@ -10,7 +10,7 @@ html {
     font-family: 'Raleway';
     color: #555;
     word-spacing: 2px;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 2;
 }
 
@@ -231,6 +231,11 @@ input[name='q']::placeholder {
     margin: 0 auto;
 }
 
+    .bag-shoping-btn,
+    .bag-checkout-btn{
+        height: 35px;
+    }
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -240,6 +245,7 @@ input[name='q']::placeholder {
     background: #222;
     color: white;
 }
+
 
 /* -------------------------------- bag html */
 
@@ -252,8 +258,8 @@ input[name='q']::placeholder {
     min-width: 80px;
 }
 
-.bag-items-img {
-    height: 140px;
+.bag-img {
+    height: 130px;
 }
 
 .bag-notification-wrapper {
@@ -453,11 +459,26 @@ p span {
     }
 
     body,
-    .navbar,
     #delivery-banner,
+    .table-responsive,
+    strong,
+    span,
+    a,
+    .add-to-bag-btn,
+    .order-btn,
     h6 {
     font-size: 10px;
 }
+
+    .add-to-bag-btn,
+    .order-btn{
+        height: 35px;
+    }
+
+    .navbar{
+        font-size: 9px;
+    }
+
     h5{
         font-size: 13px;
     }
@@ -489,7 +510,7 @@ p span {
 
     .carousel-item img,
     .product-details-img {
-        min-height: 350px;
+        min-height: 300px;
     }
 
     #delivery-banner{
@@ -510,6 +531,7 @@ p span {
     }
 
 }
+
 
 /* kindle, nexus 10 and ipad pro */
 @media (min-width: 799px) and (max-width: 1025px){
@@ -544,7 +566,7 @@ p span {
 
         .product-details-info,
         #about-note{
-            line-height: 2.6;
+            line-height: 2.3;
         }
 
         .social-note,
