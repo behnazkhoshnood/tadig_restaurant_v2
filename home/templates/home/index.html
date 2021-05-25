@@ -5,92 +5,92 @@
 
 {% block content %}
 
-        <div class="row">
-            <!-- about note -->
-            <div id="about-note" class="col-12 col-md-6 text-center">
-                <br>
-                <h5 class="logo-font font-weight-bold text-black text-center">About Us</h5>
-                <br>
-                <p class="about-note d-flex justify-content-center">
-                    Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
-                    Introducing the Persian signature dishes to the world, with the best service and quality is our
-                    top goal.
-                    All of our dishes serves with a small pice of tadig, which is a thin crust of slightly browned
-                    rice at the bottom of the cooking pot.
-                </p>
-                <br>
-                <h6 class="logo-font font-weight-bold text-center mt-0">
-                    Thank you for choosing us.
-                </h6>
-            </div>
-            <!-- carousel -->
-            <hr class="d-block d-md-none">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-md-6 px-0 py-0"
-                data-ride="carousel">
-                                                                                    <!-- carousel indicators -->
-                <ol class="carousel-indicators">
-                    {% for product in products %}
-                        {% if forloop.first %}
-                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
-                        {% else %}
-                            <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}"></li>
-                        {% endif %}
-                    {% endfor %}
-                </ol>
-                <div class="carousel-inner">
-                    <!--                                  carousel item active -->
-                    {% for product in products %}
-                        {% if forloop.first %}
-                            <div class="carousel-item active data-interval="500">
-                                {% if product.image %}
-                                    <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
-                                    <div class="carousel-caption d-block">
-                                        <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
-                                    </div>
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
-                                        <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
-                                        </div>
-                                    </a>
-                                {% endif %}
-                            </div>
-                        {% else %}
-                                      <!--                                     carousel item -->
-                            <div class="carousel-item">
-                                {% if product.image %}
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
-                                        <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
-                                        </div>
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
-                                        <div class="carousel-caption d-block">
-                                            <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
-                                        </div>
-                                    </a>
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                                                            <!-- carousel prev and next btns -->
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleDark" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="d-none">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleDark" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="d-none">Next</span>
-                </button>
-            </div>
-        </div>
+<div class="row">
+    <!-- about note -->
+    <div id="about-note" class="col-12 col-md-6 text-center">
+        <br class="d-block d-md-none">
+        <h5 class="logo-font font-weight-bold text-black text-center">About Us</h5>
+        <br>
+        <p class="about-note d-flex justify-content-center">
+            Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
+            Introducing the Persian signature dishes to the world, with the best service and quality is our
+            top goal.
+            All of our dishes serves with a small pice of tadig, which is a thin crust of slightly browned
+            rice at the bottom of the cooking pot.
+        </p>
+        <br>
+        <h6 class="logo-font font-weight-bold text-center mt-0">
+            Thank you for choosing us.
+        </h6>
     </div>
+    <!-- carousel -->
+    <hr class="d-block d-md-none">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-md-6 px-0 py-0"
+        data-ride="carousel">
+        <!-- carousel indicators -->
+        <ol class="carousel-indicators">
+            {% for product in products %}
+                {% if forloop.first %}
+                    <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                {% else %}
+                    <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}"></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            <!--                                  carousel item active -->
+            {% for product in products %}
+                {% if forloop.first %}
+                    <div class="carousel-item active data-interval=" 500">
+                        {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                <div class="carousel-caption d-block">
+                                    <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
+                                </div>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                <div class="carousel-caption d-block">
+                                    <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <!--                                     carousel item -->
+                    <div class="carousel-item">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                            <div class="carousel-caption d-block">
+                                <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
+                            </div>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                            <div class="carousel-caption d-block">
+                                <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
+                            </div>
+                        </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- carousel prev and next btns -->
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleDark" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="d-none">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleDark" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="d-none">Next</span>
+        </button>
+    </div>
+</div>
+</div>
 
 {% endblock %}

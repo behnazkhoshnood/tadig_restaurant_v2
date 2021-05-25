@@ -5,15 +5,14 @@
                 Home
             </a>
         </li>
-        <li class="col-2 nav-item dropdown">
+        <li class="col-2 nav-item dropdown order-last">
             <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" href="#" id="all-dishes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sort
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All</a>
+                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
             </div>
         </li>
 

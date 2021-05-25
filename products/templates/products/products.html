@@ -47,12 +47,15 @@
             <div class="col-12 d-flex justify-content-center">
                 <p class="text-muted mt-3 text-center text-md-left">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
-                    <span class="small"><a href="{% url 'products' %}" class=" text-muted">Menu</a> | </span>
+                        <span class="small"><a href="{% url 'products' %}" class=" text-muted">Menu</a> | </span>
                     {% endif %}
-                    {{ products|length }} dishes/drinks {% if search_term %} found for
+                        {{ products|length }} dishes/drinks {% if search_term %} found for
                     <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
             </div>
+        </div>
+        <div class="text-center">
+            <h6><strong>click on the images for more information about your desired meal.</strong></h6>
         </div>
         <!--                                                products details -->
         <hr class="d-block">
@@ -60,7 +63,7 @@
             {% for product in products %}
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-sm-6">
                             <p class="logo-font font-weight-bold text-black mt-0">{{ product.name }}</p>
                             {% if request.user.is_superuser %}
                                 <small>
@@ -69,26 +72,27 @@
                                 </small>
                             {% endif %}
                                 <h6>{{ product.price }} kr</h6>
-                            {% if product.rating %}
-                                <small class="d-block text-muted mt-2 text-center"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                5</small>
-                            {% else %}
-                                <small class="d-block text-muted mt-2 text-center">No Rating</small>
-                            {% endif %}
-                            <p>{{ product.description }}</p>
+                            {% include "products/quantity-form.html" %}
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-sm-6">
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                    <img src="{{ product.image.url }}" class="d-block w-100 img-fluid products-image" alt="{{ product.name }}" />
                                 </a>
                             {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid products-image" alt="{{ product.name }}" />
                                 </a>
+                            {% endif %}
+                            {% if product.rating %}
+                                <small class="d-block mt-2 text-center"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                5</small>
+                            {% else %}
+                                <small class="d-block mt-2 text-center">No Rating</small>
                             {% endif %}
                         </div>
                     </div>
+                    <br>
                 </li>
             {% endfor %}
         </ul>
@@ -107,6 +111,9 @@
             window.scrollTo(0, 0)
         })
     </script>
+
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
     
     <script type="text/javascript">
         $('#sort-selector').change(function() {

@@ -49,7 +49,8 @@ h6,
 li,
 strong,
 small,
-input {
+input,
+.text-muted {
     font-family: 'Open+Sans';
 }
 
@@ -114,7 +115,7 @@ input[name='q']::placeholder {
 }
 
 .img-fluid {
-    height: 250px;
+    height: 200px;
     width: 100%;
     object-fit: fill;
     image-rendering: -webkit-optimize-contrast;
@@ -152,6 +153,9 @@ input[name='q']::placeholder {
 }
 
 /* -------------------------------- index html */
+.carousel-item img{
+    height: 200px;
+}
 
 #about-note {
     padding-right: 50px;
@@ -210,6 +214,9 @@ input[name='q']::placeholder {
 
 
 /* -------------------------------- product/product_details html */
+.products-image{
+    height: 150px;
+}
 
 .list-group-flush .list-group-item {
     width: 95%;
@@ -502,6 +509,17 @@ p span {
     }
 }
 
+/* screens small and more than 525px */
+@media (min-width: 525px) and (max-width: 767px) {
+        .products-image{
+        height: 200px;
+    }
+
+        .carousel-item img{
+        height: 250px;
+    }
+}
+
 /* screens only md */
 @media (min-width: 768px) and (max-width: 991px) {
     .flex-wrapper {
@@ -515,6 +533,10 @@ p span {
     height: 400px !important;
     }
 
+    .products-image{
+        height: 250px;
+    }
+
     .btn-lg {
         font-size: 17px;
     }
@@ -523,6 +545,11 @@ p span {
 
 /* screens on lg and up */
 @media (min-width: 992px) {
+    body,
+    #delivery-banner{
+        font-size: 17px;
+    }
+
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -533,7 +560,7 @@ p span {
 
     .carousel-item img,
     .product-details-img {
-        min-height: 300px;
+        height: 350px;
     }
 
     #delivery-banner{
@@ -551,6 +578,10 @@ p span {
         padding-top: 210px;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .products-image{
+        height: 250px;
     }
 
     .btn-lg {
@@ -592,7 +623,7 @@ p span {
         .carousel-control-next, .carousel-control-prev,
         .carousel-item img,
         .product-details-img{
-            height: 550px !important;
+            height: 485px !important;
         }
 
 
@@ -627,12 +658,6 @@ p span {
             justify-content: space-evenly;
         }
 
-        .carousel-control-next, .carousel-control-prev,
-        .carousel-item img,
-        .product-details-img{
-            height: 400px !important;
-        }
-
         #footer{
             position: relative;
             bottom: 0;
@@ -645,10 +670,11 @@ p span {
             .carousel-control-next, .carousel-control-prev,
             .carousel-item img,
             .product-details-img{
-                height: 500px !important;
+                height: 450px !important;
             }
 
             .flex-wrapper {
+                min-height: calc(100vh - 290px);
                 padding-top: 190px;
             }
 
