@@ -80,8 +80,8 @@ The site owner is able to make money by providing this set of services to the us
   * [JQuery](https://jquery.com/) was used for initializing some bootstrap elements.
 
 - **Typography**
-  - I used [Google Fonts](https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Yusei+Magic&display=swap") for the font style of my project:
-    - The font I have used for the body of this project is called **Montserrat** and for the headers, input and labels I used **Yusei Magic** font with sans-serif as a backup font.
+  - I used [Google Fonts](https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@100;200;300;400;500&display=swap") for the font style of my project:
+    - The font I have used for this project is called **Raleway** and **Open+Sans** font with sans-serif as a backup font.
 
 - **Icons**
   - I used [Favicon](https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/) to make a unic brand for my website.
@@ -93,12 +93,16 @@ The site owner is able to make money by providing this set of services to the us
 
   - **Main colour palette**
 
-    - #5e35b1 deep-purple darken-1 used for navbar, collapsible header flash text and add buttons.
-    - #7e57c2 deep-purple lighten-1 used for hover effect on navbar and add buttons.
-    - #d81b60 pink darken-1 used for reset, delete and cancel buttons and some info texts.
-    - #ad1457 pink darken-3 used for hover effect on reset, delete and cancel buttons.
-    - #2979ff blue accent-3 used for edit buttons.
-    - #2962ff blue accent-4 used for hover effect on edit buttons.
+    - Main colors that have been used are black and white and some shades of gray due to their high contrast which complement the colorful images.
+    - For toast messeges headers and some labels I used bootstrap scheme:
+        - Succsess: #28a745; which is a shade of green color.
+        - Danger: #dc3545 ; which is a shade of red color.
+        - Primary: #007bff ; which is a shade of blue color.
+        - secondary: #6c757d ; which is a shade of gray color.
+        - warning: ##ffc107 ; which is a shade of yellow color.
+        - info: #17a2b8 ; which is a shade of blue color.
+        - light: #f8f9fa ; which is a shade of light gray color.
+        - dark: #343a40 ; which is a shade of dark gray color.
 ---
 ## **Wireframes**
 [Balsamiq Wireframes](https://balsamiq.com/wireframes/) was used to create all wireframes for the project.
@@ -107,100 +111,122 @@ The site owner is able to make money by providing this set of services to the us
 
 Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/good-cook-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/good-cook-mobile-view-admin.png)
-![Registered users](static/wireframes/good-cook-desktop-view-registered-user.png) **Registered users** | ![Registered users](static/wireframes/good-cook-mobile-view-registered-user.png)
-![Not registered user](static/wireframes/good-cook-desktop-view-not-registered-users.png) **Not registered users** | ![Not registered user](static/wireframes/good-cook-mobile-view-not-registered-user.png)
+![Admin]() **Admin** | ![Admin]()
+![Registered users]() **Registered users** | ![Registered users]()
+![Not registered user]() **Not registered users** | ![Not registered user]()
 ---
 
  #### <center>Profile<center>
 
 Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/profile-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/profile-mobile-view-admin.png) 
-![Registered users](static/wireframes/profile-desktop-view-registered-users.png)**Registered users** | ![Registered users](static/wireframes/profile-mobile-view-registered-user.png)
+![Admin]() **Admin** | ![Admin]() 
+![Registered users]()**Registered users** | ![Registered users]()
 ---
 
  #### <center>Add Recipes<center>
  Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/add-recipe-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/add-recipe-mobile-view-admin.png) 
-![Registered users](static/wireframes/add-recipe-desktop-view-registered-users.png) **Registered users** | ![Registered users](static/wireframes/add-recipe-mobile-view-registered-user.png)
+![Admin]() **Admin** | ![Admin]() 
+![Registered users]() **Registered users** | ![Registered users]()
 ---
  #### <center>Manage Categories<center>
  Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/manage-categories-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/manage-categories-mobile-view-admin.png)
+![Admin]() **Admin** | ![Admin]()
 ---
 
  #### <center>Manage Marks<center>
 Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/manage-marks-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/manage-marks-mobile-view-admin.png)
+![Admin]() **Admin** | ![Admin]()
 ---
 
  #### <center>Add Category<center>
  Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/add-category-desktop-view-admin.png) **Admin**| ![Admin](static/wireframes/add-category-mobile-view-admin.png)
+![Admin]() **Admin**| ![Admin]()
 ---
 
  #### <center>Add Mark<center>
  Desktop view | Mobile view
 - | -
-![Admin](static/wireframes/add-mark-desktop-view-admin.png) **Admin** | ![Admin](static/wireframes/add-mark-mobile-view-admin.png)
+![Admin]() **Admin** | ![Admin]()
 
  #### <center>Log In<center>
  Desktop view | Mobile view
 - | -
-![All users](static/wireframes/log-in-desktop-view-all-users.png) **All users** | ![All users](static/wireframes/log-in-mobile-view-all-users.png)
+![All users]() **All users** | ![All users]()
 ---
 
  #### <center>Register<center>
 Desktop view | Mobile view
 - | -
-![All users](static/wireframes/register-desktop-view-all-users.png) **All users** | ![All users](static/wireframes/register-mobile-view-all-users.png)
+![All users]() **All users** | ![All users]()
 ---
 
 ## **Features**
 - **Implemented features**
-  - **All Recipes page**
-    - First collapsible body is open on loading the page to make the page more appealing.
+  - **Common features in all pages**
+    - All of the pages contain a 3 part layout with the header, main part of the page and the footer.
+        - **Header**
+            - **main navbar**
+                - Main navbar is deviding the products that are provided in to diffrent categories of: appetizers, main dishes, desserts and beverages.
+                on medium and large screens, main navbar is fixed on top of the page and is lined up in a line. In smaller screens this navbar turns to a dropdown navbar.
+                - Another item in this navbar is "Sort" which sorts all the products by their name, price or rating.
+            - **Home button**
+               - On medium and large screens restaurant logo works as the home button but in smaller screen home button is added to the dropdown navbar.
+            - **Search, Account and Bag**
 
-    - Unregistered and registered users are able to view all recipes that have been added by registered users on All recipes page.
+                In all views,the search area, account and bag are fixed on top of the page.
 
-    - Upon registering/loggin in, the user will be greeted with the flash note on top of the "All Recipes" page.
+                **Search**
 
-    - All recipes are shown in a collapsible drop down list.
+                - Customers can search for the name, category or any word from a product description to easily find them, 
+                - By clicking on the search icon, the search result and the number of the search result will be shown under the search area.
+                - If the filed is empty when search icon is clicked a toast message appear on top right corner of the page and notifies the user.
 
-    - A search input provided on top of the page to make is easy to search through the recipes, giving the recipe name,category,marks and ingredients as an index to mongo database.
+                **Account**
 
-    - The recipe name, created_by, date of the recipe, edit button and delete button is shown on the header of the collapsible list, for desktop view. In mobile views just the recipe name and edit button is shown on the header and the user name and date of insertion and delete button is added on top of the body section of the collapsible. 
-    - Recipes information like recipe category, marks, ingredients, cooking steps and recipe image are included in body of the collapsible.
-    - Admin Users, will be able to delete any recipes entered by any users, whereas everyone else will only be able to edit or delete their own recipes.
-    - Delete button is shown in all views to the admin in the colapsible header whereas for other users this button will change position to the top of collapsible body.
+                - Account is a dropdown button which contains the **register** and **logout** for all the users.
+                - **Log in button** is added to this list for registered users.
+                - Admin or super user access an extra button from here which is called **Manage Products**, which is used to add new products to the list of products.
 
+                **Bag**
+
+                - This shows a grand total amount of the products added to the shopping bag and placed on the top right corner.
+
+        - **Footer**
+
+            Footer is devided to 3 parts. **Social** , **Contacts** and **Copyright**, which is locted at the bottom of the pages.
+            **Social** contains the facebook, twitter and instagram.
+            **Contacts** contains the address, phone number, opening time and email address of the restaurant.
+            these parts are positioned under each other in small views and in medium and larger views contacts and social are positioned side by side and copyright is positioned under them.
+
+  - **Home Page**
+
+    - The home page contains the eyecatching carousel slide with the colorful images that makes the perpose of the website clear from the begining.
+    - breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
+    - carousel is showing all the product images. By clicking on each image user is directed to product details page, which shoes that product, all the information related to it, and can add it to the back right away.
 ---
-  - **Profile**
-    - By clicking on the profile buttton on the top navbar user can see the recipes that have been added by this user and have an option to delete or edit these recipes. This option is also available in All recipes page but only for the recipes that have been created by this user.( except the admin that can delete any recipe.)
+  - **Products Pages**
 
-    - If this user didn't add any recipe to this page yet they recive a small note and instructed how to do so.
+    - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price and rating information of all producs in that category.
+    - Under the price of each product is also a form that user can use to add any product in this category to their shoping bag.
+    - User is informed with the header on top of the page that by clicking on product images they get more information about that product.
+    - when clicking on product image user is redirected to the product details page which has the description of that product.
+    - Sorting only in each specific category is also possible by the sorting dropdown input provided on top of this page, which can sort the products based on their price, rating or name.
+    - On smaller views the product info and image are positioned under each other but on small and larger screens they are placed side by side.
 ---
-  - **Add Recipe page**
+  - **Product Details Page**
 
-    - The 'Add Recipe' button will redirect the users to the form template that the users will need to fill out to add their recipes. 
-    - When users are adding a new recipe, they are guided through with notifications of what to do and requirements. 
-    - The form will not be able to be submitted with any required boxes not filled out by the user.
-    - The cancel button also provided in the bottom of this page in case the user decided to not add the recipe.
-    - A warning pop-up note provided to ask the user if they are sure that they don't want to add any recipe, when clicking on cancel bottom. If user confirms he/she will be redirected to profile page without adding a recipe.
-    - Once the user has added the required information for the recipe, they will see it on their profile page with a flash message of top on the page indicating that the recipe added.
+    - This page shows the product name, price, rating,image and description.
+    - A form to add this product to the shopping bag is located under the produt price.
+    - on small screens the product information, shopping and quantity bottons are placed under each other, but in medium and larger views they are placed side by side. 
 ---
-  - **Edit form**
+  - **Shopping Bag Page**
 
-    - If users ever decide that they would like to edit any of the data, all they need to do is click on the edit button on the head part of the collapsible on either "All Recipe" page or "Profile" page. For admin, this button can be found only on profile page for his/her own recipes.
-    - By clicking on edit button, edit form will reveal with all the previous information that have been added to the form.
-    - User can change any part they desire and then click on edit button at the bottom of the page.
-    - If user decided to not change the informations they can click on the cancel buttton next to edit buttton.
-
+    - 
 ---
   - **Delete buttton**
 

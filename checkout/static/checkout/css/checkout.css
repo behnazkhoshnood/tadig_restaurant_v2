@@ -23,7 +23,7 @@
 
 .stripe-style-input::placeholder {
     color: #aab7c4 !important;
-    font-family: "Open+Sans" !important;
+    font-family: "Open+Sans", sans-serif !important;
     font-size: 15px !important;
 }
 
@@ -39,12 +39,12 @@
 }
 
 .order-summary{
-    font-family: 'Open+Sans';
+    font-family: 'Open+Sans', sans-serif;
     white-space: nowrap;
 }
 
 .checkout-success-page{
-    font-family: 'Open+Sans';
+    font-family: 'Open+Sans', sans-serif;
     font-size: 12px;
 }
 

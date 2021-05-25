@@ -6,7 +6,7 @@ html {
     padding: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     color: #555;
     word-spacing: 2px;
     font-size: 12px;
@@ -14,7 +14,7 @@ html {
 }
 
 hr {
-    border: 1px solid rgba(0, 0, 0, .125);
+    border: 1px solid #00000020;
     border-radius: 0;
     border-top-width: 0;
     width: 95%;
@@ -51,11 +51,7 @@ strong,
 small,
 input,
 .text-muted {
-    font-family: 'Open+Sans';
-}
-
-i {
-    font-family: Awesome;
+    font-family: 'Open+Sans', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -97,21 +93,21 @@ input[name='q']::placeholder {
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: #000000;
+    color: #ffffff;
 }
 
 .btn-outline-black {
-    background: white;
-    color: black !important;
+    background: #ffffff;
+    color: #000000 !important;
     border: 1px solid black;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
-    color: white !important;
+    background: #000000;
+    color: #ffffff !important;
 }
 
 .img-fluid {
@@ -183,7 +179,7 @@ input[name='q']::placeholder {
     opacity: .4 !important;
     transition: opacity .15s ease;
     border: none;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .carousel-control-next:hover,
@@ -245,6 +241,10 @@ input[name='q']::placeholder {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.quantity-form-btns{
+    white-space: nowrap;
 }
 
 .quantity-input {
@@ -316,11 +316,11 @@ p span {
     line-height: 2 !important;
     font-weight: 900;
     font-size: 1.33333em;
-    color: black;
+    color: #000000;
 }
 
 .contacts li i {
-    color: black;
+    color: #000000;
 }
 
 #footer{
@@ -351,7 +351,7 @@ p span {
     height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #000000;
     position: absolute;
     top: -10px;
     right: 36px;
