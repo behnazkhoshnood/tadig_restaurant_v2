@@ -1,0 +1,5 @@
+{% if item.product.image %}
+    <img class="d-block w-100 bag-img image-fluid rounded-0" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+{% else %}
+    <img class="d-block w-100 bag-img image-fluid rounded-0" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}" >
+{% endif %}
