@@ -188,21 +188,24 @@ Desktop view | Mobile view
 
                 **Account**
 
-                - Account is a dropdown button which contains the **register** and **logout** for all the users.
+                - Account is a dropdown button which contains the *register* and *logout* for all the users.
                 - **Log in button** is added to this list for registered users.
-                - Admin or super user access an extra button from here which is called **Manage Products**, which is used to add new products to the list of products.
+                - Admin or super user access an extra button from here which is called *Manage Products*, which is used to add new products to the list of products.
 
                 **Bag**
 
                 - This shows a grand total amount of the products added to the shopping bag and placed on the top right corner.
 
+                **Delivery Banner**
+                - This part will notify the user that by shopping more than 200 kr, which is the free delivery treshold, they would earn the free delivery.
+
         - **Footer**
 
-            Footer is devided to 3 parts. **Social** , **Contacts** and **Copyright**, which is locted at the bottom of the pages.
+            Footer is devided to 3 parts. *Social* , *Contacts* and *Copyright*, which is locted at the bottom of the pages.
             **Social** contains the facebook, twitter and instagram.
             **Contacts** contains the address, phone number, opening time and email address of the restaurant.
             these parts are positioned under each other in small views and in medium and larger views contacts and social are positioned side by side and copyright is positioned under them.
-
+---
   - **Home Page**
 
     - The home page contains the eyecatching carousel slide with the colorful images that makes the perpose of the website clear from the begining.
@@ -213,42 +216,93 @@ Desktop view | Mobile view
 
     - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price and rating information of all producs in that category.
     - Under the price of each product is also a form that user can use to add any product in this category to their shoping bag.
+    - When user adds a product to their shoping bag they will be notified by a toast message on top on the page, which shows that product information.
+    - If the price of the items are lower than free delivery treshold, it will show in this toast message that how much more they should add to their bag to get the free delivery.
     - User is informed with the header on top of the page that by clicking on product images they get more information about that product.
     - when clicking on product image user is redirected to the product details page which has the description of that product.
     - Sorting only in each specific category is also possible by the sorting dropdown input provided on top of this page, which can sort the products based on their price, rating or name.
-    - On smaller views the product info and image are positioned under each other but on small and larger screens they are placed side by side.
+    - There is also a scroll back to top button is provided in this page, to easily go back to the top of the page.
+    - On medium and larger views the product info and image are positioned side by side but on smaller views they are placed under each other.
+    - Admin or super user provided with extra links under eah product price to either delete or edit that product.
 ---
   - **Product Details Page**
 
     - This page shows the product name, price, rating,image and description.
-    - A form to add this product to the shopping bag is located under the produt price.
-    - on small screens the product information, shopping and quantity bottons are placed under each other, but in medium and larger views they are placed side by side. 
+    - A form to add this product to the shopping bag is located under the product price.
+    - By choosing the amount, and then clicking on Add to Bag, user will see a toast messege on top of the page that shows the product information in their bag.
+    - If the grand total of the products value is lower than the delivery treshold, user will be notified the amount that they should spend more in order to get free delivery in the toast messege.
+    - The toast message also provide the user with a button to be redirected to thier shopping bag.
+    - on small screens the product information, shopping and quantity bottons are placed under each other, but in medium and larger views they are placed side by side.
+    - Admin or super user provided with extra links under the product price to either delete or edit this product.
 ---
   - **Shopping Bag Page**
 
-    - 
+    - user can easily reach this page by clicking on the bag icon on top right corner of all pages or on the notification toast that they will see on top of the products and products details, after clicking on the add to bag button.
+    - If user has any pruduct in their shopping bag, they can review them in this page.
+    - User can easily update the amount or remove the products in their bag, in this page.
+    - The amount on Total shopping, delivery fee and grand total is shown under this page with two buttons.
+    - One button is to redirect the user to products page, to order something more, and the other redirects the user to checkout page.
+    - If there isn't any product in the shoping list, user will be notified that the bag is empty and get the option to be redirected to products page.
+    - In small views the Grand total and secure checkout botton is placed on top of the page and the chosen products and their details placed under the buttons.
+    - In larger views the products information is placed on top of the billing information and the checkout botton.
 ---
-  - **Delete buttton**
+  - **Checkout Page**
 
-    - If user decides that they would like to delete any of their recipe, all they need to do is click on the delete button, on the head of the collapsible, on either "All Recipe" page or "Profile" page.
-    - In mobile view devices the delete buttton is located on top of the recipe body instead.( exept for the admin on all recipe page. Admin delete botton stays in the collapsible header in all views in "All Recipes" page.)
-    - When the user tries to delete a recipe, they will be asked to confirm if that is what they really want to do by means of a confirmation message. This is to prevent any user to delete a recipe by mistake.
-
-  - **Manage category and marks**
-
-    - Admin can add, edit or delete the categories or marks by clicking on these options provided in the navbar, only for admin user, in two pages provided ("Manage Categories" and "Manage Marks").
-
-  - **Register/Login page**
-
-    - On registeration user is asked to enter their first and last name, username and a password and confirmation for the password.
-    - A user will need to register a profile to be able to add any recipes, this infomation is on get_recipe.html.
-    - If a user tries to register a username which is used by someone else already, they will not be allowed to use that username. The user will be notified of this by use of Flash Messages - "Username already exists!".
-    - If a user password and confirm password dosen't match user gets a flash message - "Passwords do not match, please re-enter"
-    - tooltips provided on each input field to give more guidence tothe user.
-    - When a user has successfully registered their new profile, they will be redirected to 'get_recipes.html'.
-    - When a returning user logs in successfully, they will also be redirected to 'get_recipes.html'.
-    - If a registered user puts their infomation in incorrectly when loging in, they will be notified by the use of Flash Messages - "Incorrect Username and/or Password".
+    - By clicking on the secure checkout button on the shopping bag page, user will be redirected to checkout page.
+    - In this page user can see the summary of their order, and a form to fill the information required for the delivery.
+    - by filling this form and clicking on the *Compelete Order* button, user can securely purchase from the site with the help of stripe elements.
+    - On x-small screens order summary is placed on top of the order form and under the form there is the *Compelete Order* button and *Adjust Bag*.
+    - Product images is not seenable in the x-small views to improve the page layout.
+    - On small and larger screens the order summary and form placed side by side and the compelete order and adjust bag is at the bottom of the page.
 ---
+  - **Checkout Success Page**
+
+    - After compeleting the order form and click on the compelete order botton, in checkout page, user will see a nice overlay for a short time untill the proccess of shoping compelets.
+    - User then will be redirected to checkout success page and see a toast message on top of the page, notifing the user that the order is prossessed, the order number.
+    - User also recives a confirmation email to their email address.
+    - In this page all the order information is shown to the user, including the order number and date, purchased products and the price for each product, delivery information and the total amount of the purchase.
+---
+  - **Profile Page**
+
+    - Profile user is only accessable for registered users.
+    - If a non registered user try to go to profile page by writing it in the browser he/she will be redirected to the sign in page.
+    - Registered user have an access to their profile in account dropdown button, in the header.
+    - In profile page, there is a information form that can be filled.
+    - The first time that the user compelete an order these information will be filled automaticlly.
+    - User can update these information in profile page, with filling the form and click on update information botton.
+    - After filling this form, these information will set to the checkout form when user want to order any products.
+    - In this page, user can see all the previous orders list, in a table, and can review each on of them.
+    - Clicking on each order in the table redirects the user to checkout success page.
+    - On entering the checkout Success page from the profile, user gets a toast messege that this is a past confirmation for that order number.
+    - under the form there is a button that redirects the user back to their profile page.
+---
+  - **Manage Product Page and Admin features**
+
+    - Admin or super user has access to an extra button in account dropdown menu.
+    - by clicking it, the add product form opens, and a new product can be added to the products.
+    - Super user also can edit or delete each product with clicking on the edit or delete links provided under the price of each product in the products and product details page.
+
+  - **Register**
+
+    - On registeration user is asked to enter their email address, email confirmation , fullname, username and a password and password confirmation.
+    - If a user tries to register an email which is used by someone else already, they will not be allowed to use that username. The user will be notified of this - "A user is already registered with this e-mail address.".
+    - If a user tries to register an username which is used by someone else already, they will not be allowed to use that username. The user will be notified of this - "A user with that username already exists.".
+    - If a user password and confirm password dosen't match user gets a toast message - "Passwords do not match, please re-enter"
+    - User is not allowed to use a common, all numeric, under 8 charecter or too similar to the user name for seurity reseons.
+    - If user already has an account the can click on the sign in link on the line on top of this page to sign in.
+    - there is a home button under the page that redirects the user to home page if they don't want to make an account.
+    - When a user has successfully registered their new account, they will be redirected to home page.
+---
+  - **Login page**
+
+    - There is a link on top of this page that redirects the user to sign up page if they don't have an account yet.
+    - User needs to fill in the username and password to login.
+    - There is a checkbox with *Remember Me* label. clicking this checkbox will same the username and password for next login.
+    - If a registered user puts their infomation in incorrectly when loging in, they will be notified by a messages - "The username and/or password you specified are not correct.".
+    - If a user attempts to login several time unsuccfully, they will be notified by a message - "Too many failed login attempts. Try again later."
+    - there is a home button under the page that redirects the user to home page if they don't want to login.
+    - When a user has successfully logged in, they will be redirected to home page with a toast messege.
+
   - **Log Out**
     - user is provided by the option to log out when clicking on the button provided on the navbar.
     - By clicking on "Log Out" button user get a message to check if they really want to log out.

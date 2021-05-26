@@ -67,6 +67,17 @@
     height: 100%;
 }
 
+/* smaller than sm */
+@media (max-width: 575px){
+    .order-info{
+        padding-left: 15px;
+    }
+
+    .item-header{
+        padding-left: 30px;
+    }
+}
+
 @media (min-width: 400px){
     .checkout-success-page{
         font-size: 16px;
