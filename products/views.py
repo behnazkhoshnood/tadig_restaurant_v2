@@ -5,11 +5,9 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category, Review
-from .forms import ProductForm
+
 
 # Create your views here.
-
-
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -72,9 +70,18 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    context = {
-        'product': product,
-    }
+    # add review
+
+    if request.method == 'POST' and request.user.is_authenticated:
+        rating = request.POST.get('rating', 3)
+        comment = request.POST.get('commnet', '')
+
+        review = Review.objects.create(product=product, user=request.user, rating=rating, comment=comment)
+
+        context = {
+            'product': product,
+            'review': review,
+        }
 
     return render(request, 'products/product_detail.html', context)
 
@@ -151,14 +158,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-
-def review_list(request):
-    latest_review_list = Review.objects.order_by('-pub_date')[:9]
-    context = {'latest_review_list':latest_review_list}
-    return render(request, 'products/review_list.html', context)
-
-
-def review_detail(request, review_id):
-    review = get_object_or_404(Review, pk=review_id)
-    return render(request, 'products/review_detail.html', {'review': review})

@@ -45,13 +45,13 @@
     {% endblock %}
 
     <title>Tadig Restaurant {% block extra_title %}{% endblock %}</title>
-    <link rel="shortcut icon" type="image/jpg" href="media/favicon .png"/>
+    <link rel="shortcut icon" type="image/png" href="media/favicon .png"/>
 </head>
 
 <body>
-    <div class="flex-wrapper">
-        <div class="container-fluid px-0 py-3">
-            <!-- header -->
+    <div class="page-container d-flex flex-column d-flex justify-content-between">
+        <!-- header -->
+        <div>
             <header class="container-fluid fixed-top">
                 <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
                     <!--  navbar home -->
@@ -69,7 +69,7 @@
                                 <div class="input-group-append">
                                     <button class="form-control btn btn-black border border-black rounded-0"
                                         type="submit">
-                                        <span class="icon">
+                                        <span class="icon ">
                                             <i class="fas fa-search"></i>
                                         </span>
                                     </button>
@@ -122,7 +122,7 @@
                 </div>
                 <!-- mobile and main nav includes -->
                 <div class="row bg-white">
-                    <nav class="navbar navbar-expand-md navbar-light w-100">
+                    <nav class="navbar navbar-expand-md navbar-light w-100 py-md-3">
                         <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -138,35 +138,38 @@
                     </div>
                 </div>
             </header>
+        </div>
 
-            {% if messages %}
-            <!-- message-container -->
-                <div class="message-container">
-                    {% for message in messages %}
-                        {% with message.level as level %}
-                            {% if level == 40 %}
-                                {% include 'includes/toasts/toast_error.html' %}
-                            {% elif level == 30 %}
-                                {% include 'includes/toasts/toast_warning.html' %}
-                            {% elif level == 25 %}
-                                {% include 'includes/toasts/toast_success.html' %}
-                            {% else %}
-                                {% include 'includes/toasts/toast_info.html' %}
-                            {% endif %}
-                        {% endwith %}
-                    {% endfor %}
-                </div>
-            {% endif %}
+        {% if messages %}
+        <!-- message-container -->
+            <div class="message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/toasts/toast_error.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/toasts/toast_warning.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast_success.html' %}
+                        {% else %}
+                            {% include 'includes/toasts/toast_info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
+        <div class="py-3">
             {% block content %}
             {% endblock %}
         </div>
 
-        <footer id="footer" class="bg-white container-fluid mt-1">
-            <!-- footer -->
-            {% include 'includes/footer.html' %}
-        </footer>
-
+        <div>
+            <footer id="footer" class="bg-white container-fluid mt-1">
+                <!-- footer -->
+                {% include 'includes/footer.html' %}
+            </footer>
+        </div>
     </div>
 
     {% block postloadjs %}

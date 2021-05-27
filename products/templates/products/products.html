@@ -59,7 +59,7 @@
             {% for product in products %}
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <div class="col-12 col-sm-6 col-md-3">
                             <p class="logo-font font-weight-bold text-black mt-0">{{ product.name }}</p>
                             {% if request.user.is_superuser %}
                                 <small>
@@ -108,7 +108,29 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-12 col-sm-6">
+                        <div class="d-none d-md-block col-md-3">
+                            <h6>Add your review</h6>
+                            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                                <form action="{% url 'reviews:add_review' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" value="Add" />
+                                </form>
+                                <small class="d-block text-muted mt-2 text-center"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                5</small>
+                            
+
+                        </div>
+                        <div class="d-none d-md-block col-md-3">
+                                {% if latest_review_list %}
+                                    <h6>Latest reviews</h6>
+                                        {% for review in latest_review_list %}
+                                        <strong>rated {{ review.rating }}/5 by {{ review.user_name }}</strong>
+                                            <p>{{ review.comment }}</p>
+                                        {% endfor %}
+                                {% endif %}
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img src="{{ product.image.url }}" class="d-block w-100 img-fluid products-image" alt="{{ product.name }}" />
@@ -118,22 +140,19 @@
                                     <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid products-image" alt="{{ product.name }}" />
                                 </a>
                             {% endif %}
-                            <h2>Latest reviews</h2>
-
                             {% if latest_review_list %}
-                            <div>
-                                {% for review in latest_review_list %}
                                 <div>
-                                    <h4><a href="{% url 'reviews:review_detail' review.id %}">
-                                            {{ review.wine.name }}
-                                        </a></h4>
-                                    <h6>rated {{ review.rating }} of 5 by {{ review.user_name }}</h6>
-                                    <p>{{ review.comment }}</p>
+                                    {% for review in latest_review_list %}
+                                        <div>
+                                            <h6><a href="{% url 'product_detail' product.id %}">
+                                                    <small>{{ product.review_set.count }} reviews ({{ product.average_rating | floatformat }} average rating)</small>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
-                            </div>
                             {% else %}
-                            <p>No reviews are available.</p>
+                                <p>No reviews are available.</p>
                             {% endif %}
                         </div>
                     </div>
