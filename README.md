@@ -711,3 +711,6 @@ Amazon Web Services — S3 Bucket Storage Allocation
 
 to make my carousel dynamic
 https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django
+
+to make the rating and review models
+https://www.codementor.io/@jadianes/get-started-with-django-building-recommendation-review-app-du107yb1a
