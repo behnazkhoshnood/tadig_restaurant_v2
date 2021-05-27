@@ -118,11 +118,22 @@
                                     <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid products-image" alt="{{ product.name }}" />
                                 </a>
                             {% endif %}
-                            {% if product.rating %}
-                                <small class="d-block mt-2 text-center"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                5</small>
+                            <h2>Latest reviews</h2>
+
+                            {% if latest_review_list %}
+                            <div>
+                                {% for review in latest_review_list %}
+                                <div>
+                                    <h4><a href="{% url 'reviews:review_detail' review.id %}">
+                                            {{ review.wine.name }}
+                                        </a></h4>
+                                    <h6>rated {{ review.rating }} of 5 by {{ review.user_name }}</h6>
+                                    <p>{{ review.comment }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
                             {% else %}
-                                <small class="d-block mt-2 text-center">No Rating</small>
+                            <p>No reviews are available.</p>
                             {% endif %}
                         </div>
                     </div>

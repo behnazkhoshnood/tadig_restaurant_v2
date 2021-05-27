@@ -1,4 +1,6 @@
 from django.db import models
+from profiles.models import UserProfile
+import numpy as np
 
 
 class Category(models.Model):
@@ -26,11 +28,30 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True
-        )
+    # rating = models.DecimalField(
+    #     max_digits=6, decimal_places=2, null=True, blank=True
+    #     )
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def average_rating(self):
+        all_ratings = map(lambda x: x.rating, self.review_set.all())
+        return np.mean(all_ratings)
+
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    pub_date = models.DateTimeField('date published')
+    user_name = models.ForeignKey(UserProfile, on_delete=models.DO_NOTHING)
+    comment = models.CharField(max_length=200, null=True, blank=True)
+    rating = models.IntegerField(choices=RATING_CHOICES, null=True, blank=True)
