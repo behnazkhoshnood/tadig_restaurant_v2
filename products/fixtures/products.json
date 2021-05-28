@@ -8,7 +8,6 @@
          "description":"A tasty and simple persian appetiser. An eggplant dip with caramelized onions, roasted nuts, herbs and spices.",
          "price":65.0,
          "category":1,
-         "rating":4.6,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/kashke-bademjan.jpg",
          "image":"Kashke-bademjan.jpg"
       }
@@ -22,7 +21,6 @@
          "description":"A great Persian dish of soft roasted aubergine in tomato and garlic sauce, with eggs cooked into it at the last minute. Ideal for making as part of a mezze meal.",
          "price":58.99,
          "category":1,
-         "rating":4.6,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Mirza-ghasemi.jpg",
          "image":"Mirza-ghasemi.jpg"
       }
@@ -36,7 +34,6 @@
          "description":"Do piyaze alo is a nice, simple vegetarian meal made of diced potato, tomato and onions.",
          "price":58.99,
          "category":1,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Do-piyaze-alo.jpg",
          "image":"Do-piyaze-alo.jpg"
       }
@@ -50,7 +47,6 @@
          "description":"Salad olivieh is the Persian version of chicken salad and potato salad, rolled into one amazing dish that is loved by most who try it.",
          "price":69.99,
          "category":1,
-         "rating":5.0,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Salad-olviyeh.jpg",
          "image":"Salad-olviyeh.jpg"
       }
@@ -64,7 +60,6 @@
          "description":"Noon panir sabzi is a Persian platter served with a delicious mix of fresh herbs, mint, walnuts, radishes feta cheese and flat bread.",
          "price":44.99,
          "category":1,
-         "rating":4.5,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Noon-panir-sabzi.jpg",
          "image":"Noon-panir-sabzi.jpg"
       }
@@ -78,7 +73,6 @@
          "description":"Baghali polo is a popular Iranian dish of rice, fava beans and dill. It is made by cooking rice and green broad beans in boiling water. This dish can be served in all varieties.",
          "price":130.99,
          "category":2,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Baghali-polo.jpg",
          "image":"Baghali-polo.jpg"
       }
@@ -92,7 +86,6 @@
          "description":"Zereshk Polo ba Morgh is a Persian classic made with Zereshk (barberries), Morgh (chicken), and Polo, which is the steamed and fluffy Persian rice.",
          "price":109.0,
          "category":2,
-         "rating":4.4,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Zereshk-Polo.jpg",
          "image":"Zereshk-Polo.jpg"
       }
@@ -106,7 +99,6 @@
          "description":"Lamb Aubergine Stew with Yellow Split Peas gives you an idea of the main ingredients of this dish.",
          "price":136.99,
          "category":2,
-         "rating":4.5,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Khoreshe-gheymeh.jpg",
          "image":"Khoreshe-gheymeh.jpg"
       }
@@ -120,7 +112,6 @@
          "description":"A stew made of herbs like parsley and coriander; cooked with kidney beans and lamb. Vegetarian ghormeh sabzi has mushrooms rather than meat.",
          "price":129.99,
          "category":2,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/ghormeh-sabzi.jpg",
          "image":"ghormeh-sabzi.jpg"
       }
@@ -134,7 +125,6 @@
          "description":"This stew is flavored with pomegranate paste, ground walnuts and spices like turmeric, cinnamon, cardamom, and rosebud.",
          "price":133.99,
          "category":2,
-         "rating":4.4,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Khoreshte-fesenjoon.jpg",
          "image":"Khoreshte-fesenjoon.jpg"
       }
@@ -148,7 +138,6 @@
          "description":"Baklava is a rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with honey.",
          "price":74.99,
          "category":3,
-         "rating":4.5,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Baklava.jpg",
          "image":"Baklava.jpg"
       }
@@ -162,7 +151,6 @@
          "description":"Faloodeh is a traditional Iranian cold dessert similar to a sorbet. It consists of thin vermicelli-sized noodles made from starch in a semi-frozen syrup.",
          "price":60.99,
          "category":3,
-         "rating":4.6,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Faloode-shirazi.jpg",
          "image":"Faloode-shirazi.jpg"
       }
@@ -176,7 +164,6 @@
          "description":"Bastani is an Iranian ice cream made from milk, eggs, sugar, rose water, saffron, vanilla, and pistachios. It is known widely as Persian ice cream.",
          "price":60.0,
          "category":3,
-         "rating":4.9,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Bastani-sonnati.jpg",
          "image":"Bastani-sonnati.jpg"
       }
@@ -190,7 +177,6 @@
          "description":"Noon khamei is a filled choux pastry ball with a typically sweet and moist filling of whipped cream, custard, pastry cream, or ice cream. ",
          "price":56.99,
          "category":3,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Noon-khamei.jpg",
          "image":"Noon-khamei.jpg"
       }
@@ -204,7 +190,6 @@
          "description":"Ranginak is a Shirazi sweet made from Dates, nuts, cinnamon. It's makes a good combination with tea.",
          "price":48.99,
          "category":3,
-         "rating":4.8,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Ranginak.jpg",
          "image":"Ranginak.jpg"
       }
@@ -218,7 +203,6 @@
          "description":"Doogh is a cold savory yogurt-based beverage that is mixed with salt.",
          "price":29.99,
          "category":5,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Doogh.jpg",
          "image":"Doogh.jpg"
       }
@@ -232,7 +216,6 @@
          "description":"Strengthens the nervous system Facilitates the digestion Helps with stress-related headaches, tachycardia, anxiety and mood.",
          "price":33.99,
          "category":5,
-         "rating":4.4,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Araghe-bidmeshk.jpg",
          "image":"Araghe-bidmeshk.jpg"
       }
@@ -246,7 +229,6 @@
          "description":"Gol gav zaban flower has a sweet honey-like taste and is one of the few truly blue-colored edible substances.",
          "price":33.99,
          "category":5,
-         "rating":4.8,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Gol-gav-zaban.jpg",
          "image":"Gol-gav-zaban.jpg"
       }
@@ -260,7 +242,6 @@
          "description":"Mojito flavors are sweetness, citrus, and herbaceous mint, which makes it a popular summer drink.",
          "price":69.99,
          "category":6,
-         "rating":5.0,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Mojito.jpg",
          "image":"Mojito.jpg"
       }
@@ -274,7 +255,6 @@
          "description":"White russian is a cocktail made with vodka, coffee liqueur and cream served with ice in an Old Fashioned glass.",
          "price":69.99,
          "category":6,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/White-russian.jpg",
          "image":"White-russian.jpg"
       }
@@ -288,7 +268,6 @@
          "description":"Bloody mary is a cocktail containing vodka, tomato juice, and other spices and flavorings including celery and lemon juice.",
          "price":60.99,
          "category":6,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Bloody-mary.jpg",
          "image":"Bloody-mary.jpg"
       }
@@ -302,7 +281,6 @@
          "description":"A small amount of nearly boiling water is forced under pressure (expressed) through finely-ground coffee beans.",
          "price":36.99,
          "category":7,
-         "rating":5.0,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Espresso.jpg",
          "image":"Espresso.jpg"
       }
@@ -316,7 +294,6 @@
          "description":"Masala chai is a flavoured tea beverage made by brewing black tea with a mixture of aromatic Indian spices and herbs.",
          "price":39.99,
          "category":7,
-         "rating":4.8,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Chai-latte.jpg",
          "image":"Chai-latte.jpg"
       }
@@ -330,7 +307,6 @@
          "description":"Orange juice is a liquid extract of the orange tree fruit, produced by squeezing or reaming oranges.",
          "price":50.0,
          "category":8,
-         "rating":4.8,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Orange-Juice.jpg",
          "image":"Orange-Juice.jpg"
       }
@@ -344,7 +320,6 @@
          "description":"A soft sweet natural juice. No added suger.",
          "price":50.0,
          "category":8,
-         "rating":4.9,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Watermelon-juice.jpg",
          "image":"Watermelon-juice.jpg"
       }
@@ -358,7 +333,6 @@
          "description":"A soft sweet natural juice. No added suger.",
          "price":50.0,
          "category":8,
-         "rating":4.7,
          "image_url":"https://browser-pink-salmon-u6f6af0z.ws-eu04.gitpod.io/workspace/tadig_restaurant_v2/media/Berry-juice.jpg",
          "image":"Berry-juice.jpg"
       }

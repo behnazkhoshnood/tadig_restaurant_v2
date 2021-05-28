@@ -3,15 +3,24 @@
 
 {% block extra_title %}- Home page{% endblock %}
 
-{% block content %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
+{% block content %}
+<div class="overlay"></div>
 <div class="row align-items-center">
     <!-- about note -->
+    <row class=" d-flex align-items-center">
     <div id="about-note" class="col-12 col-md-6 text-center">
         <br class="d-block d-md-none">
         <h5 class="logo-font font-weight-bold text-black text-center">About Us</h5>
         <br>
-        <p class="about-note d-flex justify-content-center px-5">
+        <p class="about-notejustify-content-center px-2">
             Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
             Introducing the Persian signature dishes to the world, with the best service and quality is our
             top goal.

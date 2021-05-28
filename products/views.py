@@ -70,18 +70,9 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    # add review
-
-    if request.method == 'POST' and request.user.is_authenticated:
-        rating = request.POST.get('rating', 3)
-        comment = request.POST.get('commnet', '')
-
-        review = Review.objects.create(product=product, user=request.user, rating=rating, comment=comment)
-
-        context = {
-            'product': product,
-            'review': review,
-        }
+    context = {
+        'product': product,
+    }
 
     return render(request, 'products/product_detail.html', context)
 

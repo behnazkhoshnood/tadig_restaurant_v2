@@ -1,18 +1,19 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav col-10  offset-md-1 text-center d-flex justify-content-around pb-md-3" aria-labelledby="dropdownMenuButton">
-        <li class="col-2 nav-item d-block d-md-none">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-md-none">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
-        <li class="col-2 nav-item dropdown order-last">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" href="#" id="all-dishes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
@@ -24,7 +25,7 @@
 
         <li class="col-2 nav-item">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=mains" id="main-dish-link">
-                Main Dishes
+                Dishes
             </a>
         </li>
 
