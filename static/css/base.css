@@ -10,7 +10,14 @@ html {
     color: #555;
     word-spacing: 2px;
     font-size: 13px;
+}
+
+header{
     line-height: 2;
+}
+
+body:not(header){
+    line-height: 4vh;
 }
 
 .page-container {
@@ -26,9 +33,9 @@ html {
     border: none;
 }
 
-
 .img-thumbnail {
     border-radius: 0;
+    height: 200px;
 
 }
 
@@ -495,6 +502,11 @@ p span {
     .page-container {
         padding-top: 222px;
     }
+
+    .carousel-item img,
+    .img-thumbnail {
+        height: 300px;
+    }
 }
 
 /* ipad,ipad mini and protrait */
@@ -514,6 +526,11 @@ p span {
         font-size: medium;
     }
 
+    .img-thumbnail {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
     .carousel-item img {
         max-width: inherit;
         padding-right: 120px;
@@ -523,7 +540,7 @@ p span {
 
     @media (min-width: 1900px) {
         .carousel-item img {
-            height: 350px;
+            height: 500px !important;
         }
     }
 }
@@ -539,8 +556,13 @@ p span {
     .input-group>.form-control,
     .input-group>.form-control-plaintext,
     h2,
-    .btn {
+    .btn,
+    strong {
         font-size: xx-large;
+    }
+
+    .img-thumbnail {
+        height: 400px;
     }
 
     icon {

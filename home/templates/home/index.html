@@ -9,8 +9,7 @@
     <!-- about note -->
     <div id="about-note" class="col-12 col-md-6 text-center">
         <br class="d-block d-md-none">
-        <h5 class="logo-font font-weight-bold text-black text-center">About Us</h5>
-        <br>
+        <h5 class="logo-font font-weight-bold text-black text-center pb-2">About Us</h5>
         <p class="about-note d-flex justify-content-center px-5">
             Tadig is a Persian restaurant with a warm and friendly environment located in Jakobsberg Center.
             Introducing the Persian signature dishes to the world, with the best service and quality is our
@@ -44,14 +43,14 @@
                     <div class="carousel-item active data-interval=" 500">
                         {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                <img src="{{ product.image.url }}" class="d-block w-100 img-thumbnail img-fluid" alt="{{ product.name }}" />
                                 <div class="carousel-caption d-block">
                                     <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                 </div>
                             </a>
                         {% else %}
                             <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-fluid" alt="{{ product.name }}" />
+                                <img src="{{ MEDIA_URL }}noimage.png" class="d-block w-100 img-thumbnail img-fluid" alt="{{ product.name }}" />
                                 <div class="carousel-caption d-block">
                                     <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                 </div>
