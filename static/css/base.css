@@ -3,19 +3,35 @@ html {
 }
 
 body {
-    height: calc(100vh - 164px);
+    height: calc(100vh - 164px );
     color: #555;
     font-family: 'Lato';
 }
 
-.img-fluid{
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 350px;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 350px;            /* Footer height */
+}
+
+.img-fluid {
     height: 200px;
     image-rendering: -webkit-optimize-contrast;
     border-radius: 0;
 }
 
 .social-note,
-#about-note{
+#about-note {
     line-height: 2.5;
 }
 
@@ -49,7 +65,8 @@ body {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -83,16 +100,16 @@ body {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
@@ -101,10 +118,23 @@ a.category-badge > span.badge:hover {
     height: 42px;
     width: 42px;
     position: fixed;
+    bottom: 60px;
+    right: 10px;
+}
+
+.btb-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
     bottom: 10px;
     right: 10px;
 }
 
+.btb-button a:hover{
+    color: #fff;
+}
+
+.btb-link,
 .btt-link,
 .update-link,
 .remove-item {
@@ -134,15 +164,16 @@ input[name='q']::placeholder {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
     right: 36px;
 }
+
 
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
@@ -183,25 +214,58 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+/* index page */
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: transparent;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.prev-icon,
+.next-icon{
+    font-size: 30px;
+    color: black;
+}
+
 /* product-details page */
-.quantity-form-btns{
+.quantity-form-btns {
     margin: auto;
 }
+
+/* product page */
+.divisibleby:last-child{
+    display: none;
+}
+
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -219,8 +283,8 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -237,18 +301,19 @@ input[name='q']::placeholder {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8;
+    /* text-info */
 }
 
 /* Product Form */
@@ -279,6 +344,20 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* really small */
+@media (max-width: 300px){
+    body,
+    .navbar {
+        font-size: 9px;
+    }
+}
+
+/* md and larger */
+@media (min-width: 768px){
+    .img-fluid {
+        height: 300px;
+    }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -337,7 +416,8 @@ input[name='q']::placeholder {
         font-size: .75rem;
     }
 
-    .increment-qty, .decrement-qty {
+    .increment-qty,
+    .decrement-qty {
         padding: .25rem .5rem !important;
     }
 }

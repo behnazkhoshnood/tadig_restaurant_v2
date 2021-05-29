@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Products {% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -109,22 +111,22 @@
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-none mb-5">
+                <div class="divisibleby col-12 d-sm-none mb-5">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <div class="divisibleby col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <div class="divisibleby col-12 d-none d-lg-block d-xl-none mb-5">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-5">
+                <div class="divisibleby col-12 d-none d-xl-block mb-5">
                     <hr>
                 </div>
                 {% endif %}
@@ -138,14 +140,21 @@
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
 </div>
+<div class="btb-button shadow-sm rounded-0 border border-black">
+    <a class="btb-link d-flex h-100" href="#footer">
+        <i class="fas fa-arrow-down text-black mx-auto my-auto"></i>
+    </a>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
+$('.btt-button').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+});
 </script>
 
 <script type="text/javascript">
