@@ -8,6 +8,10 @@ body {
     font-family: 'Lato';
 }
 
+.table{
+    font-size: 13px;
+}
+
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -25,10 +29,15 @@ body {
 }
 
 .img-fluid {
-    height: 200px;
+    height: 150px;
     image-rendering: -webkit-optimize-contrast;
     border-radius: 0;
 }
+
+.carousel-item img{
+    height: 250px;
+}
+
 
 .social-note,
 #about-note {
@@ -120,6 +129,8 @@ a.category-badge>span.badge:hover {
     position: fixed;
     bottom: 60px;
     right: 10px;
+    z-index: 100;
+    background-color: #ffffff;
 }
 
 .btb-button {
@@ -128,6 +139,8 @@ a.category-badge>span.badge:hover {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    z-index: 100;
+    background-color: #ffffff;
 }
 
 .btb-button a:hover{
@@ -249,6 +262,11 @@ input[name='q']::placeholder {
     display: none;
 }
 
+/* bag page */
+.update-link small{
+    float: left;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -344,9 +362,8 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-/* really small */
-@media (max-width: 300px){
-    body,
+/*x-small */
+@media (max-width: 350px){
     .navbar {
         font-size: 9px;
     }
@@ -355,9 +372,15 @@ input[name='q']::placeholder {
 /* md and larger */
 @media (min-width: 768px){
     .img-fluid {
+        height: 200px;
+        width: 300px;
+    }
+
+    .carousel-item img{
         height: 300px;
     }
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

@@ -1,6 +1,5 @@
 from django.db import models
-from profiles.models import UserProfile
-
+from django.contrib.auth.models import User
 
 class Category(models.Model):
 
@@ -11,8 +10,6 @@ class Category(models.Model):
     friendly_name = models.CharField(
         max_length=254, null=True, blank=True
         )
-    slug= models.SlugField(max_length=225)
-
     def __str__(self):
         return self.name
 
@@ -37,11 +34,10 @@ class Product(models.Model):
 
 class Review(models.Model):
     product = models.ForeignKey(
-        Product, related_name='reviews', on_delete=models.CASCADE
-    )
-    pub_date = models.DateTimeField(auto_now_add=True)
-    user_name = models.ForeignKey(
-        UserProfile, related_name='reviews', on_delete=models.CASCADE
-    )
-    comment = models.TextField(max_length=200, null=True, blank=True)
-    rating = models.IntegerField(null=True)
+        Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=1000)
+    rating =models.FloatField(default=0)
+
+    def __str__(self):
+        return self.user.username

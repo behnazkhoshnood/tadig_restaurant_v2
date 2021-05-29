@@ -33,10 +33,10 @@
                 </h6>
             </div>
             <!-- carousel -->
-            <div id="carouselExampleDark" class="carousel carousel-dark slide d-block col-12 col-md-6 col-lg-4 offset-lg-2"
+            <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade d-block col-12 col-md-6 col-lg-4 offset-lg-2"
         data-ride="carousel">
         <!-- carousel indicators -->
-        <ol class="carousel-indicators px-5">
+        <ol class="carousel-indicators px-5 d-sm-none">
             {% for product in products %}
                 {% if forloop.first %}
                     <li data-target="#carouselExampleDark" data-slide-to="{{forloop.counter0}}" class="active"></li>
@@ -52,14 +52,14 @@
                     <div class="carousel-item active data-interval=" 500">
                         {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" />
                                 <div class="carousel-caption d-block">
                                     <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                 </div>
                             </a>
                         {% else %}
                             <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                                <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}" />
                                 <div class="carousel-caption d-block">
                                     <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                                 </div>
@@ -71,14 +71,14 @@
                     <div class="carousel-item">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" />
                             <div class="carousel-caption d-block">
                                 <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                             </div>
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}" />
                             <div class="carousel-caption d-block">
                                 <p class="text-white bg-black d-inline">{{ product.name }}</p><br>
                             </div>
@@ -89,11 +89,11 @@
             {% endfor %}
         </div>
         <!-- carousel prev and next btns -->
-            <button class="carousel-control-prev ml-3" type="button" data-target="#carouselExampleDark" data-slide="prev">
+            <button class="carousel-control-prev ml-3" type="button" data-target="#carouselExampleFade" data-slide="prev">
                 <span class="prev-icon"><i class="fas fa-angle-left"></i></span>
                 <span class="d-none">Previous</span>
             </button>
-            <button class="carousel-control-next mr-3" type="button" data-target="#carouselExampleDark" data-slide="next">
+            <button class="carousel-control-next mr-3" type="button" data-target="#carouselExampleFade" data-slide="next">
                 <span class="next-icon"><i class="fas fa-angle-right"></i></span>
                 <span class="d-none">Next</span>
             </button>

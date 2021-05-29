@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block extra_title %}- {% trans 'Edit Review' %}{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+                <hr>
+                <h2 class="mb-4">{% trans 'Edit Review' %}</h2>
+                <hr>
+    <div class="card">
+        <div class="card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Save Changes" class="btn btn-danger">
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
