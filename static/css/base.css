@@ -8,6 +8,21 @@ body {
     font-family: 'Lato';
 }
 
+.reviews::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.reviews::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #e9e9e9;        /* color of the tracking area */
+}
+
+.reviews::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;    /* color of the scroll thumb */
+}
+
 .table{
     font-size: 13px;
 }
@@ -228,7 +243,8 @@ input[name='q']::placeholder {
 }
 
 /* index page */
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -239,22 +255,50 @@ input[name='q']::placeholder {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 15%;
+    width: 10%;
     color: transparent;
     text-align: center;
-    opacity: .5;
+    opacity: .3;
     transition: opacity .15s ease;
+    border: none;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover,
+.carousel-control-next:active,
+.carousel-control-prev:active,
+.carousel-control-next:focus,
+.carousel-control-prev:focus{
+    opacity: .5;
 }
 
 .prev-icon,
 .next-icon{
-    font-size: 30px;
-    color: black;
+    font-size: 35px;
+    color: #000000;
+}
+
+.home-reviews{
+    max-height: 300px !important;
+    overflow-y: auto;
 }
 
 /* product-details page */
 .quantity-form-btns {
     margin: auto;
+}
+
+.reviews{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.reviews hr:last-child {
+    display: none;
+}
+
+.stars{
+    white-space: nowrap;
 }
 
 /* product page */
@@ -351,6 +395,64 @@ input[name='q']::placeholder {
     cursor: pointer;
 }
 
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:40px;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:rgb(245, 244, 244);
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: rgb(0, 0, 0);
+    text-shadow:1px 1px rgb(0, 0, 0), 2px 2px rgb(0, 0, 0), .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #000000;
+    text-shadow:1px 1px rgb(0, 0, 0), 2px 2px rgb(0, 0, 0), .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #000000;
+    text-shadow:1px 1px #000000, 2px 2px rgb(0, 0, 0), .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+
+
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
@@ -372,12 +474,17 @@ input[name='q']::placeholder {
 /* md and larger */
 @media (min-width: 768px){
     .img-fluid {
-        height: 200px;
-        width: 300px;
+        height: 300px;
+        width: 550px;
+    }
+
+    .reviews-row {
+        max-height: 300px;
     }
 
     .carousel-item img{
         height: 300px;
+        image-rendering: -webkit-optimize-contrast;
     }
 }
 

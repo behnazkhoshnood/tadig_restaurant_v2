@@ -714,3 +714,12 @@ https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django
 
 to make the rating and review models
 https://www.codementor.io/@jadianes/get-started-with-django-building-recommendation-review-app-du107yb1a
+
+radio star input:
+https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1
+
+known bugs:
+when clicking on rating star buttons the page jumps up to the top.
+
+future features:
+confirmation toast message for deleting a product.
