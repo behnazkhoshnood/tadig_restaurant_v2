@@ -50,8 +50,8 @@ The site owner is able to make money by providing this set of services to the us
 
 - **Sorting and Searching**
   - I want to be able to sort the list of availabe products, so that I can easily identify the best rated, best priced and categorically sorted products.
-  - I want to be able to sort a specific category of product, so that I can find the best priced or best rated product in a specific category, or sort the products in each category.
-  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced or best rated products.
+  - I want to be able to sort a specific category of product, so that I can find the best priced product in a specific category, or sort the products in each category.
+  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced products.
   - I want to be able to search for a product by name, category or description, so that I can find a specific product I'd like to purchase.
   - I want to be able to easily see what I've searched for and the number of results, so that I can quickly decide wheather the product I want is availabe.
 
@@ -80,8 +80,8 @@ The site owner is able to make money by providing this set of services to the us
   * [JQuery](https://jquery.com/) was used for initializing some bootstrap elements.
 
 - **Typography**
-  - I used [Google Fonts](https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@100;200;300;400;500&display=swap") for the font style of my project:
-    - The font I have used for this project is called **Raleway** and **Open+Sans** font with sans-serif as a backup font.
+  - I used [Google Fonts](https://fonts.googleapis.com/css?family=Lato&display=swap") for the font style of my project:
+    - The font I have used for this project is called **Lato** and sans-serif as a backup font.
 
 - **Icons**
   - I used [Favicon](https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/) to make a unic brand for my website.
@@ -171,9 +171,9 @@ Desktop view | Mobile view
     - All of the pages contain a 3 part layout with the header, main part of the page and the footer.
         - **Header**
             - **main navbar**
-                - Main navbar is deviding the products that are provided in to diffrent categories of: appetizers, main dishes, desserts and beverages.
+                - Main navbar is deviding the products that are provided in to diffrent categories of: appetizers, main dishes, desserts and beverages and a sorting dropdown button.
                 on medium and large screens, main navbar is fixed on top of the page and is lined up in a line. In smaller screens this navbar turns to a dropdown navbar.
-                - Another item in this navbar is "Sort" which sorts all the products by their name, price or rating.
+                - Another item in this navbar is "Sort" which sorts all the products by their name, price or category.
             - **Home button**
                - On medium and large screens restaurant logo works as the home button but in smaller screen home button is added to the dropdown navbar.
             - **Search, Account and Bag**
@@ -209,12 +209,13 @@ Desktop view | Mobile view
   - **Home Page**
 
     - The home page contains the eyecatching carousel slide with the colorful images that makes the perpose of the website clear from the begining.
-    - breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
-    - carousel is showing all the product images. By clicking on each image user is directed to product details page, which shoes that product, all the information related to it, and can add it to the back right away.
+    - Breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
+    - Carousel is showing all the product images. By clicking on each image user is directed to product details page, which shoes that product, all the information related to it, and can add it to the back right away.
+    - Under the about note and carousel, all the reviews that have been added for any product is displayed with their name, avrage rating and number of rates.
 ---
   - **Products Pages**
 
-    - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price and rating information of all producs in that category.
+    - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price, number of reviews and avarege rating information of all producs in that category.
     - Under the price of each product is also a form that user can use to add any product in this category to their shoping bag.
     - When user adds a product to their shoping bag they will be notified by a toast message on top on the page, which shows that product information.
     - If the price of the items are lower than free delivery treshold, it will show in this toast message that how much more they should add to their bag to get the free delivery.
@@ -232,7 +233,9 @@ Desktop view | Mobile view
     - By choosing the amount, and then clicking on Add to Bag, user will see a toast messege on top of the page that shows the product information in their bag.
     - If the grand total of the products value is lower than the delivery treshold, user will be notified the amount that they should spend more in order to get free delivery in the toast messege.
     - The toast message also provide the user with a button to be redirected to thier shopping bag.
-    - on small screens the product information, shopping and quantity bottons are placed under each other, but in medium and larger views they are placed side by side.
+    - under the product details and image there is a reviews form for the product with a comment and rating inputs and submit button.
+    - All the reviews for this product is shown including the name of the user, rating and their respective comments.
+    - on small screens the product information, shopping and quantity bottons review form and reviews are placed under each other, but in medium and larger views they are placed side by side.
     - Admin or super user provided with extra links under the product price to either delete or edit this product.
 ---
   - **Shopping Bag Page**

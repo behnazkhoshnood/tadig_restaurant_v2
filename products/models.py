@@ -32,14 +32,16 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def avaregereview(self):
-        reviews = Review.objects.filter(product=self).aggregate(avarage=Avg('rating'))
+        reviews = Review.objects.filter(product=self).aggregate(
+            avarage=Avg('rating'))
         avg = 0
         if reviews["avarage"] is not None:
             avg = float(reviews["avarage"])
         return avg
 
     def countreview(self):
-        reviews = Review.objects.filter(product=self).aggregate(count=Count('id'))
+        reviews = Review.objects.filter(
+            product=self).aggregate(count=Count('id'))
         cnt = 0
         if reviews["count"] is not None:
             cnt = int(reviews["count"])
