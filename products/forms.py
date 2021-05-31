@@ -3,6 +3,14 @@ from .widgets import CustomClearableFileInput
 from .models import Product, Category, Review
 
 
+class ReviewForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Review
+        fields = ['comment', 'rating']
+
+
 class ProductForm(forms.ModelForm):
 
     class Meta:

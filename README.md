@@ -40,6 +40,8 @@ The site owner is able to make money by providing this set of services to the us
   - I want to be able to easily recover my password in case I forget it, so that I can recover access to my account.
   - I want to be able to receive an email confirmation after registering, so that I can verify that my account registeration was successful.
   - I want to be able to have a personalized user profile, so that I can view my personal order history and order confirmations and save my payment information.
+  - I want to be able to see each product review, so that I can easily choose the meal(product), based on the comments and reviews.
+  - I want to be able to add a review, so that I can share my thoughts with other customers and the owners of the restaurant.
 
 #### **As a Shopper**
 
@@ -50,8 +52,8 @@ The site owner is able to make money by providing this set of services to the us
 
 - **Sorting and Searching**
   - I want to be able to sort the list of availabe products, so that I can easily identify the best rated, best priced and categorically sorted products.
-  - I want to be able to sort a specific category of product, so that I can find the best priced or best rated product in a specific category, or sort the products in each category.
-  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced or best rated products.
+  - I want to be able to sort a specific category of product, so that I can find the best priced product in a specific category, or sort the products in each category.
+  - I want to be able to sort multiple categories of products simultaneously, so that I can find the best priced products.
   - I want to be able to search for a product by name, category or description, so that I can find a specific product I'd like to purchase.
   - I want to be able to easily see what I've searched for and the number of results, so that I can quickly decide wheather the product I want is availabe.
 
@@ -80,8 +82,8 @@ The site owner is able to make money by providing this set of services to the us
   * [JQuery](https://jquery.com/) was used for initializing some bootstrap elements.
 
 - **Typography**
-  - I used [Google Fonts](https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@100;200;300;400;500&display=swap") for the font style of my project:
-    - The font I have used for this project is called **Raleway** and **Open+Sans** font with sans-serif as a backup font.
+  - I used [Google Fonts](https://fonts.googleapis.com/css?family=Lato&display=swap") for the font style of my project:
+    - The font I have used for this project is called **Lato** and sans-serif as a backup font.
 
 - **Icons**
   - I used [Favicon](https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/) to make a unic brand for my website.
@@ -171,9 +173,9 @@ Desktop view | Mobile view
     - All of the pages contain a 3 part layout with the header, main part of the page and the footer.
         - **Header**
             - **main navbar**
-                - Main navbar is deviding the products that are provided in to diffrent categories of: appetizers, main dishes, desserts and beverages.
+                - Main navbar is deviding the products that are provided in to diffrent categories of: appetizers, main dishes, desserts and beverages and a sorting dropdown button.
                 on medium and large screens, main navbar is fixed on top of the page and is lined up in a line. In smaller screens this navbar turns to a dropdown navbar.
-                - Another item in this navbar is "Sort" which sorts all the products by their name, price or rating.
+                - Another item in this navbar is "Sort" which sorts all the products by their name, price or category.
             - **Home button**
                - On medium and large screens restaurant logo works as the home button but in smaller screen home button is added to the dropdown navbar.
             - **Search, Account and Bag**
@@ -209,12 +211,13 @@ Desktop view | Mobile view
   - **Home Page**
 
     - The home page contains the eyecatching carousel slide with the colorful images that makes the perpose of the website clear from the begining.
-    - breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
-    - carousel is showing all the product images. By clicking on each image user is directed to product details page, which shoes that product, all the information related to it, and can add it to the back right away.
+    - Breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
+    - Carousel is showing all the product images. By clicking on each image user is directed to product details page, which showes that product, all the information related to it, and can add it to the back right away.
+    - Under the about note and carousel, all the reviews that have been added for any product is displayed with their name, avarege rating and number of rates.
 ---
   - **Products Pages**
 
-    - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price and rating information of all producs in that category.
+    - By clicking on the main navbar categories in the top header, users are directed to respective category page, which has the name, image, price, number of reviews and avarege rating information of all producs in that category.
     - Under the price of each product is also a form that user can use to add any product in this category to their shoping bag.
     - When user adds a product to their shoping bag they will be notified by a toast message on top on the page, which shows that product information.
     - If the price of the items are lower than free delivery treshold, it will show in this toast message that how much more they should add to their bag to get the free delivery.
@@ -227,12 +230,14 @@ Desktop view | Mobile view
 ---
   - **Product Details Page**
 
-    - This page shows the product name, price, rating,image and description.
+    - This page shows the product name, price, avarege rating,image and description.
     - A form to add this product to the shopping bag is located under the product price.
     - By choosing the amount, and then clicking on Add to Bag, user will see a toast messege on top of the page that shows the product information in their bag.
     - If the grand total of the products value is lower than the delivery treshold, user will be notified the amount that they should spend more in order to get free delivery in the toast messege.
     - The toast message also provide the user with a button to be redirected to thier shopping bag.
-    - on small screens the product information, shopping and quantity bottons are placed under each other, but in medium and larger views they are placed side by side.
+    - under the product details and image there is a reviews form for the product with a comment and rating inputs and submit button.
+    - All the reviews for this product is shown including the name of the user, rating and their respective comments.
+    - on small screens the product information, shopping and quantity bottons review form and reviews are placed under each other, but in medium and larger views they are placed side by side.
     - Admin or super user provided with extra links under the product price to either delete or edit this product.
 ---
   - **Shopping Bag Page**
@@ -253,7 +258,7 @@ Desktop view | Mobile view
     - by filling this form and clicking on the *Compelete Order* button, user can securely purchase from the site with the help of stripe elements.
     - On x-small screens order summary is placed on top of the order form and under the form there is the *Compelete Order* button and *Adjust Bag*.
     - Product images is not seenable in the x-small views to improve the page layout.
-    - On small and larger screens the order summary and form placed side by side and the compelete order and adjust bag is at the bottom of the page.
+    - On small and larger screens the order summary and form placed side by side and the compelete order and adjust bag buttons are at the bottom of the page.
 ---
   - **Checkout Success Page**
 
@@ -276,6 +281,21 @@ Desktop view | Mobile view
     - On entering the checkout Success page from the profile, user gets a toast messege that this is a past confirmation for that order number.
     - under the form there is a button that redirects the user back to their profile page.
 ---
+  -**Shopping bag page**
+
+    - Displays selected products to be purchased and its details 
+    - Users can add and reduce product quantity from the shpping bag and the cost will adjust accordingly 
+    - Users can remove selected products from the shipping bag and cost will adjust accordingly
+    - Proceed to checkout page
+
+  - **Checkout App**
+
+    - If a user is authenticated and has a profile the delivery/shipping form will be pre-populated with their default info else if the user is not authenticated the form will be empty 
+    - A summary of the products & cost the user is about to purchase will be avaible on display next to the delivery/shipping form
+    - Stripe secure card validation: the card entered by the user will be validated in real time by stripe and if valid:
+    - the purchase will go through and the user will be automatically redirected to success page showing order confirmation details
+    - Upon successful purchase: confirmation email is sent to the user, containing their order summary
+
   - **Manage Product Page and Admin features**
 
     - Admin or super user has access to an extra button in account dropdown menu.
@@ -301,68 +321,78 @@ Desktop view | Mobile view
     - If a registered user puts their infomation in incorrectly when loging in, they will be notified by a messages - "The username and/or password you specified are not correct.".
     - If a user attempts to login several time unsuccfully, they will be notified by a message - "Too many failed login attempts. Try again later."
     - there is a home button under the page that redirects the user to home page if they don't want to login.
-    - When a user has successfully logged in, they will be redirected to home page with a toast messege.
+    - When a user has successfully logged in, they will be redirected to home page with a success notification toast messege.
 
   - **Log Out**
-    - user is provided by the option to log out when clicking on the button provided on the navbar.
+    - user is provided by the option to log out when clicking on the button provided on the account dropdown button in the top navbar.
     - By clicking on "Log Out" button user get a message to check if they really want to log out.
     - On log out user redirects to log in page and getting a flash message: "You have been logged out!"
 ---
 - **Features Left to Implement**
-   - Adding a like/dislike button for each Recipe and sort the recipes from the most to least favorites.
-   - Adding the liked recipes in a new section in profile page.
-   - Make the design of the site more appealing and more food friendly.
-   - Adding a footer with social media sites for the app.
-   - Seperating the recipes in different sections for each category.
-   - More secure pathway for the admin.
+   - adding more responsive design for my image fields.
+   - Adding sort products based on the avarege rating.
+   - Adding the like/dislike function in a new section in profile page.
+   - Adding social media sites for the app.
+   - Adding food delivery time system for the app.
+   - Additional payment methods like paypal or applepay
 ---
 ## **Technologies**
 - **Front-End**
 
-  - [HTML5](https://en.wikipedia.org/wiki/HTML)
-    - To give the page its structure and presenting static data.
-    - All HTML files are located within the 'templates' directory.
-  - [CSS](https://en.wikipedia.org/wiki/CSS)
-    - CSS has been used to style and customise the content of this project.
-  - [Materialize](https://materializecss.com/)
-    - This is a framework that I have used to simplify CSS classes, features that have been used and modified include the navbar, responsive design classes, and colors for backgrounds and text.
-  - [JQuery](https://en.wikipedia.org/wiki/JQuery)
-    - JQuery has been used to give the site its functionality as well as making DOM manipulation simpler.
+    - HTML5 was used to put the page structure in place [HTML5](https://validator.w3.org/).
+    - CSS was used to style and allign images and other structures on the page [CSS](https://www.w3.org/Style/CSS/Overview.en.html).
+    - Javascript was used for interactivity [JavaScript](https://www.ecma-international.org/).
+    - Bootstrap was used for page layout [Bootstrap](https://getbootstrap.com/).
+    - Google fonts was used for the site fonts [Google fonts](https://fonts.google.com/).
+    - Fontawesome was used for its icons [Font awesome](https://fontawesome.com/).
 
 - **Back-end**
-  - [MongoDB](https://en.wikipedia.org/wiki/MongoDB) 
-    - As the data entered by users can always be different from one to the next, the project uses MongoDB to store its data as MongoDB is a Document Based Database.
-  - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
-    - Flask is a framework that allows developers to easily present data in an orderly fashion. All data entered by a user, such as the Recipe Name, is presented to users with a few lines of code embedded into the HTML.
-      - Modules from Flask that have been included are:
-      - Flask
-      - flash
-      - render_template
-      - redirect
-      - request
-      - session
-      - url_for
-      - PyMongo
-  - [bson.objectid](https://www.npmjs.com/package/bson-objectid)
-      - ObjectId
-  - [werkzeug.security](https://werkzeug.palletsprojects.com/en/1.0.x/utils/)
-      - generate_password_hash
-      - check_password_hash
-  - [datetime](https://docs.python.org/3/library/datetime.html)
-      - datetime
-  - [Python](https://www.python.org/)
-    - Python is working very closely with Flask to manipulate data and HTML across multiple pages within the app.
+
+    - Python3 was used for the application scripting [Python](https://www.python.org/).
+    - Django framework was used to build the Project [Django](https://www.djangoproject.com/).
+    - Amazon web service was used to host static and media files [AWS](https://aws.amazon.com/).
+    - Postgres database was used for the deployed app on heroku [Postgres](https://www.postgresql.org/).
+    - Gunicorn server was used for the deployed app on heroku [Gunicorn](https://gunicorn.org/).
+    - Stripe payment service was used for product payments [Stripe](https://stripe.com/).
+
 - **Deployment**
-  * [Heroku](https://dashboard.heroku.com/)
-  * [Git](https://git-scm.com/)
-  * [Github](https://github.com/)
-  * [Gitpod](https://gitpod.io/)
+
+    - Heroku for hosting the application [Heroku](https://dashboard.heroku.com/apps).
+    - I used gitpod's development environment to write the code for this project [Gitpod](https://www.gitpod.io/).
+    - I used github for its repo and version control of the project [Github](https://github.com/).
+    - I used google smtp email to send emails to users [google](https://support.google.com/mail/answer/7126229?hl=en).
+    - I used Chrome DevTools for ressponssive design.
+
 - **validators**
   - The validators that have been used on the project are as followed:
     - [HTML Validator](https://validator.w3.org/nu/) - No issues apart from jinja templating
     - [CSS Validator](https://jigsaw.w3.org/css-validator/) - No issues
     - [JavaScript Validator](https://jshint.com/) - No issues 
     - [Python Validator](http://pep8online.com/) - No issues
+
+- **User stories tests**
+- ****Testing user experience:****
+
+  - **Product Owner**
+    - can easily add a product via product form
+    - can easily edit/update product info
+    - can easily delete products
+  - **Sign-up / Login**
+    - user: can successfully sign up for an account by filling the the required form fields and will recieve a confirmation email
+    - user : users also have an easy option of socisl login, by providing their google account
+    - user: users can successfully recover their passwords by clicking on the forgot password: which will send an email to the provided email adddress with the necessary link for password recovery.
+  - **Logged in / authenticated users**
+    - user: Logged in users can save their default delivery/billing info on their profile page
+    - user: logged in users can successfully add items to their wishlist for later purchase
+    - user: logged in users can review products that they have bought
+  - **authenticated and unauthenticated users**
+    - user: can successfully browser the site by gender, category or price and make a selection to buy
+    - user: can successfully view each product details to identify price, read other users reviews on the product,select a product size or quantity
+    - user : can quickly use the search icon to search for products they are intrested in
+    - user : can easily access products on sale and keep track of their total shopping bag cost throughout the site i. shopping bag:
+    - user: can easily access their shopping bag items, which conveniently contains all their selected products, which can be added,subtracted or removed from the shopping bag and the cost recalculates accordingly.
+    - Easy and secure stripe checkout process with no hassle.
+    - user: upon successful checkout: user gets redirected to success page with order details and a confirmation email is also sent to the user with their order details.
 ---
 ## **Testing**
 - **Supported browsers and screens**
@@ -375,150 +405,13 @@ Desktop view | Mobile view
 
   - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
-- **Register.html**
-  - **Test 1 - Register - Test Passed ✓**
-
-    - **Step 1** - Click the register button on the navbar for desktop view devices or side navbar for tablet or mobile view devices.
-    - **Step 2** - Put in a first name(2 character minimum).
-
-    - **Step 3** - Put in a last name (also 2 character minimum).
-    - **Step 4** - Put in a username which is unique (5 character minimum).
-    - **Step 5** - Put in a password (also 5 character minimum).
-    - **Step 6** - Click 'Register' button.
-    - **Step 7** - Be redirected to 'get_recipes.html' with a flash message, welcoming the user.
-
-  - **Test 2 - Register with a username which already exists - Test Passed ✓**
-
-    - **Step 1** - While on 'register.html', enter username 'admin' or any username existing in our data base.
-
-    - **Step 2** - Enter password (5 character minimum).
-    - **Step 3** - Click the 'Register' button.
-    - **Step 4** - Be presented by flash message containing "Username already exists!".
-  - **Test 3 - Register with less than 2 Alphabet for first and last name and less than 5 characters for username - Test Passed ✓**
-    - **step 1** - While on 'register.html', enter first or last name with numbers or less than 2 alphabet is shown invalid.
-
-    - **Step 2** - While on 'register.html', enter username or password with less than 5 charecters is shown invalid.
-    - **Step 3** - As the 'Required' and minlength=2 for first and last name, and minlength=5 for username and password has been added, the form will not be submitted.
-    - **Step 4** - Changing first and last name to more than 1 alphabet, and username and password to more than 4 charecters will submit the form.
-    - **step 5** - All the tooltips are shown an the page by hovering over the input icon.
-
-  Desktop view | Mobile view
-  - | -
-  ![register All users desktop](static/images/desktopview-all-users.png) | ![register All users mobile](static/images/mobile-view-all-users.png)
-  ---
-- **Login.html**
-
-  - **Test 1 - Log In - Test Passed ✓**
-
-    - **Step 1** - Enter your Username.
-
-    - **Step 2** - Enter your Password.
-    - **Step 3** - Click the 'log in' buttton.
-    - **Step 4** - Be redirected to 'get_recipes.html' with flash message containing "Welcome, [ user ]".
-
-  - **Test 2 - Log in attempt with incorrect info - Test Passed ✓**
-
-    - **Step 1** - Enter credentials that are incorrect.
-
-    - **Step 2** - Click the 'log in' button.
-    - **Step 3** - Be redirected to the log in page with a flash message containing "Incorrect Username and/or Password".
-
-  Desktop view | Mobile view
-  - | -
-  ![log in All users desktop](static/images/login-desktop-all-users.png) | ![log in All users mobile](static/images/login-mobile-all-users.png)
-
-- **Adding a New Recipe**
-
-  - **Test 1 - Adding a New Recipe - Test Passed ✓**
-
-    - **Step 1** - Log In.
-
-    - **Step 2** - Be redirected to get_recipes.
-    - **Step 3** - Click the button labeled 'Add Recipe'.
-    - **Step 4** - Be redirected to the form for user to fill in.
-    - **Step 5** - Form is tried to be submitted with empty fields for required fields and faild; user is notified of missing items.
-    - **Step 6** - There is 1 multichoice dropdown field on the form, which is called marks. This field is not required and the form still successfully post if this field is empty.
-    - **Step 7** - There is a cancel button provided on the bottom of the form. If the user don't want to add the recipe. he/she can click on this button and get redirected to their profile page.
-    - **Step 8** - Once the form is filled out to the satisfaction of the constraints and the 'Add Recipe!' button is clicked user will be redirected to 'profile.html' where the user can see their newly added recipe located alphabeticly in the collapsible dropdown list. User also be notified that the new recipe added by flash notifications.
-    - **Step 9** - Check the contents of the newly added recipe right away by clicking on that recipe in the dropdown list.
-
-  Desktop view | Mobile view
-  - | -
-  ![add recipe admin desktop view](static/images/add-desktop-admin.png) Admin views: | ![add recipe admin mobile view](static/images/add-mobile-admin.png)
-    **note:** same for all users, except that in the admin page there is manage Catogory and manage mak buttons visable in the navbar.
-
-  - **Test 2 - Avoids empty strings in out textarea fields - Test Passed ✓**
-
-    - **Step 1** - Fill in all the required feilds in "Add Recipe" form.
-    - **Step 2** - Add an empty line to the ingredients or cooking steps textarea.
-    - **Step 3** - click on "Add Recipe" button.
-    - **Step 4** - Empty lines will be removed when showing the recipe in the "All Recipes" or "Profile" page.
-
-- **Editing/Deleting a Recipe**
-  - **Test 1 - Editing a Recipe - Test Passed ✓**
-
-    - **Step 1** - Navigate to profile or All recdipe page.
-    - **Step 2** - Click the button labeled "EDIT" for the desired recipe.
-    - **Step 3** - Navitgate to the part of the recipe that the user wishes to edit.
-    - **Step 4** - After editing the desired part, click on the blue button, "EDIT RECIPE" at the bottom of the page to edit the recipe.
-    - **Step 5** - Be redirected to profile.html and a flash message, notifing the user that the recipe is updated.
-    - **Step 6** - Should the user wish to cancel the action, they can click on the cancel button located on bottom left.
-    - **Step 7** - If user clicks the cancel button he/she will be redirected to profile page and all changes will be disregarded.
-
-  Desktop view | Mobile view
-  - | -
-  ![edit form admin desktop view](static/images/edit-desktop-admin.png) | ![edit form admin mobile view](static/images/edit-mobile-admin.png)
----
-  - **Test 2 - Avoid duplication in multi choice dropdown input field - Test Passed ✓**
-    - **step 1** - In edit form in marks field user can just add one of each choices to the list.
-
-  - **Test 3 - Deleting a Recipe for registered users - Test Passed ✓**
-    - **Step 1** - Navigate to All Recipes, or profile page.
-    - **Step 2** - Click the button labeled "DELETE". In mobile phone view this button can be found on top of the recipe collapsible body but in desktop view it is placed in the head of the collapsible.
-    - **Step 3** - User gets a message if they are sure to delete this recipe.
-    - **step 4** - If confirm the recipe deletes and user redirects to their profile page but if press cancel, recipe stays unchanged and the user will be redirected to their profile page. Admin user will stay in any page that they deleted the recipe from.
-
-  Desktop view | Mobile view
-  - | -
-  ![profile admin desktop view](static/images/profile-desktop-view.png) | ![profile admin mobile view](static/images/profile-mobile-view.png)
----
-  - **Test 2 - Deleting a Recipe for Admin - Test Passed ✓**
-    - **Step 1** - Navigate to All Recipes, or profile page.
-    - **Step 2** - Click the button labeled "DELETE", in the head of collapsible, for each rcipe.
-    - **Step 3** - User gets a message if they are sure to delete this recipe.
-    - **step 4** - If confirm the recipe deletes and user redirects to their profile page but if press cancel, recipe stays unchanged and the user will be redirected to their profile page. Admin user will stay in any page that they deleted the recipe from.
-
-  Desktop view | Mobile view
-  - | -
-  ![All recipes Admin desktop view](static/images/desktop-view-admin.png) | ![all recipes Admin mobile view](static/images/mobile-view-admin.png)
-
-- ### **Manage categories and marks pages( only admin accessibility )**
-
-  - **Test 1 - Add, edit or delete categories or marks - Test Passed ✓**
-
-    - **step 1** - Click on the Manage Categries to manage the categories or Manage Marks to manage the marks.
-    - **step 2** - Admin can sees all the categories in manage categories and all the marks in manage marks in a seperate card with an option of delete or edit and an Add button on top of the page to add a new category or mark.
-    - **step 3** - By clicking on the add button, a one input field form, called add category or add mark opens regardingly.
-    - **step 4** - Admin can write the desired name for the new category/mark and press the Add category or Add mark at the bottom of the form.
-    - **step 5** - Admin is provided also with a cancel button in both pages if he/she decided to not add any new category or mark.
-  - **step 6** - Pressing this button bring up a note if he/she is sure not to add any category or mark.
-    - **step 7** - if press ok, admin redirects to the get_categories if in add category form, or get_marks if in add marks form.
-    - **step 8** - if press cancel, no category or mark will be added and user will be redirected to "Add Catogory" or "Add mark" regarding to which one that he/she was adding.
-
   Desktop view | Mobile view
   - | -
   ![manage categories desktop](static/images/manage-categories-desktop.png) | ![manage categories mobile](static/images/manage-categories-mobile.png)
   ![manage marks desktop](static/images/manage-marks-desktop.png) | ![manage marks mobile](static/images/manage-marks-mobile.png)
   ![add categories desktop](static/images/add-category-desktop.png) | ![add categories mobile](static/images/add-category-mobile.png)
   ![add marks desktop](static/images/add-mark-desktop.png) | ![add marks mobile](static/images/add-mark-mobile.png)
-  ---
-- ### **Log Out**
 
-  - **Test 1 - Log out - Test Passed ✓**
-    - **step 1** - Click on the "log Out" button in the navbar to log out.
-    - **step 2** - Pressing this button bring up a note: "Are you sure you want to log out?".
-    - **step 3** - if press ok user will log out.
-    - **step 4** - if press cancel, the user would not log out.
 ---
 ## **Fixed Issues**
 
@@ -714,3 +607,12 @@ https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django
 
 to make the rating and review models
 https://www.codementor.io/@jadianes/get-started-with-django-building-recommendation-review-app-du107yb1a
+
+radio star input:
+https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1
+
+known bugs:
+when clicking on rating star buttons the page jumps up to the top.
+
+future features:
+confirmation toast message for deleting a product.

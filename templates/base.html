@@ -17,10 +17,7 @@
     {% block corecss %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -32,11 +29,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
@@ -49,19 +46,16 @@
 </head>
 
 <body>
-    <div class="page-container d-flex flex-column d-flex justify-content-between">
-        <!-- header -->
-        <div>
+    <div id="page-container">
+        <div id="content-wrap">
             <header class="container-fluid fixed-top">
-                <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
-                    <!--  navbar home -->
-                    <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
+                <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                         <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                            <h2 class="logo-font text-black my-0"><strong>Tadig </strong>Restaurant</h2>
+                            <h2 class="logo-font text-black my-0"><strong>Tadig</strong> Restaurant</h2>
                         </a>
                     </div>
-                    <!-- navbar search -->
-                    <div class="col-12 col-md-4 my-auto py-1 py-md-0">
+                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                         <form method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0" type="text" name="q"
@@ -69,7 +63,7 @@
                                 <div class="input-group-append">
                                     <button class="form-control btn btn-black border border-black rounded-0"
                                         type="submit">
-                                        <span class="icon ">
+                                        <span class="icon">
                                             <i class="fas fa-search"></i>
                                         </span>
                                     </button>
@@ -77,9 +71,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-12 col-md-4 my-auto py-1 py-md-0">
-                        <ul class="list-inline list-unstyled text-center text-md-right my-0">
-                            <!-- navbar account -->
+                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                             <li class="list-inline-item dropdown">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -91,7 +84,7 @@
                                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                     {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -101,7 +94,6 @@
                                     {% endif %}
                                 </div>
                             </li>
-                            <!-- navbar bag -->
                             <li class="list-inline-item">
                                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                     href="{% url 'view_bag' %}">
@@ -120,10 +112,9 @@
                         </ul>
                     </div>
                 </div>
-                <!-- mobile and main nav includes -->
                 <div class="row bg-white">
-                    <nav class="navbar navbar-expand-md navbar-light w-100 py-md-3">
-                        <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#main-nav"
+                    <nav class="navbar navbar-expand-lg navbar-light w-100">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -131,46 +122,45 @@
                         {% include 'includes/main-nav.html' %}
                     </nav>
                 </div>
-                <!-- delivery banner -->
-                <div id="delivery-banner" class="row text-center px-0">
+                <div id="delivery-banner" class="row text-center">
                     <div class="col bg-black text-white">
-                        <p class="mx-0 pt-3">Free delivery on orders over {{ free_delivery_threshold }} Kr!</p>
+                        <h4 class="logo-font my-1">Free delivery on orders over {{ free_delivery_threshold }} kr!</h4>
                     </div>
                 </div>
             </header>
-        </div>
 
-        {% if messages %}
-        <!-- message-container -->
+            {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
-                    {% with message.level as level %}
-                        {% if level == 40 %}
-                            {% include 'includes/toasts/toast_error.html' %}
-                        {% elif level == 30 %}
-                            {% include 'includes/toasts/toast_warning.html' %}
-                        {% elif level == 25 %}
-                            {% include 'includes/toasts/toast_success.html' %}
-                        {% else %}
-                            {% include 'includes/toasts/toast_info.html' %}
-                        {% endif %}
-                    {% endwith %}
+                {% with message.level as level %}
+                {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+                {% endwith %}
                 {% endfor %}
             </div>
-        {% endif %}
+            {% endif %}
 
-        <div class="py-3">
-            {% block content %}
+            {% block page_header %}
             {% endblock %}
-        </div>
 
-        <div>
-            <footer id="footer" class="bg-white container-fluid mt-1">
-                <!-- footer -->
-                {% include 'includes/footer.html' %}
-            </footer>
+            <div class="d-flex align-items-stretch">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
+        <footer id="footer" class="bg-white container-fluid mt-1">
+            <!-- footer -->
+            {% include 'includes/footer.html' %}
+        </footer>
     </div>
+
 
     {% block postloadjs %}
     <script type="text/javascript">
