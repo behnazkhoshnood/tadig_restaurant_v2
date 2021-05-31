@@ -49,7 +49,7 @@
             <!--                                  carousel item active -->
             {% for product in products %}
                 {% if forloop.first %}
-                    <div class="carousel-item active data-interval=" 500">
+                    <div class="carousel-item active" data-interval="500">
                         {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" />
