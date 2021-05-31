@@ -15,7 +15,7 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
+        <div class="col text-center mt-3 mt-md-5">
             <h5 class="logo-font font-weight-bold text-black">Menu</h5>
             {% for c in current_categories %}
                 <span
@@ -58,7 +58,7 @@
             <hr>
             <div class="row">
                 {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card-container col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">

@@ -210,8 +210,8 @@ Desktop view | Mobile view
 
     - The home page contains the eyecatching carousel slide with the colorful images that makes the perpose of the website clear from the begining.
     - Breaf information about the restaurant in provided to the left side of the carousel in medium and larg screens and in smaller screens, this information is placed ontop of the carousel.
-    - Carousel is showing all the product images. By clicking on each image user is directed to product details page, which shoes that product, all the information related to it, and can add it to the back right away.
-    - Under the about note and carousel, all the reviews that have been added for any product is displayed with their name, avrage rating and number of rates.
+    - Carousel is showing all the product images. By clicking on each image user is directed to product details page, which showes that product, all the information related to it, and can add it to the back right away.
+    - Under the about note and carousel, all the reviews that have been added for any product is displayed with their name, avarege rating and number of rates.
 ---
   - **Products Pages**
 
@@ -228,7 +228,7 @@ Desktop view | Mobile view
 ---
   - **Product Details Page**
 
-    - This page shows the product name, price, rating,image and description.
+    - This page shows the product name, price, avarege rating,image and description.
     - A form to add this product to the shopping bag is located under the product price.
     - By choosing the amount, and then clicking on Add to Bag, user will see a toast messege on top of the page that shows the product information in their bag.
     - If the grand total of the products value is lower than the delivery treshold, user will be notified the amount that they should spend more in order to get free delivery in the toast messege.
@@ -256,7 +256,7 @@ Desktop view | Mobile view
     - by filling this form and clicking on the *Compelete Order* button, user can securely purchase from the site with the help of stripe elements.
     - On x-small screens order summary is placed on top of the order form and under the form there is the *Compelete Order* button and *Adjust Bag*.
     - Product images is not seenable in the x-small views to improve the page layout.
-    - On small and larger screens the order summary and form placed side by side and the compelete order and adjust bag is at the bottom of the page.
+    - On small and larger screens the order summary and form placed side by side and the compelete order and adjust bag buttons are at the bottom of the page.
 ---
   - **Checkout Success Page**
 
@@ -304,20 +304,19 @@ Desktop view | Mobile view
     - If a registered user puts their infomation in incorrectly when loging in, they will be notified by a messages - "The username and/or password you specified are not correct.".
     - If a user attempts to login several time unsuccfully, they will be notified by a message - "Too many failed login attempts. Try again later."
     - there is a home button under the page that redirects the user to home page if they don't want to login.
-    - When a user has successfully logged in, they will be redirected to home page with a toast messege.
+    - When a user has successfully logged in, they will be redirected to home page with a success notification toast messege.
 
   - **Log Out**
-    - user is provided by the option to log out when clicking on the button provided on the navbar.
+    - user is provided by the option to log out when clicking on the button provided on the account dropdown button in the top navbar.
     - By clicking on "Log Out" button user get a message to check if they really want to log out.
     - On log out user redirects to log in page and getting a flash message: "You have been logged out!"
 ---
 - **Features Left to Implement**
-   - Adding a like/dislike button for each Recipe and sort the recipes from the most to least favorites.
-   - Adding the liked recipes in a new section in profile page.
-   - Make the design of the site more appealing and more food friendly.
-   - Adding a footer with social media sites for the app.
-   - Seperating the recipes in different sections for each category.
-   - More secure pathway for the admin.
+   - adding more responsive design for my image fields.
+   - Adding sort products based on the avarege rating.
+   - Adding the like/dislike function in a new section in profile page.
+   - Adding social media sites for the app.
+   - Adding food delivery time system for the app.
 ---
 ## **Technologies**
 - **Front-End**
@@ -327,8 +326,8 @@ Desktop view | Mobile view
     - All HTML files are located within the 'templates' directory.
   - [CSS](https://en.wikipedia.org/wiki/CSS)
     - CSS has been used to style and customise the content of this project.
-  - [Materialize](https://materializecss.com/)
-    - This is a framework that I have used to simplify CSS classes, features that have been used and modified include the navbar, responsive design classes, and colors for backgrounds and text.
+  - [Bootstrap](https://getbootstrap.com/)
+    - This is a framework that I have used for CSS classes, features that have been used and modified include the navbar, responsive design classes, and most of the colors.
   - [JQuery](https://en.wikipedia.org/wiki/JQuery)
     - JQuery has been used to give the site its functionality as well as making DOM manipulation simpler.
 
