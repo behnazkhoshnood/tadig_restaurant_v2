@@ -7,7 +7,6 @@
 This website is made for restaurants. We named our restaurant "Tadig restaurant" which is a made-up Persian restaurant.
 It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential customers.
 
-![Tadig Restaurant]()
 ## **Contents** ##
 * UX
     * [Project Summary](#project-summary)
@@ -365,14 +364,6 @@ Desktop view | Mobile view
     - Gunicorn server was used for the deployed app on heroku [Gunicorn](https://gunicorn.org/).
     - Stripe payment service was used for product payments [Stripe](https://stripe.com/).
 
-- **Deployment**
-
-    - Heroku for hosting the application [Heroku](https://dashboard.heroku.com/apps).
-    - I used gitpod's development environment to write the code for this project [Gitpod](https://www.gitpod.io/).
-    - I used github for its repo and version control of the project [Github](https://github.com/).
-    - I used google smtp email to send emails to users [google](https://support.google.com/mail/answer/7126229?hl=en).
-    - I used Chrome DevTools for ressponssive design.
-
 - **validators**
   - The validators that have been used on the project are as followed:
     - [HTML Validator](https://validator.w3.org/nu/) - 2 warnning due to Meta and head element not found
@@ -551,14 +542,14 @@ Else we will be in our local environment and so use the default database.
 26. Create a Procfile at the same level as the project. 
 27. Enter the following code into the Procfile to tell Heroku to create a web dyno that will run gunicorn and serve tadig:
 ```
-    web: gunicorn tadig-testaurant.wsgi:application
+    web: gunicorn tadig-restaurant.wsgi:application
 ```
 28. Temporarily disable collect static – to do this:
 *   login via the terminal: heroku login –i.
 *   Enter heroku email and password.
 *   Enter the following in the terminal:
 ```
-    heroku config:set DISABLE_COLLECTSTATIC=1 --app mr-smyth-tadig-restaurant
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app tadig-restaurant
 ```
 In `Settings.py`:   
 
@@ -576,7 +567,7 @@ In `The Terminal`:
 *   git commit –m “**your-message**”
 *   git push
 *   Now initialize heroku git remote (because we created our app on the website rather than with the CLI): 
-*       heroku git:remote -a mr-smyth-tadig-restaurant
+*       heroku git:remote -a tadig-restaurant
 *   Then push to heroku : git push heroku master
 
 In `The Heroku`:
