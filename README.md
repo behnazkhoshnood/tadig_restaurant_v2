@@ -335,6 +335,8 @@ Desktop view | Mobile view
    - Adding social media sites for the app.
    - Adding food delivery time system for the app.
    - Additional payment methods like paypal or applepay
+   - Fix the rating template form.
+   - better confirmation note for delete product.
 ---
 ## **Technologies**
 - **Front-End**
@@ -404,166 +406,262 @@ Desktop view | Mobile view
   - A large amount of testing was done to ensure that all pages were linking correctly.
 
   - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
-
-  Desktop view | Mobile view
-  - | -
-  ![manage categories desktop](static/images/manage-categories-desktop.png) | ![manage categories mobile](static/images/manage-categories-mobile.png)
-  ![manage marks desktop](static/images/manage-marks-desktop.png) | ![manage marks mobile](static/images/manage-marks-mobile.png)
-  ![add categories desktop](static/images/add-category-desktop.png) | ![add categories mobile](static/images/add-category-mobile.png)
-  ![add marks desktop](static/images/add-mark-desktop.png) | ![add marks mobile](static/images/add-mark-mobile.png)
-
 ---
 ## **Fixed Issues**
 
-- **Issue 1** - When a user were adding a recipe with empty lines in multi-line textarea inputs, empty lines were shown in these areas.
-  - I fixed this issue by adding the above script.js file to trim the empty lines.
+- **Issue 1** 
+  - By clicking on the stars in that rating inputs, form was jumping on top of the page.
+    I fixed this problem by changing the code below:
 
-```$('li, .edit-delete-div').filter(function () {
-        return $(this).text().trim() === '';}).remove();
-```
-- **Issue 2** - When editing a recipe user could add the marks that they have chosen for this recipe from before, again, in the dropdown list.
-  - I fixed this issue by adding the above edit.js file code to avoid duplication.
-```$(document).ready(function () {
-var marks = document.getElementById("mark");
+        .rating:not(:checked) > input { 
+            position:absolute; 
+            top:-9999px;
+            clip:rect(0,0,0,0); 
+        }
 
-[].slice.call(marks.options)
-  .map(function(a){
-    if(this[a.value]){ 
-      marks.removeChild(a); 
-    } else { 
-      this[a.value]=1; 
-    } 
-  },{});
-});
-```
-- **Issue 3** - Users could open unauthorized pages if providing it's url route path in the browser.
+    to
 
-  - I fixed this problem with adding error handlers in my python and using relative error conditions in the functions that needed like manage, add, edit and delete categories and mark pages, users profile page, add, edit and delete buttons. These codes are provided with docstrings in my [app.py](app.py) in more details.
-```
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+        .rating:not(:checked) > input { 
+        display: none; 
+        }
 
 
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template('500.html'), 500
 
+- **Issue 2**
+  - when rendering the divisibilityby in products pages the last div with <hr> was showing even if there wasn't any other product in the list.
+    I fixed this issue by adding this code in css:
 
-@app.errorhandler(403)
-def page_forbidden(e):
-    return render_template('403.html'), 500
-```
-- **Issue 4** - The title areas for category and marks where changing height depending on their html note.
-    - I fixed this issue with adding the code below to my script.js file
-```
-    var manageTitleHight = 0;
+        .divisibleby:last-child{
+            display: none;
 
-$(".manage-title").each(function(){
-   if ($(this).height() > manageTitleHight) { manageTitleHight = $(this).height(); }
-});
+- **Issue 3** 
+  - Some of the Images when blurry.
+  - I fixed this issue by using this code to my img css:
 
-$(".manage-title").height(manageTitleHight);
-   // to avoid copying the link of the delete and edit btns
-$(".delete-btn, .edit-btn").contextmenu(function () { return false; });
-});
-```
-- **Issue 5** - By putting some recipe informations with both edit and delete buttons in the recipes collapsible header, mas not a good choice for smaller views.
-  - I fixed that issue by using some materialize classes to replace dome of these info in the body of the collapsible in smaller views.
-```
-This class is in the collapsible header and hide this buttton in small views.
- <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
- class="btn-small delete-btn hide-on-small-only">Delete</a>
+        image-rendering: -webkit-optimize-contrast;
 
-This class is in the collapsible body and hide this buttton in medium and large views.
- <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-class="btn-small delete-btn hide-on-med-and-up -align">Delete Recipe</a>
-```
+- **Issue 4**
+  - I had some migration issues that have been fixed by deleting all migrations in all apps exept the __int__ and migrate them again.
+
+- **Issue 5** 
+  - Bag was showing the delivery fee even when nothing in shoping bag.
+  - I fixed this issue adding this code:
+
+        if (
+            self.order_total < settings.FREE_DELIVERY_THRESHOLD and
+            self.order_total != 0):
+            self.delivery_cost = settings.STANDARD_DELIVERY_FEE
+        else:
+            self.delivery_cost = 0
+
+- ** Known Issues **
+  - the social icons for twiter and istagram is not shown in my index page!
+  - the review rating form stoped working and just adds one star to my products after deleting the migrations.
+  - stripe payment-intent-success gives error 500
+  - in some views the toast notifications are blurry
+
 ---
-## **Deployment**
-This project is stored in a GitHub repository and hosted on Heroku.
-### **How to deploy to Github**
-1. Click [here](https://github.com/behnazkhoshnood/good-cook-ms3") to get to the projects repository.
+## Deployment
 
-2. Click on 'Settings' to the far right in navigation menu below your repository name.
+### Steps to deploy eHand to Heroku using Postgres
 
-3. Scroll down to 'GitHub Pages' and select 'master branch' as the source.
+#### In Heroku:
+1. Setup and account and log in to Heroku
+2. On the apps page select `NEW`.
+3. Give the app a name and select the closest region – then click `Create App`.
+4. Click on Resources tab to provision a new Postgres database for it.
+5. Search in the Addons search bar for `Heroku Postgres`.
+6. Select your Development plan (in my case - Hobby Dev Plan).
 
-4. Click save.
+#### In GitPod or IDE:
+7. To use postgres open project in GitPod and install:
+```
+*   pip3 install dj_database_url
+*   pip3 install psycopg2-binary
+*   Update requirements: pip3 freeze > requirements.txt
+```
 
-5. The link to the site hosted on GitHub Pages should appear at the top of the section.
+#### In Django - setup new database:
+In `Settings.py`:   
 
-### **How to clone this repository in order to run the code locally on your machine**
-1. Click [here](https://github.com/behnazkhoshnood/good-cook-ms3") to get to the projects repository.
+8. Make sure import os is there.
+9. Add: `import dj_database_url`.
+10. Goto Database settings and comment out existing database setting and add below example to point the database at the new Postgres database.
+```
+example:
+    DATABASES = {
+        'default': dj_database_url.parse( # ***paste in the database URL from Heroku***)
+    }
+```
+11. Run Migrations. `Migrations have now been made to the Postgres Database.`
+12. After a Successful Migration goto memberships.models.
 
-2. Click "Clone or Download".
+---
+***Important:***
 
-3. Click the "copy" icon.
+13. Comment out the `post_save_create_memberships` signal - ***this is because creating a user will trigger this signal to create a free membership. 
+But as there will be no packages setup within our new database - we must stop this signal before we create our superuser.***   
+---
+14. Now we can create a superuser -: `python3 manage.py createsuperuser`.
+15. Runserver and login as superuser to the admin page.
+16. Goto Packages in the memberships section.
+17. Click add package to add each of the following 2 packages
+*   package type: free.
+*   package price: 0.
+*   stripe plan id: (price_id) get this from your stripe - Products - Free Plan - Pricing - API id.   
 
-4. Open Git Bash in your local IDE.
+***and***  
+*   package type: premium.
+*   package price: 5.
+*   stripe plan id: (price_id) get this from your stripe - Products - Premium Plan - Pricing - API id.
+18. Save and logout of admin.
+19. Stop the server.
+20. Uncomment the signal from step 13.
+21. Restart the server and check admin - the superuser will now be linked to a free package type and have a stripe customer id.
+22. Goto Settings -  Database settings - remove the Postgres database URL.
+23.  Create an if/else code block to check if the os.environ variable is defined. 
+if it is defined that will mean we are on Heroku so we will use the Postgres database.
+Else we will be in our local environment and so use the default database.
+```
+    Example: 
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+```
 
-5. Change your current working directory to where you want the cloned directory to be made.
+24. In the Terminal install gunicorn as our webserver: `pip3 install gunicorn`
+25. Freeze requirements. `Pip3 freeze > requirements.txt`
+26. Create a Procfile at the same level as the project. 
+27. Enter the following code into the Procfile to tell Heroku to create a web dyno that will run gunicorn and serve eHand:
+```
+    web: gunicorn ehand.wsgi:application
+```
+28. Temporarily disable collect static – to do this:
+*   login via the terminal: heroku login –i.
+*   Enter heroku email and password.
+*   Enter the following in the terminal:
+```
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app mr-smyth-ehand
+```
+In `Settings.py`:   
 
-6. Type `$ git clone` and then paste the URL you copied earlier.
+29. Add the hostname of the Heroku app – to ALLOWED_HOSTS (also include localhost):
+```
+    ALLOWED_HOSTS = ['tadig-restaurant.herokuapp.com', 'localhost'].
+```
+30. Ensure all .env variables such as the Django and stripe secret keys remain private. Also, make sure they are set up inside Heroku's config vars.
 
-   `git clone https://github.com/USERNAME/REPOSITORY`
-7. When you press enter your local clone will be ready.
-### **How to clone this repository in order to run the code locally on your machine**
+In `The Terminal`:
 
-1. Created a new application using the Heroku dashboard.
+31. Deploy to Heroku:
+*   Add and push to GitHub
+*   git add .
+*   git commit –m “**your-message**”
+*   git push
+*   Now initialize heroku git remote (because we created our app on the website rather than with the CLI): 
+*       heroku git:remote -a mr-smyth-ehand
+*   Then push to heroku : git push heroku master
 
-2. Go to settings tab, click on 'reveal config vars' and add config vars such as IP (0.0.0.0), PORT (5000), MongoDB Name, MongoDB URI (URL with DB name and password).
+In `The Heroku`:
 
-3. Install Heroku via the console using 'npm install -g Heroku'.
+32. Setup automatic deployment in Heroku:
+*   Goto the deploy tab
+*   Set deployment method to GitHub
+*   Search for ehand
+*   Click connect
+*   Scroll down and click Enable Automatic Deploys
 
-4. Log into Heroku via the console using 'heroku login' and follow the on screen instructions to log in.
+ehand is now deployed to Heroku
 
-5. Create a requirements.txt via the console using 'pip3 freeze > requirements.txt'.
+[<< ***Back to contents***](#table-of-contents)
 
-6. Create a Procfile via the console using 'echo web: python app.py > Procfile'.
+## Local Deployment
 
-7. Connect GitHub to Heroku via the console using 'heroku git:remote a creative-hub'
+**Before starting, some prerequisites:**
 
-8. Commit all files in your project via the console using 'git add .' and 'git commit -m "Message"'.
+*   Before starting you should have an IDE set up - [Visual Studio Code](https://code.visualstudio.com/). - for example.
+*   Its advisable to have a virtual environment setup. Pythons own can be used : 
 
-9. Deploy your project to Heroku via the consol using 'git push heroku master'.
+```
+    python3 -m .venv venv
+    .venv\Scripts\activate
+```
 
-### **Running the application locally using Gitpod**
+*   Have **at least** the following installed:   
+    *   Python3 - to run the application.
+    *   Pip - to install any requirements.
+    *   GIT - required for version control.
 
-1. Clone the repository as outlined above and upload it to GitPod.
 
-2. Install the necessary libraries specified in the requirements.txt.
+The above example displays an env for a local purpose only.
 
-3. Set your environment variables by creating and adding them into a env.py file.
+5.  Install all requirements for the application by using this command:
+```
+    sudo -H pip3 -r requirements.txt
+```
+6.  In the IDE terminal, use the following command to start eHand:
+```
+    python manage.py runserver
+```
 
-4. Create a .gitignore file in the root directory and add the env.py file to avoid it being pushed to GitHub.
+eHand should now be running locally on localhost port 8000. (http://127.0.0.1:8000)
 
-5. Import the env.py file into the app.py file.
+7.  After running Django initially, it will create the local database **db.SQLite3**.
+8.  Make all migrations:
+```
+python3 manage.py makemigrations --dry-run
+python3 manage.py makemigrations
+python3 manage.py migrate --plan
+python3 manage.py migrate
+```
 
-6. Run the application.
+9.  Create a superuser:
+```
+python3 manage.py createsuperuser
+***Enter username, email and password***
+```
+
+You should now have a local copy of eHand.
+
+---  
 
 ## **Credits**
 - **Content and Media**
 
   The content and images used in this site were obtained from links below:
-  Images | Content
-  - | - 
-  [Adas polo image](https://www.saveur.com/resizer/Wnizk_4UQkqFMI5XmMydgOXf4J8=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/L2N233EB3VWQE43J7IJHYBS3Z4.jpg) |[Adas polo content](https://almondandthehazelnut.com/recipes/adas-polo/)
-  [Chicken enchilada dip image](https://www.familyfreshmeals.com/wp-content/uploads/2014/06/Cheesy-Chicken-Enchilada-Dip-BEAUTY_1-768x512.jpg) | [Chicken enchilada dip content](https://www.familyfreshmeals.com/2014/06/cheesy-chicken-enchilada-dip.html)
-  [Chicken tikka masala image](https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-chicken-tikka-masala-jpg-1526059261.jpg) | [Chicken tikka masala content](https://www.topochicousa.net/recipe-blog/2020/9/2/chicken-tikka-masala)
-  [Khoreshte ghorme sabzi image](https://thecaspianchef.com/wp-content/uploads/2019/12/ghormehsabzi3.jpg) | content added by me
-  [Mojito image](https://kitchenswagger.com/wp-content/uploads/2020/07/mojito-recipe3.jpg) | [Mojito content](https://www.allrecipes.com/recipe/147363/the-real-mojito/)
-  [Pepper & walnut hummus image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/houmous_0-a0c19df.jpg?quality=90&webp=true&resize=375,341) | [Pepper & walnut hummus content](https://www.bbcgoodfood.com/recipes/pepper-walnut-houmous-veggie-dippers) | 
+
+| Starter page | Main page | Desserst page | Drink page |
+|:---------------|:---------------|:---------------|:---------------|
+| [Kashke bademjan](https://persianfoodtours.com/wp-content/uploads/2019/10/Kashk-e-Bademjan.jpg) | [Baghali polo](https://www.behesht.co.ukimages/behesht/foods/maincourse/baghali-polo.jpg) | [Baklava](https://encrypted-tbn0.gstatic.comimages?q=tbn%3AANd9GcSyftLKhAJzlAmscp5fLjIjBYzrP-Vy1_7xsl9SHiQAFTu8vCeM&usqp=CAU) | [Doogh](https://www.thedeliciouscrescent.com/wp-content/uploads/2020/03/Doogh_5.jpg) |
+| [Mirza ghasemi](https://claudiacanu.com/wp-content/uploads/2018/07/Mirza-Ghasemi-eggplant-sauce.jpg) | [Zereshk polo ba morgh](https://yummynotes.net/wp-content/uploads/2020/04/Zereshk-Polo.jpg) <br> Info : [Persian Mama](https://persianmama.com/zereshk-polo-ba-morgh/) | [Faloodeh shirazi](https://i.pinimg.com/originals/1b/d9/12/1bd9124c6ffb8cdfbc0e5e2c536dd2b1.jpg) | [Araghe bidmeshek](https://en.snapptrip.com/blog/wp-content/uploads/2017/05/Sharbat-e-Khakshi-1024x805.jpg) <br> Info : [Diba](https://dibaonline.de/NIK-Aragh-Bidmeshk-Willow-blossoms-430ml) |
+| [Do piaze alo](https://3.bp.blogspot.com/-psIKWaAbLDc/Wt4mpNShYGI/AAAAAAAAKzM/Z4Rb5Bj-7Mka3VhIoJb6NAtpSwbJ0pQEgCLcBGAs/s1600/DoPiazeh_TurmericSaffron.JPG) | [Khoreshte gheyme bademjan](https://igotitfrommymaman.com/wp-content/uploads/2020/01/Khoreshe-Gheymeh-11-scaled.jpg) <br> Info : [Persian food tours](http://www.persianfoodtours.com/khoresht-gheymeh-bademjan-yellow-split-peas-stew/) | [Bastani sonnati](https://encrypted-tbn0.gstatic.comimages?q=tbn%3AANd9GcSgL85WQFb-72OdGFDShM4gpfIt5z1tGWhmIha_Tv8XBehXtcKE&usqp=CAU) | [Gol gav zaboon](https://images-na.ssl-images-amazon.comimages/I/61-KwamytGL._A.jpg) <br> Info : [The persian pot](http://www.thepersianpot.com/recipe/gol-gav-zaban-borage-tea/) |
+| [Salad olvie](https://i.pinimg.com/originals/39/37/be/3937be2fea7c0c2fb2c9987b7a63bc4b.jpg) <br> Info : [Persian mama](https://persianmama.com/salad-olivieh-persian-chicken-salad/) | [Khoreshte ghorme Sabzi](https://www.196flavors.com/wp-content/uploads/2017/03/ghormeh-sabzi-3.jpg) | [Noon khamei](https://i1.wp.com/www.littleswissbaker.com/wp-content/uploads/2016/04/DSC_1897v2.jpg?w=680&ssl=1) | [Mojito](https://alldayidreamaboutfood.com/wp-content/uploads/2013/05/Honest-Mojitos-3.jpg) |
+| [Noon panir sabzi](https://cdn.shortpixel.ai/spai/q_lossless+ret_img/https://3nkq72bhhp51kv1h2do55o5r-wpengine.netdna-ssl.com/wp-content/uploads/2.3_NAT_American-Herbal-Cookbook_NEW-Wordpress.jpg) <br> Info : [Clean plates](https://www.cleanplates.com/eat/recipes-eat/panir-sabzi/) | [Khoreshte fesenjoon ba morgh](https://3.bp.blogspot.com/-RaW9e0WBdAA/T_7DZs4o5sI/AAAAAAAACxs/xTdy-dEqpVQ/s1600/Fesenjoon-TS.jpg) | [Ranginak](https://4.bp.blogspot.com/-LBlaXdUqrYo/Tba1gvjYyHI/AAAAAAAACvs/l1bm02mG7-s/s1600/227458_206016996087508_100000376264948_606452_2793162_n.jpg) | [Berry juice](https://5.imimg.com/data5/LY/KU/OD/GLADMIN-7061725/berryjuice-500x500.jpg) |
+| **More Drinks** |                                                                                                                                                                                                                                                                                  |
+| [Watermelon juice](https://images.eatthismuch.com/site_media/img/854541_Shamarie84_45b61cdb-ddfc-43dd-bf1f-6c366caf07a5.png) | [Orange juice](https://www.earthfoodandfire.com/wp-content/uploads/2018/04/Homemade-Orange-Juice.jpg) | [Masala chai](https://wendypolisi.com/wp-content/uploads/2018/09/dirty-chai-latte-2.jpg) | [Bloody mary](https://www.bbcgoodfood.com/sites/default/files/user-collections/my-colelction-image/2015/12/bloody-mary.jpg) |
+| [White russian](https://i.pinimg.com/originals/af/d2/4c/afd24c5047e6aaa1cfbe4dd8e8d7468f.jpg) |  [Espresso](https://kaffeexperterna.com/wp-content/uploads/2015/08/espresso-crema-kaffe.jpg) |
 
 - **Resources**
 
   Below is a list of the resources used to create this project:
 
-  - [Handeling Applications Errors -- Flask Documentation](https://flask.palletsprojects.com/en/master/errorhandling/#error-handlers)
-  - [(Totorial) Docstring in Python](https://www.datacamp.com/community/tutorials/docstrings-python)
-  - [quick start -- Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
   - [Adding a favicon -- Flask documentations](https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/)
   - [Stack Overflow](https://stackoverflow.com/)
+  - [Slack Peer code review](https://slack.com/intl/en-se/)
+  - [w3schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer)
+  - [To make responsive Footer](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/)
+  - [To fix my scrollbar style](https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp)
+  - [Dynamic carousel slider](https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django)
+  - [Radio star input](https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1)
+
 ### **Acknowledgements**
 
  - Big thanks to my mentor, Rohit Sharma who provided me with tips, support and some helpful resources.
@@ -571,48 +669,10 @@ This project is stored in a GitHub repository and hosted on Heroku.
  - Also the whole code instetute support team for fast support and help all the time.
 
 **This project is purely educational, please contact me if there are any issues with Copyright.**
-behnaz.khoshnood@gmail.com
 
 
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer
 
-used codes:
-to align my ratings under each image in product page I used this code from stackoverfroW[https://stackoverflow.com/questions/22592064/how-to-align-text-below-an-image-in-css/22592136]
-known bugs:
-the image in my product page is showing on the border line of my fixed navbar.
 
-to pot the footer at the bottom of the page
-https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
 
-my main nav menu items text were seperating to 2 line. I used this code to fix it:
-https://stackoverflow.com/questions/17704539/css-getting-text-in-one-line-rather-than-two
-.navbar-nav li{
-    white-space: nowrap
-    }
 
-used this for fixing my scrollbar style
-https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
 
-Project Tools
-Django — Web Framework
-Back end Python 3.8 — Back end Programming language
-PostgreSQL — databases
-Front end — HTML 5, CSS 3, Bootstrap, JavaScript
-QR code Generation JavaScript JQuery
-Deployment Activity Heroku server
-Amazon Web Services — S3 Bucket Storage Allocation
-
-to make my carousel dynamic
-https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django
-
-to make the rating and review models
-https://www.codementor.io/@jadianes/get-started-with-django-building-recommendation-review-app-du107yb1a
-
-radio star input:
-https://gist.github.com/blairanderson/7f9d1c08345c6573e09edaa1f7316fa1
-
-known bugs:
-when clicking on rating star buttons the page jumps up to the top.
-
-future features:
-confirmation toast message for deleting a product.

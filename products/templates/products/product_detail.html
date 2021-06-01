@@ -126,14 +126,15 @@
                         <p>If you have not created an account yet, then please sign up first to post a review.</p>
                     {% endif %}
                 </div>
-                <hr class="d-block d-md-none" </form>
+                <hr class="d-block d-md-none">
+            </form>
         </div>
         <div class="col-12 col-md-6 reviews">
             <h5 class="logo-font font-weight-bold text-black text-center m-3">All reviews</h5>
             <h6 class="text-center">{{ product.countreview }} reviews for {{ product.name }}</h6>
             <h6 class="text-center">Rating Avarage: {{ product.avaregereview | stringformat:".2f" }}</h6>
-            {% for review in reviews %}
             <hr>
+            {% for review in reviews %}
                 <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
                     <div class="p-2 col-3">{{ review.user }}</div>
                     <div class="p-2 col-3 stars">
