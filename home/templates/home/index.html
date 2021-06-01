@@ -103,7 +103,7 @@
             <div class="col-12 reviews home-reviews">
                 <h5 class="logo-font font-weight-bold text-black text-center m-3">All reviews</h5>
                     {% for review in reviews %}
-                        <div class="text-center">
+                        <div class="text-center reviews">
                             <h6 class="text-center">{{ review.product.countreview }} reviews for {{ review.product }}</h6>
                             <p class="text-center">Avarage Rating : {{ review.product.avaregereview | stringformat:".2f" }}<i class="fas fa-star mr-1"></i></p>
                             <br>
@@ -119,7 +119,7 @@
 {{ block.super }}
 <script>
 var map = {};
-$('div').each(function(){
+$('.reviews').each(function(){
     var value = $(this).text();
     if (map[value] == null){
         map[value] = true;
