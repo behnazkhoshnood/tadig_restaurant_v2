@@ -375,7 +375,8 @@ Desktop view | Mobile view
 
 - **validators**
   - The validators that have been used on the project are as followed:
-    - [HTML Validator](https://validator.w3.org/nu/) - No issues apart from jinja templating
+    - [HTML Validator](https://validator.w3.org/nu/) - 2 warnning due to Meta and head element not found
+        ![Warnings](media/html-validator.png)
     - [CSS Validator](https://jigsaw.w3.org/css-validator/) - No issues
     - [JavaScript Validator](https://jshint.com/) - No issues 
     - [Python Validator](http://pep8online.com/) - No issues
@@ -471,7 +472,7 @@ Desktop view | Mobile view
 ---
 ## Deployment
 
-### Steps to deploy eHand to Heroku using Postgres
+### Steps to deploy Tadig to Heroku using Postgres
 
 #### In Heroku:
 1. Setup and account and log in to Heroku
@@ -548,16 +549,16 @@ Else we will be in our local environment and so use the default database.
 24. In the Terminal install gunicorn as our webserver: `pip3 install gunicorn`
 25. Freeze requirements. `Pip3 freeze > requirements.txt`
 26. Create a Procfile at the same level as the project. 
-27. Enter the following code into the Procfile to tell Heroku to create a web dyno that will run gunicorn and serve eHand:
+27. Enter the following code into the Procfile to tell Heroku to create a web dyno that will run gunicorn and serve tadig:
 ```
-    web: gunicorn ehand.wsgi:application
+    web: gunicorn tadig-testaurant.wsgi:application
 ```
 28. Temporarily disable collect static – to do this:
 *   login via the terminal: heroku login –i.
 *   Enter heroku email and password.
 *   Enter the following in the terminal:
 ```
-    heroku config:set DISABLE_COLLECTSTATIC=1 --app mr-smyth-ehand
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app mr-smyth-tadig-restaurant
 ```
 In `Settings.py`:   
 
@@ -575,7 +576,7 @@ In `The Terminal`:
 *   git commit –m “**your-message**”
 *   git push
 *   Now initialize heroku git remote (because we created our app on the website rather than with the CLI): 
-*       heroku git:remote -a mr-smyth-ehand
+*       heroku git:remote -a mr-smyth-tadig-restaurant
 *   Then push to heroku : git push heroku master
 
 In `The Heroku`:
@@ -583,11 +584,11 @@ In `The Heroku`:
 32. Setup automatic deployment in Heroku:
 *   Goto the deploy tab
 *   Set deployment method to GitHub
-*   Search for ehand
+*   Search for tadig-restaurant
 *   Click connect
 *   Scroll down and click Enable Automatic Deploys
 
-ehand is now deployed to Heroku
+tadig-restaurant is now deployed to Heroku
 
 [<< ***Back to contents***](#table-of-contents)
 
@@ -615,12 +616,12 @@ The above example displays an env for a local purpose only.
 ```
     sudo -H pip3 -r requirements.txt
 ```
-6.  In the IDE terminal, use the following command to start eHand:
+6.  In the IDE terminal, use the following command to start tadig-restaurant:
 ```
     python manage.py runserver
 ```
 
-eHand should now be running locally on localhost port 8000. (http://127.0.0.1:8000)
+tadig-restaurant should now be running locally on localhost port 8000. (http://127.0.0.1:8000)
 
 7.  After running Django initially, it will create the local database **db.SQLite3**.
 8.  Make all migrations:
@@ -637,7 +638,7 @@ python3 manage.py createsuperuser
 ***Enter username, email and password***
 ```
 
-You should now have a local copy of eHand.
+You should now have a local copy of tadig-restaurant.
 
 ---  
 
@@ -677,10 +678,3 @@ You should now have a local copy of eHand.
  - Also the whole code instetute support team for fast support and help all the time.
 
 **This project is purely educational, please contact me if there are any issues with Copyright.**
-
-
-
-
-
-
-

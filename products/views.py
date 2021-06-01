@@ -40,7 +40,10 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!"
+                    )
                 return redirect(reverse('products'))
 
             queries = (
@@ -164,7 +167,7 @@ def add_review(request, product_id):
             data.user = request.user
             data.product = product
             data.save()
-            messages.success(request, 'Your review has been sent! Thank you for sharing your thoughts with us.')
+            messages.success(request, 'Your review has been sent!')
             return redirect('product_detail', product_id)
         else:
             messages.error(

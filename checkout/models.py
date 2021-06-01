@@ -53,7 +53,7 @@ class Order(models.Model):
         )
         if (
             self.order_total < settings.FREE_DELIVERY_THRESHOLD and
-            self.order_total != 0):
+                self.order_total != 0):
             self.delivery_cost = settings.STANDARD_DELIVERY_FEE
         else:
             self.delivery_cost = 0
