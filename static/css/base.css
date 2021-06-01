@@ -468,6 +468,11 @@ input[name='q']::placeholder {
     .navbar {
         font-size: 9px;
     }
+    .body,
+    table,
+    .order-confirmation-wrapper{
+        font-size: 10px;
+    }
 }
 
 /* md and larger */

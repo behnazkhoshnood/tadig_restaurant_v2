@@ -109,62 +109,70 @@ The site owner is able to make money by providing this set of services to the us
 ## **Wireframes**
 [Balsamiq Wireframes](https://balsamiq.com/wireframes/) was used to create all wireframes for the project.
 
- #### <center>All Recipes<center>
+ #### <center>Home Page<center>
 
 Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]()
-![Registered users]() **Registered users** | ![Registered users]()
-![Not registered user]() **Not registered users** | ![Not registered user]()
+![Home page-desktop](media/home-page-desktop.png) | ![Home-page-mobile](media/home-page-mobile.png)
 ---
 
- #### <center>Profile<center>
+ #### <center>Product details page<center>
 
 Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]() 
-![Registered users]()**Registered users** | ![Registered users]()
+![Product details page-desktop](media/product-details-page-desktop.png) | ![Admin](media/product-details-page.png)
 ---
 
- #### <center>Add Recipes<center>
+ #### <center>Products page<center>
  Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]() 
-![Registered users]() **Registered users** | ![Registered users]()
+![products-page-not-admin-desktop](media/product-page-not-admin-desktop.png) | ![products-page-not-admin-mobile](media/products-page-mobile.png) 
 ---
- #### <center>Manage Categories<center>
+ #### <center>Shopping bag page<center>
  Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]()
+![shopping-bag-page-desktop.png](media/shopping-bag-page-desktop.png) | ![shopping-bag-page](media/shopping-bag-page.png)
 ---
 
- #### <center>Manage Marks<center>
+ #### <center>Checkout page<center>
 Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]()
+![checkout-page-desktop](media/checkout-page-desktop.png) | ![checkout-page-mobile](media/checkout-page-mobile.png)
 ---
 
- #### <center>Add Category<center>
+ #### <center>Checkout success page<center>
  Desktop view | Mobile view
 - | -
-![Admin]() **Admin**| ![Admin]()
+![checkout-success-page-desktop](media/checkout-success-page-desktop.png) | ![checkout-page-mobile](media/checkout-page-mobile.png)
 ---
 
- #### <center>Add Mark<center>
+ #### <center>Profile page<center>
  Desktop view | Mobile view
 - | -
-![Admin]() **Admin** | ![Admin]()
+![profile-page-desktop](media/profile-page-desktop.png) | ![profile-page-mobile](media/profile-page-mobile.png)
 
  #### <center>Log In<center>
  Desktop view | Mobile view
 - | -
-![All users]() **All users** | ![All users]()
+![sign-in-page-desktop](media/sign-in-page-desktop.png) | ![sign-in-page-mobile](media/sign-in-page-mobile.png)
 ---
 
  #### <center>Register<center>
 Desktop view | Mobile view
 - | -
-![All users]() **All users** | ![All users]()
+![register-page-desktop](media/register-page-desktop.png) | ![register-page-mobile](media/register-page-mobile.png)
+---
+
+ #### <center>Log OUt <center>
+Desktop view | Mobile view
+- | -
+![log-out-page-desktop](media/log-out-page-desktop.png) | ![log-out-mobile](media/log-out-mobile.png)
+---
+
+ #### <center>Add product oage ( Only Admin)<center>
+Desktop view | Mobile view
+- | -
+![add-poduct-page-only-admin](media/add-poduct-page-only-admin-desktop.png) | ![add-product-page-admin-mobile](media/add-product-page-admin-mobile.png)
 ---
 
 ## **Features**
