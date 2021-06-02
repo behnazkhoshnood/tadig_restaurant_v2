@@ -160,7 +160,12 @@ def add_review(request, product_id):
     product = Product.objects.get(pk=product_id)
 
     if request.method == "POST":
-        form = ReviewForm(request.POST or None)
+        form_data = {
+            "comment": request.POST["comment"],
+            "rating": request.POST["rating"],
+        }
+        form = ReviewForm(form_data)
+
         if form.is_valid():
             data = form.save(commit=False)
             data.comment = request.POST["comment"]

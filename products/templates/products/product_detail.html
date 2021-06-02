@@ -121,6 +121,7 @@
                     </div>
                     {% if user.id is not None %}
                         <button class="btn btn-black rounded-0 text-uppercase mt-3">Submit</button>
+                        {{ review.rating }}
                     {% else %}
                         <br>
                         <p>If you have not created an account yet, then please sign up first to post a review.</p>
@@ -136,6 +137,7 @@
             <hr>
             {% for review in reviews %}
                 <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
+                    {% if review.user %}
                     <div class="p-2 col-3">{{ review.user }}</div>
                     <div class="p-2 col-3 stars">
                         {% if review.rating == 1 %}
@@ -154,6 +156,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">{{ review.user }} didn't leave any ratings!</h6>
                         {% endif %}
                     </div>
+                    {% endif %}
                 </div>
                 <div class="p-2 col-10 offset-1 text-center">
                     {% if review.comment %}
