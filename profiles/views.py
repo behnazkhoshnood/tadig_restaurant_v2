@@ -5,6 +5,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order
+from products.models import Review
 
 
 @login_required
