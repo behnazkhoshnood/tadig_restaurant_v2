@@ -38,7 +38,7 @@
                         <a class="text-danger delete" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                 {% endif %}
-                <p class="mt-3">{{ product.description }}</p>
+                <p class="mt-3 px-lg-5">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -96,9 +96,9 @@
         </div>
     </div>
     <hr>
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <form action="{% url 'add_review' product.id %}" method="POST">
+    <div class="row d-flex align-items-center justify-content-around">
+        <div class="col-10 col-md-5">
+            <form action="{% url 'add_review' product.pk %}" method="POST">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <h5 class="logo-font font-weight-bold text-black text-center m-3">Add your comment here.</h5>
@@ -130,42 +130,48 @@
                 <hr class="d-block d-md-none">
             </form>
         </div>
-        <div class="col-12 col-md-6 reviews">
+        <div class="col-10 col-md-5 reviews">
             <h5 class="logo-font font-weight-bold text-black text-center m-3">All reviews</h5>
             <h6 class="text-center">{{ product.countreview }} reviews for {{ product.name }}</h6>
             <h6 class="text-center">Rating Avarage: {{ product.avaregereview | stringformat:".2f" }}</h6>
             <hr>
             {% for review in reviews %}
-                <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
-                    {% if review.user %}
-                    <div class="p-2 col-3">{{ review.user }}</div>
-                    <div class="p-2 col-3 stars">
-                        {% if review.rating == 1 %}
-                        <i class="fas fa-star"></i>
-                        {% elif review.rating == 2 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% elif review.rating == 3 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% elif review.rating == 4 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i>
-                        {% elif review.rating == 5 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="reviews-product-details">
+                    <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
+                        <div class="p-2 col-3">{{ review.user.username }}</div>
+                        {% if request.user == review.user %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_review' product.pk review.pk %}">Edit</a> |
+                                <a class="text-danger delete" href="{% url 'delete_review' product.pk review.pk %}">Delete</a>
+                            </small>
+                        {% endif %}
+                        <div class="p-2 col-3 stars">
+                            {% if review.rating == 1 %}
+                            <i class="fas fa-star"></i>
+                            {% elif review.rating == 2 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% elif review.rating == 3 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% elif review.rating == 4 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i>
+                            {% elif review.rating == 5 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% else %}
+                            <h6 class="card-subtitle mb-2 text-muted">{{ review.user }} didn't leave any ratings!</h6>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="p-2 col-10 offset-1 text-center">
+                        {% if review.comment %}
+                        <p class="card-text">{{ review.comment }}</p>
                         {% else %}
-                        <h6 class="card-subtitle mb-2 text-muted">{{ review.user }} didn't leave any ratings!</h6>
+                        <h6 class="card-text">{{ review.user }} didn't leave any comment!</h6>
                         {% endif %}
                     </div>
-                    {% endif %}
+                    <hr>
                 </div>
-                <div class="p-2 col-10 offset-1 text-center">
-                    {% if review.comment %}
-                    <p class="card-text">{{ review.comment }}</p>
-                    {% else %}
-                    <h6 class="card-text">{{ review.user }} didn't leave any comment!</h6>
-                    {% endif %}
-                </div>
-                <hr>
             {% endfor %}
         </div>
     </div>

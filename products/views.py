@@ -169,6 +169,7 @@ def add_review(request, product_id):
         if form.is_valid():
             data = form.save(commit=False)
             data.comment = request.POST["comment"]
+            data.rating = request.POST["rating"]
             data.user = request.user
             data.product = product
             data.save()
@@ -182,3 +183,45 @@ def add_review(request, product_id):
         form = ReviewForm()
         template = 'products/product_detail.html'
     return render(request, template, {"form": form})
+
+
+@login_required
+def edit_review(request, product_id, review_id):
+    """A view to edit product reviews"""
+
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(Review, product=product, pk=review_id)
+
+    if request.user == review.user:
+        if request.method == "POST":
+            form = ReviewForm(request.POST, instance=review)
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.save()
+                messages.success(request, 'Review updated!')
+                return redirect('product_detail', product_id)
+            else:
+                messages.error(
+                    request,
+                    'Update review failed. Please ensure the form is valid.')
+                return redirect('product_detail', product_id)
+        else:
+            form = ReviewForm(instance=review)
+            return render(request, 'products/editreview.html', {"form": form})
+    else:
+        return redirect('product_detail', product_id)
+
+
+@login_required
+def delete_review(request, product_id, review_id):
+    """A view to delete product review"""
+
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(Review, product=product, pk=review_id)
+    form = ReviewForm(request.POST, instance=review)
+
+    if request.user == review.user:
+        form.delete()
+        messages.success(request, 'Review delete successfully')
+
+    return redirect('product_detail', product_id)
