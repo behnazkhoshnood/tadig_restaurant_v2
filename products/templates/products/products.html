@@ -34,6 +34,10 @@
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                             </option>
+                            <option value="review_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Rating
+                                (high to low)</option>
+                            <option value="review_asc" {% if current_sorting == 'review_asc' %}selected{% endif %}>Rating
+                                (low to high)</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
                                 (low to high)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
@@ -59,7 +63,7 @@
             <div class="row">
                 {% for product in products %}
                 <div class="card-container col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-0 product-card">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">

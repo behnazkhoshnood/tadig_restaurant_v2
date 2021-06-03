@@ -47,7 +47,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .img-fluid {
-    height: 150px;
+    height: 200px;
+    width: 300px;
     image-rendering: -webkit-optimize-contrast;
     border-radius: 0;
 }

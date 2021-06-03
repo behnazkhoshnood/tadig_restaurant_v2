@@ -666,6 +666,6 @@ You should now have a local copy of tadig-restaurant.
 
  - Big thanks to my mentor, Rohit Sharma who provided me with tips, support and some helpful resources.
 
- - Also the whole code instetute support team for fast support and help all the time.
+ - Also the code instetute support teams for fast support and help all the time.
 
 **This project is purely educational, please contact me if there are any issues with Copyright.**

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q, Avg
@@ -158,6 +158,7 @@ def add_review(request, product_id):
     """ A view to add review to a product"""
 
     product = Product.objects.get(pk=product_id)
+    url = request.META.get('HTTP_REFERER')
 
     if request.method == "POST":
         form_data = {
@@ -174,15 +175,13 @@ def add_review(request, product_id):
             data.product = product
             data.save()
             messages.success(request, 'Your review has been sent!')
-            return redirect('product_detail', product_id)
+            return HttpResponseRedirect(url)
         else:
             messages.error(
                 request,
                 'Failed to submit review. Please ensure the form is valid.')
-    else:
-        form = ReviewForm()
-        template = 'products/product_detail.html'
-    return render(request, template, {"form": form})
+
+    return HttpResponseRedirect(url)
 
 
 @login_required
