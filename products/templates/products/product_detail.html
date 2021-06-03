@@ -85,11 +85,11 @@
             <div class="image-container m-5">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid details-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                 {% else %}
                     <a href="">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                 {% endif %}
             </div>
@@ -132,8 +132,16 @@
         </div>
         <div class="col-10 col-md-5 reviews">
             <h5 class="logo-font font-weight-bold text-black text-center m-3">All reviews</h5>
+            {% if product.countreview %}
             <h6 class="text-center">{{ product.countreview }} reviews for {{ product.name }}</h6>
-            <h6 class="text-center">Rating Avarage: {{ product.avaregereview | stringformat:".2f" }}</h6>
+            {% else %}
+            <h6 class="text-center">No reviews for {{ product.name }} yet!</h6>
+            {% endif %}
+            {% if product.avaregereview > 0 %}
+                <h6 class="text-center">Rating Avarage: {{ product.avaregereview | stringformat:".2f" }}</h6>
+            {% else %}
+                <h6 class="text-center"></h6>
+            {% endif %}
             <hr>
             {% for review in reviews %}
                 <div class="reviews-product-details">

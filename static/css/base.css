@@ -319,6 +319,10 @@ input[name='q']::placeholder {
     float: left;
 }
 
+.order-confirmation-wrapper{
+    font-size: 14;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -483,9 +487,9 @@ input[name='q']::placeholder {
 
 /* md and larger */
 @media (min-width: 768px){
-    .img-fluid {
-        height: 300px;
-        width: 450px;
+    .details-img {
+        height: 200px;
+        width: 350px;
     }
 
     .reviews-row {
