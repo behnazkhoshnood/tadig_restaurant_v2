@@ -140,7 +140,7 @@
                     <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
                         <div class="p-2 col-3">{{ review.user.username }}</div>
                         {% if request.user == review.user %}
-                            <small class="ml-3">
+                            <small>
                                 <a href="{% url 'edit_review' product.pk review.pk %}">Edit</a> |
                                 <a class="text-danger delete" href="{% url 'delete_review' product.pk review.pk %}">Delete</a>
                             </small>
@@ -167,11 +167,11 @@
                         {% if review.comment %}
                         <p class="card-text">{{ review.comment }}</p>
                         {% else %}
-                        <h6 class="card-text">{{ review.user }} didn't leave any comment!</h6>
+                        <h6 class="card-text">No Comments!</h6>
                         {% endif %}
                     </div>
-                    <hr>
                 </div>
+                <hr>
             {% endfor %}
         </div>
     </div>

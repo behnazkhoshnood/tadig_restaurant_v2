@@ -100,17 +100,15 @@
             </div>
         </div>
         <hr>
-            <div class="col-12 reviews home-reviews">
+            <div class="col-12 home-reviews justify-content-center">
                 <h5 class="logo-font font-weight-bold text-black text-center m-3">All reviews</h5>
                     {% for review in reviews %}
-                        <div class="text-center">
-                            <h6 class="text-center">{{ review.product.countreview }} reviews for {{ review.product }}</h6>
-                            <p class="text-center">Avarage Rating : {{ review.product.avaregereview | stringformat:".2f" }}<i class="fas fa-star mr-1"></i></p>
-                            <br>
+                        <div class="text-center reviews mb-3">
+                            <span class="text-center col-lg-5 d-inline-block text-lg-left">{{ review.product.countreview }} reviews for {{ review.product }}</span>
+                            <span class="text-center clo-lg-5 d-inline-block text-lg-right index-avg-rates">Avarage Rating : {{ review.product.avaregereview | stringformat:".2f" }}<i class="fas fa-star mr-1"></i></span>
                         </div>
                     {% endfor %}
             </div>
-        
 </div>
 
 {% endblock %}

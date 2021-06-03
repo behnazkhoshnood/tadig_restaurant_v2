@@ -8,16 +8,19 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.home-reviews::-webkit-scrollbar,
 .reviews::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
 
+.home-reviews::-webkit-scrollbar-track,
 .reviews::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
   background: #e9e9e9;        /* color of the tracking area */
 }
 
+.home-reviews::-webkit-scrollbar-thumb,
 .reviews::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
   background-color: #000000;    /* color of the scroll thumb */
@@ -283,6 +286,11 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+.index-avg-rates{
+    border-bottom-style: double;
+    margin-bottom: 15px;
+}
+
 /* product-details page */
 .quantity-form-btns {
     margin: auto;
@@ -477,7 +485,7 @@ input[name='q']::placeholder {
 @media (min-width: 768px){
     .img-fluid {
         height: 300px;
-        width: 550px;
+        width: 450px;
     }
 
     .reviews-row {
@@ -488,10 +496,15 @@ input[name='q']::placeholder {
         height: 300px;
         image-rendering: -webkit-optimize-contrast;
     }
+
+    .index-avg-rates{
+        border-bottom-style: none;
+        margin-bottom: 0;
+    }
 }
 
 
-/* fixed top navbar only on medium and up */
+/* fixed top navbar only on large and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -551,5 +564,21 @@ input[name='q']::placeholder {
     .increment-qty,
     .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+}
+
+@media(min-width: 2000px){
+    #page-container,
+        .dropdown-menu{
+        font-size: 20px;
+    }
+
+    .header-container{
+        padding-bottom: 180px;
+    }
+
+    .navbar{
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }

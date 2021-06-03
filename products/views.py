@@ -162,14 +162,14 @@ def add_review(request, product_id):
     if request.method == "POST":
         form_data = {
             "comment": request.POST["comment"],
-            "rating": request.POST["rating"],
+            "rating": request.POST.get('rating', False)
         }
         form = ReviewForm(form_data)
 
         if form.is_valid():
             data = form.save(commit=False)
             data.comment = request.POST["comment"]
-            data.rating = request.POST["rating"]
+            data.rating = request.POST.get('rating', False)
             data.user = request.user
             data.product = product
             data.save()
@@ -194,7 +194,8 @@ def edit_review(request, product_id, review_id):
 
     if request.user == review.user:
         if request.method == "POST":
-            form = ReviewForm(request.POST, instance=review)
+            form = ReviewForm(
+                request.POST, request, instance=review)
             if form.is_valid():
                 data = form.save(commit=False)
                 data.save()
@@ -218,10 +219,9 @@ def delete_review(request, product_id, review_id):
 
     product = get_object_or_404(Product, pk=product_id)
     review = get_object_or_404(Review, product=product, pk=review_id)
-    form = ReviewForm(request.POST, instance=review)
 
     if request.user == review.user:
-        form.delete()
+        review.delete()
         messages.success(request, 'Review delete successfully')
 
     return redirect('product_detail', product_id)
