@@ -315,6 +315,41 @@ input[name='q']::placeholder {
     display: none;
 }
 
+.wishlist {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 50;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wishlist {
+    pointer-events: visible;
+    opacity: 1;
+}
+
+.like_us {
+    opacity: 1;
+    transform: none;
+}
+.like_us {
+    background: #fff;
+    border-radius: 50%;
+    height: unset;
+    padding: 7px 7px 5px;
+    margin: 10px 10px 0 0;
+}
+.like_us:hover {
+  cursor: pointer;
+  color: #2f7dfc;
+} 
+.heart-prdct{
+    color: #ff0000;
+}
+
 /* bag page */
 .update-link small{
     float: left;

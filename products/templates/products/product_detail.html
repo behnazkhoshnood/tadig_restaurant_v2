@@ -92,6 +92,15 @@
                         <img class="card-img-top img-fluid-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                 {% endif %}
+                        <div class="wishlist mt-3 {% if request.user.is_authenticated%} d-block {%else%} d-none{%endif%}">
+                            {%if product.id in current_user_prdct_id%}
+                                <span class="like like_us heart-prdct " id="id" attr_id="{{ product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fas fa-heart "></i></span>
+                                
+                            {%else%}
+                                <span class="like like_us" id="id" attr_id="{{product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fa fa-heart"></i></span>
+                            {%endif%}
+                        
+                        </div>
             </div>
         </div>
     </div>
@@ -120,7 +129,7 @@
                                 <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
                             </div>
                         </div>
-                        <button class="btn btn-black rounded-0 text-uppercase mt-3">Submit</button>
+                        <button class="review-submit-btn btn btn-black rounded-0 text-uppercase mt-3">Submit</button>
                     </div>
                     <hr class="d-block d-md-none">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -147,14 +156,8 @@
             <hr>
             {% for review in reviews %}
                 <div class="reviews-product-details">
-                    <div class="d-flex flex-row mb-3 justify-content-center align-items-center text-center">
+                    <div class="d-flex flex-row mb-3 justify-content-around align-items-center text-center">
                         <div class="p-2 col-3 text-left">{{ review.user.username }}</div>
-                        {% if request.user == review.user %}
-                            <small>
-                                <a href="{% url 'edit_review' product.pk review.pk %}">Edit</a> |
-                                <a class="text-danger delete" href="{% url 'delete_review' product.pk review.pk %}">Delete</a>
-                            </small>
-                        {% endif %}
                         <div class="p-2 col-3 stars text-right">
                             {% if review.rating == 1 %}
                             <i class="fas fa-star"></i>
@@ -179,6 +182,12 @@
                         {% else %}
                         <h6 class="card-text">No Comments!</h6>
                         {% endif %}
+                        {% if request.user == review.user %}
+                            <small>
+                                <a href="{% url 'edit_review' product.pk review.pk %}">Edit</a> |
+                                <a class="text-danger delete" href="{% url 'delete_review' product.pk review.pk %}">Delete</a>
+                            </small>
+                        {% endif %}
                     </div>
                 </div>
                 <hr>
@@ -199,6 +208,48 @@ $(document).ready(function(){
     }
   });
 });
+</script>
+
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+    $(document).ready(function(){
+        $(".like").click(function(){
+            var attr_id = $(this).attr('attr_id')
+            var action_url = $(this).attr('action_url')
+            var that = $(this)
+
+            $.ajax({
+                url: action_url,
+                type: "POST",
+                data: {'attr_id': attr_id },
+                headers: { "X-CSRFToken": csrftoken },
+                success: function (result) {
+                    console.log("Success")
+                    that.toggleClass("heart-prdct");
+                },
+                error: function () {
+                    alert("Please login");
+                }
+                
+            });
+        });
+    });
 </script>
 
 {% include 'products/includes/quantity_input_script.html' %}

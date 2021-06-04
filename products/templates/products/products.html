@@ -34,10 +34,6 @@
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                             </option>
-                            <option value="review_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Rating
-                                (high to low)</option>
-                            <option value="review_asc" {% if current_sorting == 'review_asc' %}selected{% endif %}>Rating
-                                (low to high)</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
                                 (low to high)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
@@ -74,6 +70,16 @@
                                 alt="{{ product.name }}">
                         </a>
                         {% endif %}
+                        <div class="wishlist">
+                            <ul class="list-unstyled mt-3{% if request.user.is_authenticated%} d-block {%else%} d-none{%endif%}">
+                                {%if product.id in current_user_prdct_id%}
+                                    <span class="like like_us heart-prdct" id="id" attr_id="{{ product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fas fa-heart text-center"></i></span>
+                                    
+                                {%else%}
+                                    <span class="like like_us" id="id" attr_id="{{product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fa fa-heart text-center"></i></span>
+                                {%endif%}
+                            </ul>
+                        </div>
                         <div class="card-body pb-0 text-center">
                             <p class="mb-0">{{ product.name }}</p>
                         </div>
@@ -191,4 +197,48 @@ $(document).ready(function(){
         }
     })
 </script>
+<script>
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+
+    $(document).ready(function(){
+        $(".like").click(function(){
+            var attr_id = $(this).attr('attr_id')
+            var action_url = $(this).attr('action_url')
+            var that = $(this)
+
+            $.ajax({
+                url: action_url,
+                type: "POST",
+                data: {'attr_id': attr_id },
+                headers: { "X-CSRFToken": csrftoken },
+                success: function (result) {
+                    console.log("Success")
+                    that.toggleClass("heart-prdct");
+                },
+                error: function () {
+                    alert("Please login");
+                }
+                
+            });
+        });
+});
+
+    </script>
 {% endblock %}
