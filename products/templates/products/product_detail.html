@@ -120,7 +120,7 @@
                         <div class="input-rating">
                             <strong class="logo-font font-weight-bold text-black text-center">Your Rating</strong>
                             <br>
-                            <div class="rating text-center d-flex justify-content-center flex-row-reverse w-100 mt-3">
+                            <div class="rating text-center d-flex justify-content-center flex-row-reverse w-100 mt-3" id="rating">
                                 <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></i></label>
                                 <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></i></label>
                                 <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></i></label>
@@ -128,7 +128,7 @@
                                 <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
                             </div>
                         </div>
-                        <button class="review-submit-btn btn btn-black rounded-0 text-uppercase mt-3">Submit</button>
+                        <input type="submit" disabled="disabled" value="submit" name="submit" class="btn btn-black rounded-0 text-uppercase mt-3"/>
                     </div>
                     <hr class="d-block d-md-none">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -206,6 +206,15 @@ $(document).ready(function(){
       return false;
     }
   });
+});
+</script>
+
+<script>
+$(function(){
+    $("input[type='radio']").change(function(){
+
+        $("input[type='submit']").prop("disabled", false);
+    });
 });
 </script>
 

@@ -483,7 +483,20 @@ Desktop view | Mobile view
 - **Issue 6**
   - migration for the wishlist time_added field was made after the model was migrated the first time. When adding the new time_added field I was getting an error that the previous wishlists need a default value.
   - I fixed this issue by choosing option 1 and adding a timezone. now().[Stack Overflow](https://stackoverflow.com/questions/56310322/django-datetimefield-with-auto-now-add-asks-for-default)
-  
+
+- **Issue 7**
+  - My star rating is required input so I had to make the submit button disabled if the radio value is not filled.
+  - I fixed this issue with this code:
+
+            $(function(){
+                $("input[type='radio']").change(function(){
+
+                     $("input[type='submit']").prop("disabled", false);
+                 });
+                });
+            });
+
+  [Stack Overflow](https://stackoverflow.com/questions/26081761/disable-the-submit-button-if-no-radio-button-is-clicked)
 
 - ** Known Issues **
   - the social icons for Twitter and Instagram are not shown on my index page!
