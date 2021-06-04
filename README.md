@@ -3,7 +3,7 @@
 
 **Tadig Restaurant**
 
-[View the live project here.]()
+[View the live project here.](https://tadig-restaurant.herokuapp.com/)
 This website is made for restaurants. We named our restaurant "Tadig restaurant" which is a made-up Persian restaurant.
 It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential customers.
 
@@ -401,6 +401,7 @@ Desktop view | Mobile view
     - [JavaScript Validator](https://jshint.com/) - No issues 
     - [Python Validator](http://pep8online.com/) - No issues
 ---
+## **Testing**
 - **User stories tests**
 
 - **Register.html**
@@ -560,7 +561,6 @@ Desktop view | Mobile view
     - **step 4** - if press cancel, the user would not log out.
 
 ---
-## **Testing**
 - **Supported browsers and screens**
 
   - The Website was tested on Google Chrome, Microsoft Edge, and Firefox, and Opera browsers.
@@ -634,11 +634,9 @@ Desktop view | Mobile view
 
   [Stack Overflow](https://stackoverflow.com/questions/26081761/disable-the-submit-button-if-no-radio-button-is-clicked)
 
-- ** Known Issues **
-  - the social icons for Twitter and Instagram are not shown on my index page!
-  - the review rating form stopped working and just adds one star to my products after deleting the migrations.
-  - stripe payment-intent-success gives an error 500
-  - in some views the toast notifications are blurry
+- **Known Issues**
+  - stripe payment-intent-success gives an error 500.
+  - in some views the toast notifications are blurry.
 
 ---
 ## Deployment
