@@ -40,9 +40,8 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 class WishlistAdmin(admin.ModelAdmin):
-    list_display = ['user', 'wished_product', 'added_date']
-    readonly_fields = ('user', 'wished_product', 'added_date')
-    ordering = ('added_date',)
+    list_display = ['user', 'wished_product']
+    readonly_fields = ('user', 'wished_product')
 
 
 admin.site.register(Product, ProductAdmin)
