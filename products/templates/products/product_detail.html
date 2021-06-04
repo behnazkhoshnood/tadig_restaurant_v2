@@ -81,26 +81,25 @@
             </div>
             </form>
         </div>
-        <div class="col-10col-md-5 text-center px-0">
+        <div class="card container col-10 col-md-5 text-center px-0">
             <div class="image-container m-5">
+                <div class="wishlist mt-3 {% if request.user.is_authenticated%} d-block {%else%} d-none{%endif%}">
+                    {%if product.id in current_user_prdct_id%}
+                        <span class="like like_us heart-prdct " id="id" attr_id="{{ product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fas fa-heart "></i></span>
+                        
+                    {%else%}
+                        <span class="like like_us" id="id" attr_id="{{product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fa fa-heart"></i></span>
+                    {%endif%}
+                </div>
                 {% if product.image %}
-                    <a href="{{ product.image.url }}" target="_blank">
+                    <a href="{% url 'product_detail' product.id %}" target="_blank">
                         <img class="card-img-top img-fluid details-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                 {% else %}
-                    <a href="">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top img-fluid-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                 {% endif %}
-                        <div class="wishlist mt-3 {% if request.user.is_authenticated%} d-block {%else%} d-none{%endif%}">
-                            {%if product.id in current_user_prdct_id%}
-                                <span class="like like_us heart-prdct " id="id" attr_id="{{ product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fas fa-heart "></i></span>
-                                
-                            {%else%}
-                                <span class="like like_us" id="id" attr_id="{{product.id}}" action_url="{% url 'add_to_wishlist' %}"><i class="fa fa-heart"></i></span>
-                            {%endif%}
-                        
-                        </div>
             </div>
         </div>
     </div>
@@ -211,6 +210,7 @@ $(document).ready(function(){
 </script>
 
 <script>
+
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -227,6 +227,7 @@ $(document).ready(function(){
         return cookieValue;
     }
     const csrftoken = getCookie('csrftoken');
+
 
     $(document).ready(function(){
         $(".like").click(function(){
@@ -249,7 +250,8 @@ $(document).ready(function(){
                 
             });
         });
-    });
+});
+
 </script>
 
 {% include 'products/includes/quantity_input_script.html' %}
