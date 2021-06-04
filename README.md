@@ -247,7 +247,7 @@ Desktop view | Mobile view
     - User is informed with the header on top of the page that by clicking on product images they get more information about that product.
     - when clicking on the product image user is redirected to the product details page which has the description of that product.
     - Sorting only in each specific category is also possible by the sorting dropdown input provided on top of this page, which can sort the products based on their price, rating, or name.
-    - There is also a scroll back to the top button is provided on this page, to easily go back to the top of the page.
+    - There is also a scroll back to the top and go to footer button is provided on this page, to easily go back to the top or the footer of the page.
     - On medium and larger views the product info and image are positioned side by side but on smaller views, they are placed under each other.
     - Admin or superuser provided with extra links under each product price to either delete or edit that product.
 ---
@@ -372,6 +372,7 @@ Desktop view | Mobile view
    - Additional payment methods like Paypal or apple pay
    - Fix the rating template form.
    - better confirmation note for delete product.
+   - Connect to social apps.
 ---
 ## **Technologies**
 - **Front-End**
@@ -399,8 +400,9 @@ Desktop view | Mobile view
     - [CSS Validator](https://jigsaw.w3.org/css-validator/) - No issues
     - [JavaScript Validator](https://jshint.com/) - No issues 
     - [Python Validator](http://pep8online.com/) - No issues
-
+---
 - **User stories tests**
+
 - **Register.html**
   - **Test 1 - Register - Test Passed ✓**
 
@@ -489,11 +491,11 @@ Desktop view | Mobile view
     - **Step 5** - Be redirected to same page they where editing the form from(products or product details) and a toast message, notifing the admin that the product is updated.
     - **Step 6** - Should the Admin wish to cancel the action, they can click on the cancel button located on bottom left.
     - **Step 7** - If Admin clicks the cancel button he/she will be redirected to same page(products or product details page) and all changes will be disregarded.
-    -**step 8** - Pressing the delete product will bring a confirmation popup that if pressed okey. the product will be deleted.
+    - **step 8** - Pressing the delete product will bring a confirmation popup that if pressed okey. the product will be deleted.
 
   Desktop view | Mobile view
   - | -
-  ![delete button admin desktop view](media/test-edit-form-admin-mobile.png) | ![edit form admin mobile view](media/test-edit-form-admin-mobile.png)
+  ![delete button admin desktop view](media/test-edit-button-admin-desktop.png) | ![edit form admin mobile view](media/test-edit-form-admin-mobile.png)
 ---
 
   - **Test 2 - Deleting a review for registered users - Test Passed ✓**
@@ -501,10 +503,15 @@ Desktop view | Mobile view
     - **Step 2** - Click the button labeled "DELETE".
     - **Step 3** - User gets a message if they are sure to delete this review.
     - **step 4** - If confirm the recipe deletes and user redirects to their product details page but if press cancel, recipe stays unchanged.
+    
+    **test 3 - Adding a review for registered users - Test Passed ✓**
+
+    - **step 1** - If user is registered, they can Also Add reviews in this page. the submit button is disabled if there is no ratting value in the review.
+    - **step 2** - if user is not registered they see a notification instead of the add form that will redirect them to sign up page if they click on it.
 
   Desktop view | Mobile view
   - | -
-  ![delete review desktop view](media/edit-review-page-desktop.png) | ![edit review mobile view](media/test-edit-review-mobile.png)
+  ![delete review desktop view](media/shopping-bag-view-desktop.png) | ![edit review mobile view](media/test-edit-review-mobile.png)
 ---
   - **Test 2 - Adding an item to Shoping bag - Test Passed ✓**
     - **Step 1** - Navigate to product details.
@@ -512,59 +519,46 @@ Desktop view | Mobile view
     - **Step 3** - User gets a message toast with the information of that product with the delivery fee and the remaining price for free delivery threshold.
     - **step 4** - If clicking on the toast messege button user will be redirected to shopping bag page.
 
-  Desktop view | Mobile view
-  - | -
-  ![product details desktop view](static/images/desktop-view-admin.png) | ![product details mobile view](static/images/mobile-view-admin.png)
-
-- ### **Manage categories and marks pages( only admin accessibility )**
-
-  - **Test 1 - Add, edit or delete categories or marks - Test Passed ✓**
-
-    - **step 1** - Click on the Manage Categries to manage the categories or Manage Marks to manage the marks.
-    - **step 2** - Admin can sees all the categories in manage categories and all the marks in manage marks in a seperate card with an option of delete or edit and an Add button on top of the page to add a new category or mark.
-    - **step 3** - By clicking on the add button, a one input field form, called add category or add mark opens regardingly.
-    - **step 4** - Admin can write the desired name for the new category/mark and press the Add category or Add mark at the bottom of the form.
-    - **step 5** - Admin is provided also with a cancel button in both pages if he/she decided to not add any new category or mark.
-  - **step 6** - Pressing this button bring up a note if he/she is sure not to add any category or mark.
-    - **step 7** - if press ok, admin redirects to the get_categories if in add category form, or get_marks if in add marks form.
-    - **step 8** - if press cancel, no category or mark will be added and user will be redirected to "Add Catogory" or "Add mark" regarding to which one that he/she was adding.
+    - ** step 6** - If user is 
 
   Desktop view | Mobile view
   - | -
-  ![manage categories desktop](static/images/manage-categories-desktop.png) | ![manage categories mobile](static/images/manage-categories-mobile.png)
-  ![manage marks desktop](static/images/manage-marks-desktop.png) | ![manage marks mobile](static/images/manage-marks-mobile.png)
-  ![add categories desktop](static/images/add-category-desktop.png) | ![add categories mobile](static/images/add-category-mobile.png)
-  ![add marks desktop](static/images/add-mark-desktop.png) | ![add marks mobile](static/images/add-mark-mobile.png)
+  ![product details quantity form desktop view](media/product-details-desktop.png) | ![product details quantity form mobile view](media/product-details-mobile.png)
+  ![add review registered user desktop view ](media/add-review-registered-user-desktop-view.png) | ![media/non-registered-user-add-reviw-mobile.png](media/product-details-mobile.png)
+
+- ### **shopping bag pages( only admin accessibility )**
+
+  - **Test 1 - Add, edit or delete products to the shopping bag - Test Passed ✓**
+
+    - **step 1** - Click on the + or - buttons in guantity form to change the amount of the product.
+    - **step 2** - Click on the update link to confirm the change or delete link to remove the product from the shopping list.
+    - **step 3** - By clicking on the update button, a toast message will show the current bag items and the price info.
+    - **step 4** - By clicking on the secure checkout user will be redirected to checkout page.
+    - **step 5** - By clicking the keep shoping user will be redirected to products page.
+
+  Desktop view | Mobile view
+  - | -
+  ![shopping bag desktop](media/shopping-bag-view-desktop.png) | ![shopping bag mobile](media/shopping-bag-view-mobile.png)
   ---
+
+  - **Test 1 - Checkout page confirmation - Test Passed ✓**
+    - **step 1** - Fill out all the required field for the delivery address.
+    - **step 2** - Click on the complete order after filling the fields correctly bring up an overly and then redirects the user to checkout success page.
+    - **step 3** - By clicking on the Adjust bag user will be redirected to their shoping bag.
+
+  Desktop view | Mobile view
+  - | -
+  ![checkout desktop](media/test-checkout-desktop.png) | ![checkout mobile](media/test-checkout-mobile.png)
+  ---
+
 - ### **Log Out**
 
   - **Test 1 - Log out - Test Passed ✓**
     - **step 1** - Click on the "log Out" button in the navbar to log out.
-    - **step 2** - Pressing this button bring up a note: "Are you sure you want to log out?".
+    - **step 2** - Pressing this button bring up a logut page: "Are you sure you want to log out?".
     - **step 3** - if press ok user will log out.
     - **step 4** - if press cancel, the user would not log out.
-- ****Testing user experience:****
 
-  - **Product Owner**
-    - can easily add a product via product form
-    - can easily edit/update product info
-    - can easily delete products
-  - **Sign-up / Login**
-    - user: can successfully sign up for an account by filling the required form fields and will receive a confirmation email
-    - user: users also have an easy option of social login, by providing their google account
-    - user: users can successfully recover their passwords by clicking on the forgot password: which will send an email to the provided email address with the necessary link for password recovery.
-  - **Logged in / authenticated users**
-    - user: Logged in users can save their default delivery/billing info on their profile page
-    - user: logged in users can successfully add items to their wishlist for later purchase
-    - user: logged in users can review products that they have bought
-  - **authenticated and unauthenticated users**
-    - user: can successfully browser the site by gender, category, or price and make a selection to buy
-    - user: can successfully view each product details to identify price, read other users reviews on the product, select a product size or quantity
-    - user: can quickly use the search icon to search for products they are interested in
-    - user: can easily access products on sale and keep track of their total shopping bag cost throughout the site i. shopping bag:
-    - user: can easily access their shopping bag items, which conveniently contains all their selected products, which can be added or removed from the shopping bag and the cost recalculates accordingly.
-    - Easy and secure stripe checkout process with no hassle.
-    - user: upon successful checkout: the user gets redirected to the success page with order details and a confirmation email is also sent to the user with their order details.
 ---
 ## **Testing**
 - **Supported browsers and screens**
