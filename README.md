@@ -401,6 +401,148 @@ Desktop view | Mobile view
     - [Python Validator](http://pep8online.com/) - No issues
 
 - **User stories tests**
+- **Register.html**
+  - **Test 1 - Register - Test Passed ✓**
+
+    - **Step 1** - Click the account button and register on the navbar for desktop view devices or side navbar for tablet or mobile view devices.
+    - **Step 2** - Put in a valid email address.
+    - **Step 3** - Put email again in email confirmation field.
+    - **Step 4** - Put in a username which is unique (5 character minimum).
+    - **Step 5** - Put in a password (8 character minimum).
+    - **Step 6** - Put in the same password for password confirmation field.
+    - **Step 7** - Click on register button.
+    - **step 8** - confirm the email in the confirmation email send to your email.
+    - **Step 7** - Be redirected to 'index.html' with a toast message, confirming that the account successfully made.
+
+  - **Test 2 - Register with a username which already exists - Test Passed ✓**
+
+    - **Step 1** - While on 'register.html', enter username 'admin' or any username existing in our data base or the same email address.
+    - **Step 2** - Enter password (8 character minimum) and the same password for the password confirmation.
+    - **Step 3** - Click the 'Register' button.
+    - **Step 4** - Be presented by message containing "Username/email already exists!".
+  - **Test 3 - Register with less than 4 Alphabet for username and less than 8 characters for password - Test Passed ✓**
+
+    - **step 1** - While on 'register.html', enter first or last name with numbers or less than 2 alphabet is shown invalid.
+    - **Step 2** - While on 'register.html', enter username or password with less than 5 charecters is shown invalid.
+    - **Step 3** - As the 'Required' and minlength=4 for username, and minlength=8 for password has been added, the form will not be submitted.
+    - **Step 4** - Changing username to more than 4 alphabet, and password to more than 4 charecters will submit the form.
+    - **step 5** - All the reguirements to fill the form correctly will show on the form if incorrect values pass in the form.
+
+  Desktop view | Mobile view
+  - | -
+  ![register All users desktop](media/test-register-desktop.png) | ![register All users mobile](media/test-register-mobile.png)
+  ---
+- **Login.html**
+
+  - **Test 1 - Log In - Test Passed ✓**
+
+    - **Step 1** - Enter your Username.
+
+    - **Step 2** - Enter your Password.
+    - **Step 3** - Click the 'log in' buttton.
+    - **Step 4** - Be redirected to 'index.html' with toat message containing "You have logged in".
+
+  - **Test 2 - Log in attempt with incorrect info - Test Passed ✓**
+
+    - **Step 1** - Enter credentials that are incorrect.
+    - **Step 2** - Click the 'log in' button.
+    - **Step 3** - Be redirected to the log in page with a message containing "Incorrect Username and/or Password".
+
+  Desktop view | Mobile view
+  - | -
+  ![log in All users desktop](media/test-register-desktop.png) | ![log in All users mobile](media/test-login-mobile.png)
+
+- **Adding a New Product**
+
+  - **Test 1 - Adding a New Product(Admin) - Test Passed ✓**
+
+    - **Step 1** - Log In.
+
+    - **Step 2** - Be redirected to home page.
+    - **Step 3** - Click the button labeled 'Manage Product' in accounts dropdown menu.
+    - **Step 4** - Be redirected to the form for user to fill in.
+    - **Step 5** - Form is tried to be submitted with empty fields for required fields; user is notified of missing items.
+    - **Step 6** - There is 3 required field on the form, name, description and price.
+    - **Step 7** - There is a cancel button provided on the bottom of the form. If the user don't want to add the recipe. he/she can click on this button and get redirected to their profile page.
+    - **Step 8** - Once the form is filled out to the satisfaction of the constraints and the 'Add Recipe!' button is clicked user will be redirected to 'profile.html' where the user can see their newly added recipe located alphabeticly in the collapsible dropdown list. User also be notified that the new recipe added by flash notifications.
+    - **Step 9** - Check the contents of the newly added recipe right away by clicking on that recipe in the dropdown list.
+
+  Desktop view | Mobile view
+  - | -
+  ![add product admin desktop view](media/test-add-product-admin-desktop.png) Admin views: | ![add recipe admin mobile view](media/test-add-product-admin-mobile.png)
+    **note:** same for all users, except that in the admin page there is manage Catogory and manage mak buttons visable in the navbar.
+
+  - **Test 2 - Avoids empty strings in out textarea fields - Test Passed ✓**
+
+    - **Step 1** - Fill in all the required feilds in "Add Product" form.
+    - **Step 2** - Add an empty line to the sku or image url textarea.
+    - **Step 3** - click on "Add Product" button.
+    - **Step 4** - Product will be added to the products.
+
+- **Editing/Deleting a Product(Admin)**
+  - **Test 1 - Editing a Product - Test Passed ✓**
+
+    - **Step 1** - Navigate to products or product details page.
+    - **Step 2** - Click the button labeled "EDIT" for the desired recipe.
+    - **Step 3** - Navitgate to the part of the product that the admin wishes to edit.
+    - **Step 4** - After editing the desired part, click on the, "EDIT Product" at the bottom of the page to edit the recipe.
+    - **Step 5** - Be redirected to same page they where editing the form from(products or product details) and a toast message, notifing the admin that the product is updated.
+    - **Step 6** - Should the Admin wish to cancel the action, they can click on the cancel button located on bottom left.
+    - **Step 7** - If Admin clicks the cancel button he/she will be redirected to same page(products or product details page) and all changes will be disregarded.
+    -**step 8** - Pressing the delete product will bring a confirmation popup that if pressed okey. the product will be deleted.
+
+  Desktop view | Mobile view
+  - | -
+  ![delete button admin desktop view](media/test-edit-form-admin-mobile.png) | ![edit form admin mobile view](media/test-edit-form-admin-mobile.png)
+---
+
+  - **Test 2 - Deleting a review for registered users - Test Passed ✓**
+    - **Step 1** - Navigate to product details page in the reviews.
+    - **Step 2** - Click the button labeled "DELETE".
+    - **Step 3** - User gets a message if they are sure to delete this review.
+    - **step 4** - If confirm the recipe deletes and user redirects to their product details page but if press cancel, recipe stays unchanged.
+
+  Desktop view | Mobile view
+  - | -
+  ![delete review desktop view](media/edit-review-page-desktop.png) | ![edit review mobile view](media/test-edit-review-mobile.png)
+---
+  - **Test 2 - Adding an item to Shoping bag - Test Passed ✓**
+    - **Step 1** - Navigate to product details.
+    - **Step 2** - Click the button labeled + or - to change quantity between (1 to 99) and click on add to bag button.
+    - **Step 3** - User gets a message toast with the information of that product with the delivery fee and the remaining price for free delivery threshold.
+    - **step 4** - If clicking on the toast messege button user will be redirected to shopping bag page.
+
+  Desktop view | Mobile view
+  - | -
+  ![product details desktop view](static/images/desktop-view-admin.png) | ![product details mobile view](static/images/mobile-view-admin.png)
+
+- ### **Manage categories and marks pages( only admin accessibility )**
+
+  - **Test 1 - Add, edit or delete categories or marks - Test Passed ✓**
+
+    - **step 1** - Click on the Manage Categries to manage the categories or Manage Marks to manage the marks.
+    - **step 2** - Admin can sees all the categories in manage categories and all the marks in manage marks in a seperate card with an option of delete or edit and an Add button on top of the page to add a new category or mark.
+    - **step 3** - By clicking on the add button, a one input field form, called add category or add mark opens regardingly.
+    - **step 4** - Admin can write the desired name for the new category/mark and press the Add category or Add mark at the bottom of the form.
+    - **step 5** - Admin is provided also with a cancel button in both pages if he/she decided to not add any new category or mark.
+  - **step 6** - Pressing this button bring up a note if he/she is sure not to add any category or mark.
+    - **step 7** - if press ok, admin redirects to the get_categories if in add category form, or get_marks if in add marks form.
+    - **step 8** - if press cancel, no category or mark will be added and user will be redirected to "Add Catogory" or "Add mark" regarding to which one that he/she was adding.
+
+  Desktop view | Mobile view
+  - | -
+  ![manage categories desktop](static/images/manage-categories-desktop.png) | ![manage categories mobile](static/images/manage-categories-mobile.png)
+  ![manage marks desktop](static/images/manage-marks-desktop.png) | ![manage marks mobile](static/images/manage-marks-mobile.png)
+  ![add categories desktop](static/images/add-category-desktop.png) | ![add categories mobile](static/images/add-category-mobile.png)
+  ![add marks desktop](static/images/add-mark-desktop.png) | ![add marks mobile](static/images/add-mark-mobile.png)
+  ---
+- ### **Log Out**
+
+  - **Test 1 - Log out - Test Passed ✓**
+    - **step 1** - Click on the "log Out" button in the navbar to log out.
+    - **step 2** - Pressing this button bring up a note: "Are you sure you want to log out?".
+    - **step 3** - if press ok user will log out.
+    - **step 4** - if press cancel, the user would not log out.
 - ****Testing user experience:****
 
   - **Product Owner**
