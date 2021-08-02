@@ -3,11 +3,11 @@
 
 **Tadig Restaurant**
 
-[View the live project here.](tadig-restaurant.herokuapp.com)
+[View the live project here.](https://tadig-restaurant.herokuapp.com)
 This website is made for restaurants. We named our restaurant "Tadig restaurant" which is a made-up Persian restaurant.
 It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential customers.
 
-![Tadig Restaurant]()
+![Tadig Restaurant](media/tadig-live-view.png)
 ## **Contents** ##
 * UX
     * [Project Summary](#project-summary)
@@ -485,6 +485,12 @@ Desktop view | Mobile view
 #### In GitPod or IDE:
 7. To use postgres open project in GitPod and install:
 ```
+*   pip3 install django
+*   pip3 install django-allauth
+*   pip3 install pillow
+*   pip3 install django-crispy-forms
+*   pip3 install django-storages
+*   pip3 install stripe
 *   pip3 install dj_database_url
 *   pip3 install psycopg2-binary
 *   Update requirements: pip3 freeze > requirements.txt
